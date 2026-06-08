@@ -1,0 +1,10 @@
+SEGGER J-Link Remote Server V9.10 LogFile
+Logging started @ 2026-06-05 06:48
+00000000 - SERVER  (0x0015 bytes): Remote Server started
+00000000 - SERVER  (0x0015 bytes): TLV Protocol: V1.0.0 
+00014176 - SERVER  (0x0018 bytes): Cannot connect to J-Link
+00014176 - SERVER  (0x0018 bytes): Retrying in 5 seconds...
+00035901 - SERVER  (0x0018 bytes): Cannot connect to J-Link
+00035902 - SERVER  (0x0018 bytes): Retrying in 5 seconds...
+00045824 - SERVER  (0x0018 bytes): Cannot connect to J-Link
+00045825 - SERVER  (0x0018 bytes): Retrying in 5 seconds...

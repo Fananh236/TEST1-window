@@ -1,0 +1,27 @@
+{
+  "pi_config": {
+    "pi_host": "192.168.0.246",
+    "pi_port": 22,
+    "ssh_username": "ubuntu",
+    "ssh_password": "1",
+    "ssh_key_path": "",
+    "chip_tool_path": "/usr/local/bin/chip-tool"
+  },
+  "chip_config": {
+    "node_id": "1",
+    "endpoint_id": "1",
+    "setup_pin_code": "20202021",
+    "discovery_type": "ble-thread",
+    "thread_dataset": "hex:0e080000000000010000000300000e4a0300001035060004001fffe00208887b2e9d2e44a1a40708fde70ad131b96c6f0510676d25ed91aa185f9659ab964ca86b0d030f4f70656e5468726561642d623934660102b94f041096e696f46569f6836f99efdcdb3eae760c0402a0f7f8",
+    "discriminator": "3840"
+  },
+  "serial_config": {
+    "commander_path": "/home/phanhoanganh/.silabs/slt/installs/archive/commander/commander",
+    "device": "EFR32MG24BXXXF1536",
+    "sn":"440221915",
+    "ip":"192.168.0.10",
+    "ip_remote": "192.168.0.10",
+    "firmware_dir": "resources/firmware",
+    "target_firmware": "resources/firmware/bt_soc_blinky.s37"
+  }
+}
