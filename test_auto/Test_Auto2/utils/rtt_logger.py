@@ -55,8 +55,8 @@ class DeviceFlasher:
         # ================= SERVER =================
         server_cmd = [ 
                       "JLinkRemoteServer",
-                      "-SelectEmuByIP",
-                      self.ip
+                      "-SelectEmuBySN",
+                      self.sn
             # "JLinkExe",
             
             # "-device", self.device,
