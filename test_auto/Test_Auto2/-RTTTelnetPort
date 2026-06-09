@@ -1,17 +1,17 @@
-[00:00:00.094][info  ][DL] Starting scheduler
-[00:00:00.094][info  ][DL] ==================================================
-[00:00:00.094][info  ][DL] SL-Light starting
-[00:00:00.094][info  ][DL] ==================================================
-[00:00:00.095][info  ][DL] Init CHIP Stack
-[00:00:00.097][info  ][DL] Setting device name to : "SL-Light"
-[00:00:00.098][info  ][DL] Provision mode disabled
-[00:00:00.098][info  ][DL] Initializing OpenThread stack
-[00:00:00.099][info  ][DL] OpenThread started: OK
-[00:00:00.099][info  ][DL] Setting OpenThread device type to ROUTER
-[00:00:00.101][info  ][DL] Starting OpenThread task
-[00:00:00.101][info  ][SVR] Initializing subscription resumption storage...
-[00:00:00.103][info  ][SVR] Server initializing...
-[00:00:00.104][info  ][TS] Last Known Good Time: [unknown]
-[00:00:00.104][info  ][TS] Setting Last Known Good Time to firmware build time 2023-10-10T16:28:52
-[00:00:00.107][info  ][DMG] AccessControl: initializing
-[00:00:00.107][info  ][DMG] Example[00:00:30.167][info  ][DL] Starting advertising with interval_min=240, intverval_max=1920 (units of 625us)
+[00:00:00.107][info  ][DL] Starting scheduler
+[00:00:00.107][info  ][DL] ==================================================
+[00:00:00.108][info  ][DL] SL-Light starting
+[00:00:00.108][info  ][DL] ==================================================
+[00:00:00.108][info  ][DL] Init CHIP Stack
+[00:00:00.111][info  ][DL] Setting device name to : "SL-Light"
+[00:00:00.111][info  ][DL] Provision mode disabled
+[00:00:00.112][info  ][DL] Initializing OpenThread stack
+[00:00:00.113][info  ][DL] OpenThread started: OK
+[00:00:00.113][info  ][DL] Setting OpenThread device type to ROUTER
+[00:00:00.114][info  ][DL] Starting OpenThread task
+[00:00:00.115][info  ][SVR] Initializing subscription resumption storage...
+[00:00:00.117][info  ][SVR] Server initializing...
+[00:00:00.118][info  ][TS] Last Known Good Time: [unknown]
+[00:00:00.118][info  ][TS] Setting Last Known Good Time to firmware build time 2023-10-10T16:28:52
+[00:00:00.120][info  ][DMG] AccessControl: initializing
+[00:00:00.121][info  ][DMG] Example[00:00:30.180][info  ][DL] Starting advertising with interval_min=240, intverval_max=1920 (units of 625us)
