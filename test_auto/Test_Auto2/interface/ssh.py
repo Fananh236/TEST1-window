@@ -13,7 +13,7 @@ class SSHClient:
         self.key_path = pi_config.get("ssh_key_path") or None
         self.chip_tool_path = pi_config.get("chip_tool_path")
         self._ssh_client = None
-
+        self.otl_path = pi_config.get("otl_path")
         self.log_dir = os.path.abspath(log_dir)
         self.logger = setup_file_logger("PiSSH", self.log_dir, "pi_connection.log")
         self.logger.info("--- NEW SSH SESSION ---")
@@ -69,3 +69,4 @@ class SSHClient:
             self._ssh_client.close()
             self._ssh_client = None
             self.logger.info("SSH connection closed.")
+    

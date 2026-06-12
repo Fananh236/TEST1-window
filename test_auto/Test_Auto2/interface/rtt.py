@@ -6,12 +6,13 @@ import time
 from .jlink import build_jlink_remote_server_command, build_jlink_rtt_logger_command
 
 
-class DeviceFlasher:
+class DeviceRTT:
     def __init__(self, serial_config, log_dir):
         self.serial_config = serial_config or {}
         self.device = self.serial_config.get("device", "").replace("IM48", "")
         self.ip = self.serial_config.get("ip")
         self.log_dir = os.path.abspath(log_dir)
+        self.sn = self.serial_config.get("sn")
         os.makedirs(self.log_dir, exist_ok=True)
         self.log_file = os.path.join(self.log_dir, "rtt_log.txt")
 
@@ -38,7 +39,7 @@ class DeviceFlasher:
     def start_rtt(self):
         self._cleanup_processes()
 
-        server_cmd = build_jlink_remote_server_command(self.ip)
+        server_cmd = build_jlink_remote_server_command(self.sn)
         self.server_proc = subprocess.Popen(
             server_cmd,
             stdout=subprocess.DEVNULL,
