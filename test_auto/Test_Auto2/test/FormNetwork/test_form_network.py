@@ -26,7 +26,8 @@ def thread_dataset(pi_device):
 
 def test_thread_network_is_active(pi_device):
     """Kiểm tra Pi đang tham gia mạng Thread (leader hoặc router)."""
-    out, _ = pi_device.execute_command("ot-ctl state")
+    cmd = f"echo '{pi_device.password}' | sudo -S -p '' ot-ctl state"
+    out, _ = pi_device.execute_command(cmd)
     state = out.strip().lower()
 
     assert any(role in state for role in ["leader", "router", "child"]), (
@@ -57,7 +58,8 @@ def test_thread_dataset_is_valid_hex(thread_dataset):
 
 def test_thread_channel(pi_device):
     """Kiểm tra kênh (channel) của mạng Thread."""
-    out, _ = pi_device.execute_command("ot-ctl channel")
+    cmd = f"echo '{pi_device.password}' | sudo -S -p '' ot-ctl channel"
+    out, _ = pi_device.execute_command(cmd)
     channel = out.strip().split()[0] if out.strip() else ""
 
     assert channel.isdigit(), f"Invalid Thread channel: '{channel}'"
@@ -66,7 +68,8 @@ def test_thread_channel(pi_device):
 
 def test_thread_panid(pi_device):
     """Kiểm tra PAN ID của mạng Thread."""
-    out, _ = pi_device.execute_command("ot-ctl panid")
+    cmd = f"echo '{pi_device.password}' | sudo -S -p '' ot-ctl panid"
+    out, _ = pi_device.execute_command(cmd)
     panid = out.strip().split()[0] if out.strip() else ""
 
     assert panid.startswith("0x"), f"Invalid PAN ID format: '{panid}'"
