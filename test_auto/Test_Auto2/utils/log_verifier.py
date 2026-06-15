@@ -10,7 +10,9 @@ def verify_chiptool_log_flow(
     explicit_rtt_path: Optional[Union[str, Path]] = None,
     explicit_pi_path: Optional[Union[str, Path]] = None,
 ):
-    """Verify that the Pi log and RTT log show chip-tool dispatch and end-device execution."""
+    """Verify that the Pi log and RTT log show chip-tool dispatch and end-device execution.
+    Specially checks that when 'onoff on' or 'onoff off' are executed, the RTT log displays 'Turning light On' or 'Turning light Off'.
+    """
     from config.loader import ConfigLoader
     loader = ConfigLoader.instance()
     log_dir = Path(loader.get_log_path())
@@ -51,10 +53,11 @@ def verify_chiptool_log_flow(
 
     if not pi_log_path.exists():
         details.append(f"Pi log not found: {pi_log_path}")
+        pi_text = ""
     else:
         pi_text = pi_log_path.read_text(encoding="utf-8", errors="ignore")
         command_patterns = [
-            r"chip-tool\s+onoff\s+toggle",
+            r"chip-tool\s+onoff\s+(?:on|off|toggle)",
             r"chip-tool\s+pairing",
             r"EXECUTE COMMAND:.*chip-tool",
         ]
@@ -66,20 +69,44 @@ def verify_chiptool_log_flow(
 
     if not rtt_log_path.exists():
         details.append(f"RTT log not found: {rtt_log_path}")
+        rtt_text = ""
     else:
-        rtt_text = rtt_log_path.read_text(encoding="utf-8", errors="ignore").lower()
+        rtt_text = rtt_log_path.read_text(encoding="utf-8", errors="ignore")
+        rtt_text_lower = rtt_text.lower()
 
-        if "im:invokecommandrequest" in rtt_text:
+        if "im:invokecommandrequest" in rtt_text_lower:
             device_received_command = True
             details.append("RTT log contains command receipt from the end device")
         else:
             details.append("RTT log does not contain command receipt markers")
 
-        if re.search(r"turning light (on|off)|light (on|off)", rtt_text):
+        if re.search(r"turning light (on|off)|light (on|off)", rtt_text_lower):
             device_executed_action = True
             details.append("RTT log contains end-device action output")
         else:
             details.append("RTT log does not contain end-device action output")
+
+    # Specific check for 'onoff on' -> 'Turning light On' and 'onoff off' -> 'Turning light Off'
+    if pi_text and rtt_text:
+        # Check all onoff commands in Pi log
+        on_commands = re.findall(r"chip-tool\s+onoff\s+on\s+(\d+)\s+(\d+)", pi_text, re.IGNORECASE)
+        off_commands = re.findall(r"chip-tool\s+onoff\s+off\s+(\d+)\s+(\d+)", pi_text, re.IGNORECASE)
+        
+        if on_commands:
+            # Check for "Turning light On" in RTT log
+            if re.search(r"turning light\s+on", rtt_text, re.IGNORECASE):
+                details.append("Verified: 'onoff on' command matches 'Turning light On' in RTT log")
+            else:
+                details.append("Failed: 'onoff on' found in Pi log but 'Turning light On' NOT found in RTT log")
+                device_executed_action = False
+                
+        if off_commands:
+            # Check for "Turning light Off" in RTT log
+            if re.search(r"turning light\s+off", rtt_text, re.IGNORECASE):
+                details.append("Verified: 'onoff off' command matches 'Turning light Off' in RTT log")
+            else:
+                details.append("Failed: 'onoff off' found in Pi log but 'Turning light Off' NOT found in RTT log")
+                device_executed_action = False
 
     return {
         "command_dispatched": command_dispatched,
@@ -87,3 +114,4 @@ def verify_chiptool_log_flow(
         "device_executed_action": device_executed_action,
         "details": " | ".join(details),
     }
+
