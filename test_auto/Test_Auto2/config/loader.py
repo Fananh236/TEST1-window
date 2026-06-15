@@ -80,36 +80,6 @@ class ConfigLoader:
         os.makedirs(log_path, exist_ok=True)
         return log_path
 
-    def get_firmware_path(self):
-        return self.resolve_path(self.get("serial_config.target_firmware"))
-
-    def get_commander_path(self):
-        return self.resolve_path(self.get("serial_config.commander_path"))
-
-    # =========================
-    # DEVICES (quan trọng)
-    # =========================
-    def get_devices(self):
-        return self.get("serial_config.devices", [])
-
-    def get_device_by_name(self, name):
-        for dev in self.get_devices():
-            if dev["name"] == name:
-                return dev
-        return None
-
-    # =========================
-    # PI CONFIG
-    # =========================
-    def get_pi_config(self):
-        return self.get("pi_config", {})
-
-    # =========================
-    # CHIP CONFIG
-    # =========================
-    def get_chip_config(self):
-        return self.get("chip_config", {})
-
     # =========================
     # SINGLETON ACCESS
     # =========================
