@@ -52,9 +52,19 @@ class CommanderInterface:
         return self.helper.is_connected(sn)
 
     def get_serial_numbers(self):
+        devices = self.serial_config.get("devices", [])
+        if devices:
+            serials = [d["sn"] for d in devices if isinstance(d, dict) and "sn" in d]
+            if serials:
+                return serials
         return self._read_list_file(self.serial_file)
 
     def get_ip_numbers(self):
+        devices = self.serial_config.get("devices", [])
+        if devices:
+            ips = [d["ip"] for d in devices if isinstance(d, dict) and "ip" in d]
+            if ips:
+                return ips
         return self._read_list_file(self.ip_file)
 
     def get_firmware_file(self):

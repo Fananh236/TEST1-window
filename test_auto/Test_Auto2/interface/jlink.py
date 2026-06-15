@@ -3,7 +3,7 @@ def build_jlink_remote_server_command(sn):
 
 
 def build_jlink_rtt_logger_command(device, ip_address, log_file):
-    return [
+    cmd = [
         "JLinkRTTLogger",
         "-Device",
         device,
@@ -13,10 +13,11 @@ def build_jlink_rtt_logger_command(device, ip_address, log_file):
         "4000",
         "-RTTChannel",
         "0",
-        "-IP",
-        ip_address,
-        "-RTTTelnetPort",
-        "19020",
-        "-Silent",
-        log_file,
     ]
+    if ip_address:
+        if ":" not in ip_address:
+            cmd += ["-IP", f"{ip_address}:19020"]
+        else:
+            cmd += ["-IP", ip_address]
+    cmd += [log_file]
+    return cmd

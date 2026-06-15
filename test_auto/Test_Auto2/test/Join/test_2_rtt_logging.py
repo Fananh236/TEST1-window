@@ -16,10 +16,10 @@ def _resolve_serial_value(serial_config, field_name):
     return None
 
 
-class RTTSetup:
+class TestRTTSetup:
     
 
-    def test_rtt_logger_fixture_active(self, rtt_logger):
+    def test_rtt_logger_fixture_active(self, device_rtt):
         
         print(f"✅ RTT logger fixture is active")
 
@@ -54,7 +54,7 @@ class RTTSetup:
         print(f"⚠️ JLink tools check skipped (host-side tools)")
 
 
-class RTTProcesses:
+class TestRTTProcesses:
 
 
     def test_link_server_process(self, config):
@@ -71,7 +71,7 @@ class RTTProcesses:
         print(f"✅ Process cleanup capability verified")
 
 
-class LogFileGeneration:
+class TestLogFileGeneration:
    
     def test_test_report_log_created(self, config):
         
@@ -92,7 +92,7 @@ class LogFileGeneration:
             for log_file in log_files[:3]:
                 print(f"   - {log_file}")
 
-    def log_file_readable(self, config):
+    def test_log_file_readable(self, config):
         
         log_path = config.get("log_path", "./Log")
         
@@ -118,7 +118,7 @@ class LogFileGeneration:
             except Exception as e:
                 pytest.fail(f"Cannot read log file: {e}")
 
-    def log_contains_test_info(self, config):
+    def test_log_contains_test_info(self, config):
         
         log_path = config.get("log_path", "./Log")
         
@@ -151,10 +151,10 @@ class LogFileGeneration:
                 print(f"⚠️ Log may not contain test info yet: {log_file}")
 
 
-class RTTLogCapture:
+class TestRTTLogCapture:
     
 
-    def rtt_log_capture_enabled(self, config):
+    def test_rtt_log_capture_enabled(self, config):
         
         serial_config = config.get("serial_config", {})
         
@@ -167,7 +167,7 @@ class RTTLogCapture:
         else:
             print(f"⚠️ No IP configured for RTT")
 
-    def log_writable(self, config):
+    def test_log_writable(self, config):
         
         log_path = config.get("log_path", "./Log")
         
@@ -180,7 +180,7 @@ class RTTLogCapture:
         
         print(f"✅ Log directory is writable: {log_path}")
 
-    def log_space_available(self, config):
+    def test_log_space_available(self, config):
         
         log_path = config.get("log_path", "./Log")
         
@@ -201,9 +201,9 @@ class RTTLogCapture:
             print(f"⚠️ Could not check disk space: {e}")
 
 
-class LogRotation:
+class TestLogRotation:
     
-    def log_size_reasonable(self, config):
+    def test_log_size_reasonable(self, config):
         
         log_path = config.get("log_path", "./Log")
         
@@ -224,16 +224,16 @@ class LogRotation:
         
         print(f"✅ Total log size: {size_mb:.1f} MB")
 
-    def ld_logs_cleanup_strategy(self, config):
+    def test_ld_logs_cleanup_strategy(self, config):
         
         log_path = config.get("log_path", "./Log")
         
         print(f"✅ Log cleanup strategy: Keep recent logs, remove old if >100MB")
 
 
-class LoggingIntegration:
+class TestLoggingIntegration:
     
-    def logging_summary(self, config):
+    def test_logging_summary(self, config):
         
         print("\n" + "="*60)
         print("LOGGING CONFIGURATION SUMMARY")
