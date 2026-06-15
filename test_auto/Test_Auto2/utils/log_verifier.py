@@ -7,6 +7,8 @@ def verify_chiptool_log_flow(
     project_root: Optional[Union[str, Path]] = None,
     rtt_log_name: str = "rtt_log.txt",
     pi_log_name: str = "pi_connection.log",
+    explicit_rtt_path: Optional[Union[str, Path]] = None,
+    explicit_pi_path: Optional[Union[str, Path]] = None,
 ):
     """Verify that the Pi log and RTT log show chip-tool dispatch and end-device execution."""
     from config.loader import ConfigLoader
@@ -14,30 +16,32 @@ def verify_chiptool_log_flow(
     log_dir = Path(loader.get_log_path())
     root = Path(project_root or loader.root_dir).resolve()
 
-    rtt_log_path = None
-    for path in [
-        log_dir / rtt_log_name,
-        root / rtt_log_name,
-        root / "-RTTTelnetPort",
-        log_dir / "-RTTTelnetPort",
-    ]:
-        if path.exists():
-            rtt_log_path = path
-            break
+    rtt_log_path = Path(explicit_rtt_path) if explicit_rtt_path else None
     if not rtt_log_path:
-        rtt_log_path = log_dir / rtt_log_name
+        for path in [
+            log_dir / rtt_log_name,
+            root / rtt_log_name,
+            root / "-RTTTelnetPort",
+            log_dir / "-RTTTelnetPort",
+        ]:
+            if path.exists():
+                rtt_log_path = path
+                break
+        if not rtt_log_path:
+            rtt_log_path = log_dir / rtt_log_name
 
-    pi_log_path = None
-    for path in [
-        log_dir / pi_log_name,
-        root / "Log" / pi_log_name,
-        root / pi_log_name,
-    ]:
-        if path.exists():
-            pi_log_path = path
-            break
+    pi_log_path = Path(explicit_pi_path) if explicit_pi_path else None
     if not pi_log_path:
-        pi_log_path = log_dir / pi_log_name
+        for path in [
+            log_dir / pi_log_name,
+            root / "Log" / pi_log_name,
+            root / pi_log_name,
+        ]:
+            if path.exists():
+                pi_log_path = path
+                break
+        if not pi_log_path:
+            pi_log_path = log_dir / pi_log_name
 
     details = []
 

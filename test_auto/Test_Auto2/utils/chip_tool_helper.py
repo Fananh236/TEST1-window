@@ -88,8 +88,10 @@ def send_toggle_command(pi_device, config, label):
     full_response = (stdout + "\n" + stderr).lower()
 
     # ✅ detect lỗi thật
-    assert "timeout" not in full_response, "❌ Timeout → device NOT reachable via Thread"
-    assert "run command failure" not in full_response, "❌ chip-tool execution failed"
+    if "timeout" in full_response:
+        raise RuntimeError("❌ Timeout → device NOT reachable via Thread")
+    if "run command failure" in full_response:
+        raise RuntimeError("❌ chip-tool execution failed")
 
     print(f"✅ {label} executed successfully!\n")
 
@@ -116,7 +118,7 @@ def run_pairing(pi_device, config):
     dataset, err = fetch_thread_data_set(pi_device)
 
     if err or not dataset:
-        raise AssertionError(f"❌ Thread dataset missing: {err}")
+        raise RuntimeError(f"❌ Thread dataset missing: {err}")
 
     # =====================================================
     # BUILD PAIRING CMD
@@ -140,7 +142,7 @@ def run_pairing(pi_device, config):
     # CHECK PAIRING SUCCESS
     # =====================================================
     if "device commissioning completed with success" not in output.lower():
-        raise AssertionError("❌ Pairing FAILED")
+        raise RuntimeError("❌ Pairing FAILED")
 
     print("✅ Pairing SUCCESS")
 

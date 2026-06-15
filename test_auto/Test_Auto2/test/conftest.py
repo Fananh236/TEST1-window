@@ -93,12 +93,12 @@ def device_rtt(config, tmp_path, request):
 # =============================================================================
 def pytest_collection_modifyitems(config, items):
     order = {
-        "test_0_flashing_sn.py": 0,
-        "test_1_flashing_ip.py": 1,
-        "test_2_rtt_logging.py": 2,
-        "test_3_pi_connectivity.py": 3,
-        "test_4_chiptool.py": 4,
-        "test_5_log_verification.py": 5,
+        "test_flashing_sn.py": 0,
+        "test_flashing_ip.py": 1,
+        "test_rtt_logging.py": 2,
+        "test_pi_connectivity.py": 3,
+        "test_chiptool.py": 4,
+        "test_log_verification.py": 5,
     }
 
     def sort_key(item):
