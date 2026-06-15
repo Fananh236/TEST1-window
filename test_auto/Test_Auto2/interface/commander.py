@@ -10,14 +10,16 @@ class CommanderInterface:
             os.path.join(os.path.dirname(__file__), "..")
         )
 
-        self.commander_path = self.serial_config.get("commander_path", "commander")
-        self.device = self.serial_config.get("device", "EFR32MG24B220F1536IM48")
+        self.commander_path = self.serial_config.get("commander_path")
+        self.device = self.serial_config.get("device")
         self.firmware_dir = self.serial_config.get("firmware_dir", "resources/firmware")
 
-        self.helper = DeviceHelper(self.commander_path, self.device)
+        if not self.commander_path:
+            raise ValueError("Missing 'commander_path' in serial_config")
+        if not self.device:
+            raise ValueError("Missing 'device' in serial_config")
 
-        self.serial_file = os.path.join(self.project_root, "resources", "serials.txt")
-        self.ip_file = os.path.join(self.project_root, "resources", "ip.txt")
+        self.helper = DeviceHelper(self.commander_path, self.device)
 
     # =========================================================
     # ACTION WRAPPER
@@ -57,7 +59,7 @@ class CommanderInterface:
             serials = [d["sn"] for d in devices if isinstance(d, dict) and "sn" in d]
             if serials:
                 return serials
-        return self._read_list_file(self.serial_file)
+        return []
 
     def get_ip_numbers(self):
         devices = self.serial_config.get("devices", [])
@@ -65,7 +67,7 @@ class CommanderInterface:
             ips = [d["ip"] for d in devices if isinstance(d, dict) and "ip" in d]
             if ips:
                 return ips
-        return self._read_list_file(self.ip_file)
+        return []
 
     def get_firmware_file(self):
         firmware = self.serial_config.get("target_firmware")
@@ -80,13 +82,6 @@ class CommanderInterface:
             raise FileNotFoundError(f"Firmware not found: {firmware}")
 
         return firmware
-
-    def _read_list_file(self, file_path):
-        if not os.path.exists(file_path):
-            return []
-
-        with open(file_path, "r", encoding="utf-8") as handle:
-            return [line.strip() for line in handle if line.strip()]
 
     def _looks_like_firmware_path(self, value):
         if not isinstance(value, str):

@@ -1,4 +1,4 @@
-﻿import pytest
+import pytest
 
 from config.loader import ConfigLoader
 from interface.commander import CommanderInterface
@@ -19,7 +19,7 @@ def flashing_context(commander):
 
     ip_list = commander.get_ip_numbers()
     if not ip_list:
-        pytest.skip("❌ ip.txt list not found or file is empty!")
+        pytest.skip("❌ IP list not found in config or is empty!")
 
     return {
         "firmware_path": firmware_path,
@@ -28,7 +28,7 @@ def flashing_context(commander):
 
 
 def test_check_flashing_preconditions(commander, flashing_context):
-    assert flashing_context["ip_list"], "❌ ip.txt list not found or file is empty!"
+    assert flashing_context["ip_list"], "❌ IP list not found in config or is empty!"
     assert flashing_context["firmware_path"], f"❌ .s37 file not found in configuration directory: {commander.firmware_dir}"
 
 
@@ -38,7 +38,7 @@ def test_mass_flashing_device(commander, flashing_context):
     ip_list = flashing_context["ip_list"]
 
     if not ip_list:
-        pytest.skip("⏩ SKIP: Skipped due to missing ip.txt data or missing .s37 firmware in the system")
+        pytest.skip("⏩ SKIP: Skipped due to missing IP data in config or missing .s37 firmware in the system")
 
     for ip in ip_list:
         print(f"\n▶️ Processing device IP: {ip}")

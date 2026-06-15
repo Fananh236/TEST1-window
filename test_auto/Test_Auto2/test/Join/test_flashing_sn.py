@@ -19,7 +19,7 @@ def flashing_context(commander):
 
     serial_list = commander.get_serial_numbers()
     if not serial_list:
-        pytest.skip("❌ serials.txt list not found or file is empty!")
+        pytest.skip("❌ Serial list not found in config or is empty!")
 
     return {
         "firmware_path": firmware_path,
@@ -28,7 +28,7 @@ def flashing_context(commander):
 
 
 def test_check_flashing_preconditions(commander, flashing_context):
-    assert flashing_context["serial_list"], "❌ serials.txt list not found or file is empty!"
+    assert flashing_context["serial_list"], "❌ Serial list not found in config or is empty!"
     assert flashing_context["firmware_path"], f"❌ .s37 file not found in configuration directory: {commander.firmware_dir}"
 
 
@@ -38,7 +38,7 @@ def test_mass_flashing_device(commander, flashing_context):
     serial_list = flashing_context["serial_list"]
 
     if not serial_list:
-        pytest.skip("⏩ SKIP: Skipped due to missing serials.txt data or missing .s37 firmware in the system")
+        pytest.skip("⏩ SKIP: Skipped due to missing device serials in config or missing .s37 firmware in the system")
 
     for sn in serial_list:
         print(f"\n▶️ Processing device SN: {sn}")
