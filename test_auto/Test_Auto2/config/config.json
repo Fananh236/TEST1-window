@@ -7,14 +7,14 @@
     "ssh_key_path": "",
     "chip_tool_path": "/usr/local/bin/chip-tool"
   },
+
   "chip_config": {
-    "node_id": "1",
-    "endpoint_id": "1",
     "setup_pin_code": "20202021",
     "discovery_type": "ble-thread",
     "thread_dataset": "",
     "discriminator": "3840"
   },
+
   "serial_config": {
     "commander_path": "/home/phanhoanganh/.silabs/slt/installs/archive/commander/commander",
     "device": "EFR32MG24BXXXF1536",
@@ -23,17 +23,23 @@
       {
         "name": "device_1",
         "sn": "440221915",
-        "ip": "192.168.0.10"
+        "ip": "192.168.0.10",
+        "node_id": "1",
+        "endpoint_id": "1"
       },
       {
         "name": "device_2",
         "sn": "440221916",
-        "ip": "192.168.0.11"
+        "ip": "192.168.0.11",
+        "node_id": "2",
+        "endpoint_id": "1"
       },
       {
         "name": "device_3",
         "sn": "440221917",
-        "ip": "192.168.0.12"
+        "ip": "192.168.0.12",
+        "node_id": "3",
+        "endpoint_id": "1"
       }
     ],
 

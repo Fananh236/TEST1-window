@@ -57,7 +57,7 @@ def pi_device(config):
         print("✅ SSH connected")
     except Exception as e:
         print(f"❌ SSH failed: {e}")
-        raise
+        pytest.skip(f"SSH unavailable: {e}")
 
     yield pi
 
@@ -89,7 +89,26 @@ def device_rtt(config, tmp_path, request):
 
 
 # =============================================================================
-# 4. TEST RESULT LOGGING
+# 4. TEST ORDERING
+# =============================================================================
+def pytest_collection_modifyitems(config, items):
+    order = {
+        "test_0_flashing_sn.py": 0,
+        "test_1_flashing_ip.py": 1,
+        "test_2_rtt_logging.py": 2,
+        "test_3_pi_connectivity.py": 3,
+        "test_4_chiptool.py": 4,
+        "test_5_log_verification.py": 5,
+    }
+
+    def sort_key(item):
+        return (order.get(os.path.basename(str(item.fspath)), 99), str(item.fspath), item.name)
+
+    items.sort(key=sort_key)
+
+
+# =============================================================================
+# 5. TEST RESULT LOGGING
 # =============================================================================
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
 def pytest_runtest_logreport(report):

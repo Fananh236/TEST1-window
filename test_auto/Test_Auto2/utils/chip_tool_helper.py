@@ -2,6 +2,31 @@ import re
 import time
 
 
+def _select_target_device(config, device_name=None):
+    serial_config = config.get("serial_config", {}) or {}
+    devices = serial_config.get("devices", []) or []
+
+    if device_name:
+        for device in devices:
+            if device.get("name") == device_name:
+                return device
+
+    return devices[0] if devices else None
+
+
+def resolve_chip_target(config, device_name=None):
+    """Resolve chip target values from chip_config or from serial_config.devices."""
+    chip = dict(config.get("chip_config", {}) or {})
+    target_device = _select_target_device(config, device_name)
+
+    if target_device is not None:
+        for key in ("node_id", "endpoint_id"):
+            if key in target_device and (key not in chip or not chip.get(key)):
+                chip[key] = str(target_device[key])
+
+    return chip
+
+
 # =========================================================
 # FETCH THREAD DATASET
 # =========================================================
@@ -48,7 +73,7 @@ def send_toggle_command(pi_device, config, label):
 
     print(f"\n🚀 Sending command: {label}")
 
-    chip = config['chip_config']
+    chip = resolve_chip_target(config)
 
     toggle_cmd = (
         f"echo '{pi_device.password}' | sudo -S -p '' {pi_device.chip_tool_path} "
@@ -76,7 +101,7 @@ def send_toggle_command(pi_device, config, label):
 # =========================================================
 def run_pairing(pi_device, config):
 
-    chip = config['chip_config']
+    chip = resolve_chip_target(config)
 
     print("\n=========== START PAIRING ===========")
 

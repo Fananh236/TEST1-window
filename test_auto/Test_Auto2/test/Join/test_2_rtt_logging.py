@@ -5,6 +5,17 @@ import os
 import time
 
 
+def _resolve_serial_value(serial_config, field_name):
+    if serial_config.get(field_name):
+        return serial_config[field_name]
+
+    for device in serial_config.get("devices", []) or []:
+        if isinstance(device, dict) and device.get(field_name):
+            return device[field_name]
+
+    return None
+
+
 class RTTSetup:
     
 
@@ -149,7 +160,7 @@ class RTTLogCapture:
         
         # assert serial_config is not None, "serial_config not found"
         
-        ip = serial_config.get("ip")
+        ip = _resolve_serial_value(serial_config, "ip")
         
         if ip:
             print(f"✅ RTT capture enabled for device IP: {ip}")

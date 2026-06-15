@@ -10,15 +10,27 @@ class DeviceRTT:
     def __init__(self, serial_config, log_dir):
         self.serial_config = serial_config or {}
         self.device = self.serial_config.get("device", "").replace("IM48", "")
-        self.ip = self.serial_config.get("ip")
+        self.ip = self._resolve_device_value("ip")
         self.log_dir = os.path.abspath(log_dir)
-        self.sn = self.serial_config.get("sn")
+        self.sn = self._resolve_device_value("sn")
         os.makedirs(self.log_dir, exist_ok=True)
         self.log_file = os.path.join(self.log_dir, "rtt_log.txt")
 
         self.server_proc = None
         self.rtt_proc = None
         self.stopped = False
+
+    def _resolve_device_value(self, field_name):
+        if field_name in self.serial_config and self.serial_config.get(field_name):
+            return self.serial_config[field_name]
+
+        devices = self.serial_config.get("devices") or []
+        if isinstance(devices, list):
+            for device in devices:
+                if isinstance(device, dict) and device.get(field_name):
+                    return device[field_name]
+
+        return None
 
     def _cleanup_processes(self):
         if os.name == "posix":
