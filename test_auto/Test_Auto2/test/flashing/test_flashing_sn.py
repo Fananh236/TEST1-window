@@ -38,7 +38,7 @@ def test_mass_flashing_device(commander, flashing_context):
     serial_list = flashing_context["serial_list"]
 
     if not serial_list:
-        pytest.skip("⏩ SKIP: Skipped due to missing device serials in config or missing .s37 firmware in the system")
+        pytest.skip("⏩ SKIP: Skipped due to missing serials.txt data or missing .s37 firmware in the system")
 
     for sn in serial_list:
         print(f"\n▶️ Processing device SN: {sn}")

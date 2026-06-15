@@ -190,3 +190,75 @@
 ================================================================================
 [2026-06-15 14:30:02] TEARDOWN test/Control/test_chip_config_resolution.py::test_rtt_resolves_device_ip_and_sn_from_serial_devices
 ================================================================================
+
+================================================================================
+[2026-06-15 16:09:58] SETUP test_auto/Test_Auto2/test/Control/test_chip_config_resolution.py::test_resolve_chip_target_from_device_config
+================================================================================
+
+================================================================================
+[2026-06-15 16:09:58] CALL test_auto/Test_Auto2/test/Control/test_chip_config_resolution.py::test_resolve_chip_target_from_device_config
+================================================================================
+
+================================================================================
+[2026-06-15 16:09:58] TEARDOWN test_auto/Test_Auto2/test/Control/test_chip_config_resolution.py::test_resolve_chip_target_from_device_config
+================================================================================
+
+================================================================================
+[2026-06-15 16:09:58] SETUP test_auto/Test_Auto2/test/Control/test_chip_config_resolution.py::test_rtt_resolves_device_ip_and_sn_from_serial_devices
+================================================================================
+
+================================================================================
+[2026-06-15 16:09:58] CALL test_auto/Test_Auto2/test/Control/test_chip_config_resolution.py::test_rtt_resolves_device_ip_and_sn_from_serial_devices
+================================================================================
+
+================================================================================
+[2026-06-15 16:09:58] TEARDOWN test_auto/Test_Auto2/test/Control/test_chip_config_resolution.py::test_rtt_resolves_device_ip_and_sn_from_serial_devices
+================================================================================
+
+================================================================================
+[2026-06-15 16:11:58] SETUP test_auto/Test_Auto2/test/Control/test_chip_config_resolution.py::test_resolve_chip_target_from_device_config
+================================================================================
+
+================================================================================
+[2026-06-15 16:11:58] CALL test_auto/Test_Auto2/test/Control/test_chip_config_resolution.py::test_resolve_chip_target_from_device_config
+================================================================================
+
+================================================================================
+[2026-06-15 16:11:58] TEARDOWN test_auto/Test_Auto2/test/Control/test_chip_config_resolution.py::test_resolve_chip_target_from_device_config
+================================================================================
+
+================================================================================
+[2026-06-15 16:11:58] SETUP test_auto/Test_Auto2/test/Control/test_chip_config_resolution.py::test_rtt_resolves_device_ip_and_sn_from_serial_devices
+================================================================================
+
+================================================================================
+[2026-06-15 16:11:58] CALL test_auto/Test_Auto2/test/Control/test_chip_config_resolution.py::test_rtt_resolves_device_ip_and_sn_from_serial_devices
+================================================================================
+
+================================================================================
+[2026-06-15 16:11:58] TEARDOWN test_auto/Test_Auto2/test/Control/test_chip_config_resolution.py::test_rtt_resolves_device_ip_and_sn_from_serial_devices
+================================================================================
+
+================================================================================
+[2026-06-15 16:13:16] SETUP test_auto/Test_Auto2/test/Control/test_chip_config_resolution.py::test_resolve_chip_target_from_device_config
+================================================================================
+
+================================================================================
+[2026-06-15 16:13:16] CALL test_auto/Test_Auto2/test/Control/test_chip_config_resolution.py::test_resolve_chip_target_from_device_config
+================================================================================
+
+================================================================================
+[2026-06-15 16:13:16] TEARDOWN test_auto/Test_Auto2/test/Control/test_chip_config_resolution.py::test_resolve_chip_target_from_device_config
+================================================================================
+
+================================================================================
+[2026-06-15 16:13:16] SETUP test_auto/Test_Auto2/test/Control/test_chip_config_resolution.py::test_rtt_resolves_device_ip_and_sn_from_serial_devices
+================================================================================
+
+================================================================================
+[2026-06-15 16:13:16] CALL test_auto/Test_Auto2/test/Control/test_chip_config_resolution.py::test_rtt_resolves_device_ip_and_sn_from_serial_devices
+================================================================================
+
+================================================================================
+[2026-06-15 16:13:16] TEARDOWN test_auto/Test_Auto2/test/Control/test_chip_config_resolution.py::test_rtt_resolves_device_ip_and_sn_from_serial_devices
+================================================================================

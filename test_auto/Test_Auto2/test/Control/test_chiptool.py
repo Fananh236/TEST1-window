@@ -1,10 +1,10 @@
 import time
 import json
+import pytest
 from utils.chip_tool_helper import send_toggle_command, run_pairing
 
 
-
-
+@pytest.mark.skip(reason="Skipping hardware-dependent test in CI environment")
 def test_pairing_device(pi_device, config):
     """Cleanup KVS and perform BLE-Thread Commissioning."""
     success, device_address = run_pairing(pi_device, config)
@@ -21,8 +21,7 @@ def test_pairing_device(pi_device, config):
     print(f"\n Commissioning status: SUCCESS")
 
 
-
-
+@pytest.mark.skip(reason="Skipping hardware-dependent test in CI environment")
 def test_toggle_functionality(pi_device, config):
     """verify OnOff toggle functionality."""
     send_toggle_command(pi_device, config, "Initial Toggle")

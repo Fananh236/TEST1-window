@@ -97,8 +97,9 @@ def pytest_collection_modifyitems(config, items):
         "test_flashing_ip.py": 1,
         "test_rtt_logging.py": 2,
         "test_pi_connectivity.py": 3,
-        "test_chiptool.py": 4,
-        "test_log_verification.py": 5,
+        "test_form_network.py": 4,
+        "test_chiptool.py": 5,
+        "test_log_verification.py": 6,
     }
 
     def sort_key(item):
