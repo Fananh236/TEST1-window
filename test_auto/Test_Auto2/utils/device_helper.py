@@ -46,6 +46,9 @@ class DeviceHelper:
     def _build_cmd(self, action, sn=None, ip=None, extra=None):
         cmd = [self.commander, action]
 
+        if extra:
+            cmd += extra
+
         if sn:
             cmd += ["-s", sn]
 
@@ -53,9 +56,6 @@ class DeviceHelper:
             cmd += ["--ip", ip]
 
         cmd += ["--device", self.device]
-
-        if extra:
-            cmd += extra
 
         return cmd
 
