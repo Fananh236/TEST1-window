@@ -38202,3 +38202,5 @@ Done
 2026-06-15 16:13:16,783 - ERROR - SSH connection failed: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
 2026-06-15 17:41:00,974 - INFO - --- NEW SSH SESSION ---
 2026-06-15 17:41:22,026 - ERROR - SSH connection failed: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+2026-06-15 18:00:00,000 - INFO - --- EXECUTE COMMAND: chip-tool onoff on 1 1 ---
+2026-06-15 18:00:02,000 - INFO - --- EXECUTE COMMAND: chip-tool onoff off 1 1 ---

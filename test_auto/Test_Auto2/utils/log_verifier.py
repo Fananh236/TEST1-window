@@ -1,6 +1,8 @@
 import re
+import time
 from pathlib import Path
 from typing import Optional, Union
+
 
 
 def verify_chiptool_log_flow(
@@ -114,4 +116,117 @@ def verify_chiptool_log_flow(
         "device_executed_action": device_executed_action,
         "details": " | ".join(details),
     }
+
+
+def watch_logs_realtime(
+    project_root: Optional[Union[str, Path]] = None,
+    rtt_log_name: str = "rtt_log.txt",
+    pi_log_name: str = "pi_connection.log",
+    explicit_rtt_path: Optional[Union[str, Path]] = None,
+    explicit_pi_path: Optional[Union[str, Path]] = None,
+    duration_seconds: int = 60,
+    poll_interval: float = 0.5,
+):
+    """Monitors Pi log and RTT log in real-time.
+    Whenever a command is dispatched on Pi, it verifies the reaction in RTT log.
+    """
+    from config.loader import ConfigLoader
+    loader = ConfigLoader.instance()
+    log_dir = Path(loader.get_log_path())
+    root = Path(project_root or loader.root_dir).resolve()
+
+    rtt_path = Path(explicit_rtt_path) if explicit_rtt_path else None
+    if not rtt_path:
+        for path in [
+            log_dir / rtt_log_name,
+            root / rtt_log_name,
+            root / "-RTTTelnetPort",
+            log_dir / "-RTTTelnetPort",
+        ]:
+            if path.exists():
+                rtt_path = path
+                break
+        if not rtt_path:
+            rtt_path = log_dir / rtt_log_name
+
+    pi_path = Path(explicit_pi_path) if explicit_pi_path else None
+    if not pi_path:
+        for path in [
+            log_dir / pi_log_name,
+            root / "Log" / pi_log_name,
+            root / pi_log_name,
+        ]:
+            if path.exists():
+                pi_path = path
+                break
+        if not pi_path:
+            pi_path = log_dir / pi_log_name
+
+    print(f"[*] Starting Real-time Log Monitor...")
+    print(f"[*] Pi Log: {pi_path}")
+    print(f"[*] RTT Log: {rtt_path}")
+    print(f"[*] Duration: {duration_seconds}s, Polling: {poll_interval}s")
+
+    pi_offset = pi_path.stat().st_size if pi_path.exists() else 0
+    rtt_offset = rtt_path.stat().st_size if rtt_path.exists() else 0
+
+    def get_new_data(filepath, last_offset):
+        if not filepath.exists():
+            return "", last_offset
+        current_size = filepath.stat().st_size
+        if current_size < last_offset:
+            last_offset = 0
+        if current_size == last_offset:
+            return "", last_offset
+        with open(filepath, "r", encoding="utf-8", errors="ignore") as f:
+            f.seek(last_offset)
+            data = f.read()
+            return data, f.tell()
+
+    start_time = time.time()
+    try:
+        while time.time() - start_time < duration_seconds:
+            # Check for new command in Pi log
+            new_pi, pi_offset = get_new_data(pi_path, pi_offset)
+            if new_pi:
+                # Find commands like chip-tool onoff ...
+                pattern = r"chip-tool\s+onoff\s+(on|off|toggle)\s+(\d+)\s+(\d+)"
+                for match in re.finditer(pattern, new_pi, re.IGNORECASE):
+                    action, node_id, endpoint_id = match.groups()
+                    print(f"\n[+] Detected Pi Command: onoff {action} {node_id} {endpoint_id}")
+                    
+                    # Wait up to 3 seconds for RTT reaction
+                    reaction_found = False
+                    reaction_start = time.time()
+                    while time.time() - reaction_start < 3.0:
+                        new_rtt, rtt_offset = get_new_data(rtt_path, rtt_offset)
+                        if new_rtt:
+                            # Search for Turning light On/Off
+                            rtt_match = re.search(r"turning light\s+(on|off)", new_rtt, re.IGNORECASE)
+                            if rtt_match:
+                                rtt_action = rtt_match.group(1).lower()
+                                print(f"  [=>] RTT Event Captured: Turning light {rtt_action.upper()}")
+                                
+                                # Verification assertion logic
+                                if action.lower() == "on":
+                                    assert rtt_action == "on", f"Expected light ON, got {rtt_action.upper()}"
+                                elif action.lower() == "off":
+                                    assert rtt_action == "off", f"Expected light OFF, got {rtt_action.upper()}"
+                                print("  [Assert] PASS")
+                                reaction_found = True
+                                break
+                        time.sleep(0.1)
+                    
+                    if not reaction_found:
+                        print("  [Assert] WARNING: No corresponding RTT 'Turning light' output detected within 3s.")
+
+            time.sleep(poll_interval)
+    except KeyboardInterrupt:
+        print("\n[*] Monitor stopped by user.")
+    except AssertionError as e:
+        print(f"\n[!] ASSERTION FAILURE: {e}")
+        raise
+    
+    print("\n[*] Monitor finished.")
+
 
