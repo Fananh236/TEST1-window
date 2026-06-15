@@ -18,11 +18,26 @@
   "serial_config": {
     "commander_path": "/home/phanhoanganh/.silabs/slt/installs/archive/commander/commander",
     "device": "EFR32MG24BXXXF1536",
-    "sn": "440221915",
-    "ip": "192.168.0.10",
-    "ip_remote": "192.168.0.10",
+
+    "devices": [
+      {
+        "name": "device_1",
+        "sn": "440221915",
+        "ip": "192.168.0.10"
+      },
+      {
+        "name": "device_2",
+        "sn": "440221916",
+        "ip": "192.168.0.11"
+      },
+      {
+        "name": "device_3",
+        "sn": "440221917",
+        "ip": "192.168.0.12"
+      }
+    ],
+
     "firmware_dir": "resources/firmware",
     "target_firmware": "resources/firmware/bt_soc_blinky.s37"
-  },
-  "log_path": "./Log"
+  }
 }

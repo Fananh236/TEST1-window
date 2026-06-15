@@ -1,6 +1,6 @@
-
 import subprocess
 import os
+import shlex
 
 
 class DeviceHelper:
@@ -8,11 +8,13 @@ class DeviceHelper:
         self.commander = commander_path
         self.device = device
 
-    # =========================================================
+    # =========================
     # CORE EXECUTOR
-    # =========================================================
+    # =========================
     def _run(self, cmd, timeout=60):
         try:
+            print(f"CMD: {' '.join(cmd)}")
+
             res = subprocess.run(
                 cmd,
                 capture_output=True,
@@ -20,25 +22,29 @@ class DeviceHelper:
                 timeout=timeout
             )
 
-            if res.returncode != 0:
-                print(f"❌ FAIL: {' '.join(cmd)}")
-                print(res.stderr)
+            stdout = res.stdout.strip()
+            stderr = res.stderr.strip()
 
-            return res.returncode == 0
+            if res.returncode != 0:
+                print(f"❌ FAIL ({res.returncode})")
+                print(stderr)
+                return False, stdout, stderr
+
+            return True, stdout, stderr
 
         except subprocess.TimeoutExpired:
             print(f"⏰ TIMEOUT: {' '.join(cmd)}")
-            return False
+            return False, "", "timeout"
 
         except Exception as e:
             print(f"❌ ERROR: {e}")
-            return False
+            return False, "", str(e)
 
-    # =========================================================
+    # =========================
     # COMMAND BUILDER
-    # =========================================================
-    def _build_cmd(self, action, sn=None, ip=None):
-        cmd = [self.commander, "device", action]
+    # =========================
+    def _build_cmd(self, action, sn=None, ip=None, extra=None):
+        cmd = [self.commander, action]
 
         if sn:
             cmd += ["-s", sn]
@@ -48,20 +54,27 @@ class DeviceHelper:
 
         cmd += ["--device", self.device]
 
+        if extra:
+            cmd += extra
+
         return cmd
 
-    # =========================================================
+    # =========================
     # ACTIONS
-    # =========================================================
-    def mass_erase(self, sn=None, ip=None):
-        cmd = self._build_cmd("masserase", sn, ip)
-        return self._run(cmd)
+    # =========================
+    def mass_erase(self, sn=None, ip=None, retry=2):
+        cmd = self._build_cmd("device", sn, ip, ["masserase"])
+        return self._retry(cmd, retry)
 
-    def reset(self, sn=None, ip=None):
-        cmd = self._build_cmd("reset", sn, ip)
-        return self._run(cmd)
+    def reset(self, sn=None, ip=None, retry=2):
+        cmd = self._build_cmd("device", sn, ip, ["reset"])
+        return self._retry(cmd, retry)
 
-    def flash(self, firmware_path, sn=None, ip=None):
+    def flash(self, firmware_path, sn=None, ip=None, retry=2):
+        if not firmware_path or not os.path.exists(firmware_path):
+            print(f"❌ Firmware not found: {firmware_path}")
+            return False, "", "invalid firmware"
+
         cmd = [self.commander, "flash", firmware_path]
 
         if sn:
@@ -72,8 +85,25 @@ class DeviceHelper:
 
         cmd += ["--device", self.device]
 
-        return self._run(cmd)
+        return self._retry(cmd, retry)
 
+    # =========================
+    # RETRY WRAPPER
+    # =========================
+    def _retry(self, cmd, retry):
+        for i in range(retry):
+            ok, out, err = self._run(cmd)
+
+            if ok:
+                return True, out, err
+
+            print(f"🔁 Retry {i+1}/{retry}")
+
+        return False, out, err
+
+    # =========================
+    # DEVICE CHECK
+    # =========================
     def is_connected(self, sn):
         try:
             res = subprocess.run(
@@ -81,6 +111,14 @@ class DeviceHelper:
                 capture_output=True,
                 text=True
             )
-            return sn in res.stdout
+
+            lines = res.stdout.splitlines()
+
+            for line in lines:
+                if sn in line:
+                    return True
+
+            return False
+
         except Exception:
             return False

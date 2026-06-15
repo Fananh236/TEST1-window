@@ -32,3 +32,18 @@ class CommanderInterface:
 
     def is_device_connected(self, sn):
         return self.helper.is_connected(sn)
+    
+def get_firmware_file(self):
+    firmware = self.serial_config.get("target_firmware")
+
+    if not firmware:
+        raise ValueError("Missing 'target_firmware' in config")
+
+    if not os.path.isabs(firmware):
+        firmware = os.path.abspath(os.path.join(self.project_root, firmware))
+
+    if not os.path.exists(firmware):
+        raise FileNotFoundError(f"Firmware not found: {firmware}")
+
+    return firmware
+

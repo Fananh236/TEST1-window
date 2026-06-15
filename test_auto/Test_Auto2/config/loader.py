@@ -11,15 +11,16 @@ class ConfigLoader:
         with cls._lock:
             if cls._instance is None:
                 cls._instance = super().__new__(cls)
-                cls._instance._initialized = False
+                cls._instance._loaded = False
         return cls._instance
 
     def __init__(self, config_path=None):
-        if self._initialized:
+        if self._loaded:
             return
 
         base_dir = os.path.abspath(os.path.dirname(__file__))
         default_path = os.path.join(base_dir, "config.json")
+
         self.config_path = os.path.abspath(config_path or default_path)
 
         if not os.path.exists(self.config_path):
@@ -28,27 +29,90 @@ class ConfigLoader:
         with open(self.config_path, "r", encoding="utf-8") as f:
             self.config = json.load(f)
 
-        self._initialized = True
+        self.root_dir = os.path.abspath(
+            os.path.join(os.path.dirname(self.config_path), "..")
+        )
 
-    @classmethod
-    def instance(cls, config_path=None):
-        return cls(config_path)
+        self._validate()
+        self._loaded = True
 
-    @property
-    def root(self):
-        return os.path.abspath(os.path.join(os.path.dirname(self.config_path), ".."))
+    # =========================
+    # VALIDATION
+    # =========================
+    def _validate(self):
+        required = ["pi_config", "chip_config", "serial_config"]
+        for key in required:
+            if key not in self.config:
+                raise ValueError(f"Missing required config section: {key}")
 
+    # =========================
+    # GET VALUE (support nested)
+    # =========================
     def get(self, key, default=None):
-        return self.config.get(key, default)
+        """
+        Support: "pi_config.pi_host"
+        """
+        keys = key.split(".")
+        value = self.config
 
-    def get_log_path(self):
-        log_path = self.config.get("log_path", "./Log")
-        if not os.path.isabs(log_path):
-            log_path = os.path.abspath(os.path.join(self.root, log_path))
-        os.makedirs(log_path, exist_ok=True)
-        return log_path
+        for k in keys:
+            if isinstance(value, dict) and k in value:
+                value = value[k]
+            else:
+                return default
+        return value
 
+    # =========================
+    # PATH HANDLING
+    # =========================
     def resolve_path(self, path):
         if not path:
             return None
-        return path if os.path.isabs(path) else os.path.abspath(os.path.join(self.root, path))
+
+        return path if os.path.isabs(path) else os.path.abspath(
+            os.path.join(self.root_dir, path)
+        )
+
+    def get_log_path(self):
+        log_path = self.get("log_path", "logs")
+        log_path = self.resolve_path(log_path)
+
+        os.makedirs(log_path, exist_ok=True)
+        return log_path
+
+    def get_firmware_path(self):
+        return self.resolve_path(self.get("serial_config.target_firmware"))
+
+    def get_commander_path(self):
+        return self.resolve_path(self.get("serial_config.commander_path"))
+
+    # =========================
+    # DEVICES (quan trọng)
+    # =========================
+    def get_devices(self):
+        return self.get("serial_config.devices", [])
+
+    def get_device_by_name(self, name):
+        for dev in self.get_devices():
+            if dev["name"] == name:
+                return dev
+        return None
+
+    # =========================
+    # PI CONFIG
+    # =========================
+    def get_pi_config(self):
+        return self.get("pi_config", {})
+
+    # =========================
+    # CHIP CONFIG
+    # =========================
+    def get_chip_config(self):
+        return self.get("chip_config", {})
+
+    # =========================
+    # SINGLETON ACCESS
+    # =========================
+    @classmethod
+    def instance(cls, config_path=None):
+        return cls(config_path)
