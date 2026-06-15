@@ -8,6 +8,7 @@ Pytest Configuration và Fixtures
 import os
 import sys
 import time
+import subprocess
 import pytest
 
 # Add root path
@@ -33,6 +34,39 @@ def config():
     """Load configuration once per session"""
     loader = ConfigLoader.instance(CONFIG_PATH)
     return loader.config
+
+
+# =============================================================================
+# 1b. FLASHED DEVICE FIXTURE
+# =============================================================================
+@pytest.fixture(scope="session")
+def flashed_device(config):
+    """
+    Tự động phát hiện thiết bị nào đã được flash và đang online.
+    Trả về dict device info (name, ip, sn, node_id, endpoint_id) của thiết bị đầu tiên ping được.
+    Skip nếu không có thiết bị nào online.
+    """
+    devices = config.get("serial_config", {}).get("devices", [])
+
+    for device in devices:
+        ip = device.get("ip")
+        if not ip:
+            continue
+
+        try:
+            result = subprocess.run(
+                ["ping", "-c", "1", "-W", "1", ip],
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+                timeout=3
+            )
+            if result.returncode == 0:
+                print(f"\n✅ Device online: {device['name']} ({ip})")
+                return device
+        except Exception:
+            continue
+
+    pytest.skip("⏩ SKIP: No flashed device is reachable via IP")
 
 
 # =============================================================================
@@ -98,8 +132,9 @@ def pytest_collection_modifyitems(config, items):
         "test_rtt_logging.py": 2,
         "test_pi_connectivity.py": 3,
         "test_form_network.py": 4,
-        "test_chiptool.py": 5,
-        "test_log_verification.py": 6,
+        "test_chip_config_resolution.py": 5,
+        "test_chiptool.py": 6,
+        "test_log_verification.py": 7,
     }
 
     def sort_key(item):

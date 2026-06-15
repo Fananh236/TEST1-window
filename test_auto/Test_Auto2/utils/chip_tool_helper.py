@@ -6,9 +6,12 @@ def _select_target_device(config, device_name=None):
     serial_config = config.get("serial_config", {}) or {}
     devices = serial_config.get("devices", []) or []
 
-    if device_name:
+    # Ưu tiên _target_device_name được inject bởi fixture flashed_device
+    name_to_find = device_name or config.get("_target_device_name")
+
+    if name_to_find:
         for device in devices:
-            if device.get("name") == device_name:
+            if device.get("name") == name_to_find:
                 return device
 
     return devices[0] if devices else None
@@ -155,7 +158,8 @@ def run_pairing(pi_device, config):
     # =====================================================
     # OPTIONAL: CHECK THREAD STATE (pi side)
     # =====================================================
-    state_out, _ = pi_device.execute_command("ot-ctl state")
+    state_cmd = f"echo '{pi_device.password}' | sudo -S -p '' ot-ctl state"
+    state_out, _ = pi_device.execute_command(state_cmd)
     print("[DEBUG] Thread state (Pi):", state_out)
 
     # không fail cứng vì Pi có thể leader/router
@@ -165,4 +169,4 @@ def run_pairing(pi_device, config):
 
     print("=========== PAIRING DONE ===========\n")
 
-    return True, None
+    return True, chip.get("node_id")

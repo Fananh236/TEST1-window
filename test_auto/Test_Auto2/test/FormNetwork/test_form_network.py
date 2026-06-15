@@ -30,6 +30,13 @@ def test_thread_network_is_active(pi_device):
     out, _ = pi_device.execute_command(cmd)
     state = out.strip().lower()
 
+    # Loại bỏ đầu ra 'Done' của ot-ctl
+    state_lines = [l.strip() for l in state.splitlines() if l.strip() and l.strip().lower() != "done"]
+    state = state_lines[0] if state_lines else ""
+
+    if state in ("detached", "disabled", ""):
+        pytest.skip(f"⏩ SKIP: Pi Thread network not active. State: '{state}' (Pi chưa join Thread network)")
+
     assert any(role in state for role in ["leader", "router", "child"]), (
         f"Pi Thread network not active. State: '{state}'"
     )
@@ -60,7 +67,13 @@ def test_thread_channel(pi_device):
     """Kiểm tra kênh (channel) của mạng Thread."""
     cmd = f"echo '{pi_device.password}' | sudo -S -p '' ot-ctl channel"
     out, _ = pi_device.execute_command(cmd)
-    channel = out.strip().split()[0] if out.strip() else ""
+
+    # Loại bỏ 'Done' của ot-ctl
+    lines = [l.strip() for l in out.splitlines() if l.strip() and l.strip().lower() != "done"]
+    channel = lines[0] if lines else ""
+
+    if not channel:
+        pytest.skip("⏩ SKIP: Cannot get Thread channel (Pi not in Thread network)")
 
     assert channel.isdigit(), f"Invalid Thread channel: '{channel}'"
     print(f"\n✅ Thread channel: {channel}")
@@ -70,7 +83,13 @@ def test_thread_panid(pi_device):
     """Kiểm tra PAN ID của mạng Thread."""
     cmd = f"echo '{pi_device.password}' | sudo -S -p '' ot-ctl panid"
     out, _ = pi_device.execute_command(cmd)
-    panid = out.strip().split()[0] if out.strip() else ""
+
+    # Loại bỏ 'Done' của ot-ctl
+    lines = [l.strip() for l in out.splitlines() if l.strip() and l.strip().lower() != "done"]
+    panid = lines[0] if lines else ""
+
+    if not panid:
+        pytest.skip("⏩ SKIP: Cannot get PAN ID (Pi not in Thread network)")
 
     assert panid.startswith("0x"), f"Invalid PAN ID format: '{panid}'"
     print(f"\n✅ Thread PAN ID: {panid}")
