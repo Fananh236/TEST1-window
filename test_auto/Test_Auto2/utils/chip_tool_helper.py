@@ -85,9 +85,6 @@ def send_toggle_command(pi_device, config, label):
 
     stdout, stderr = pi_device.execute_command(toggle_cmd)
 
-    print("[DEBUG STDOUT]\n", stdout)
-    print("[DEBUG STDERR]\n", stderr)
-
     full_response = (stdout + "\n" + stderr).lower()
 
     # ✅ detect lỗi thật
@@ -139,7 +136,6 @@ def run_pairing(pi_device, config):
 
     output, _ = pi_device.execute_command(pairing_cmd)
 
-    print("[DEBUG PAIRING OUTPUT]\n", output)
 
     # =====================================================
     # CHECK PAIRING SUCCESS

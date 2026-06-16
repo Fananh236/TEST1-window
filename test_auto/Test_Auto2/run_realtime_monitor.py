@@ -4,8 +4,8 @@ import os
 from utils.log_verifier import watch_logs_realtime
 
 def simulate_appends():
-    pi_log = r"c:\Users\phanh\Downloads\TEST1-window\test_auto\Test_Auto2\Log\pi_connection.log"
-    rtt_log = r"c:\Users\phanh\Downloads\TEST1-window\test_auto\Test_Auto2\-RTTTelnetPort"
+    pi_log_path = r"../TEST1-window/test_auto/Test_Auto2/Log/pi_connection.log"
+    rtt_log_path = r"../TEST1-window/test_auto/Test_Auto2/-RTTTelnetPort"
     
     # Wait for the monitor to start
     time.sleep(1)

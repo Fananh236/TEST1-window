@@ -2,8 +2,10 @@ import re
 import os
 
 def check_logs():
-    pi_log_path = r"c:\Users\phanh\Downloads\TEST1-window\test_auto\Test_Auto2\Log\pi_connection.log"
-    rtt_log_path = r"c:\Users\phanh\Downloads\TEST1-window\test_auto\Test_Auto2\-RTTTelnetPort"
+    # pi_log_path = r"/home/phanhoanganh/TEST1-window/test_auto/Test_Auto2/Log/pi_connection.log"
+    # rtt_log_path = r"/home/phanhoanganh/TEST1-window/test_auto/Test_Auto2/-RTTTelnetPort"
+    pi_log_path = r"../TEST1-window/test_auto/Test_Auto2/Log/pi_connection.log"
+    rtt_log_path = r"../TEST1-window/test_auto/Test_Auto2/-RTTTelnetPort"
     
     if not os.path.exists(pi_log_path):
         print(f"Error: Pi log not found at {pi_log_path}")

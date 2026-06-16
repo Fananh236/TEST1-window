@@ -2,7 +2,7 @@ import logging
 import os
 
 
-def setup_file_logger(name, log_dir, file_name, level=logging.DEBUG):
+def setup_file_logger(name, log_dir, file_name, level=logging.DEBUG, mode="w"):
     os.makedirs(log_dir, exist_ok=True)
 
     logger = logging.getLogger(name)
@@ -14,7 +14,7 @@ def setup_file_logger(name, log_dir, file_name, level=logging.DEBUG):
         if isinstance(h, logging.FileHandler) and os.path.abspath(h.baseFilename) == target_path
     ]
     if not existing_handlers:
-        handler = logging.FileHandler(target_path, mode="a", encoding="utf-8")
+        handler = logging.FileHandler(target_path, mode=mode, encoding="utf-8")
         formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
         handler.setFormatter(formatter)
         logger.addHandler(handler)
