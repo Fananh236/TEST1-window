@@ -21,8 +21,8 @@ def test_verify_toggle_flow_from_logs(pi_device, flashed_device, device_rtt, con
     from config.loader import ConfigLoader
     loader = ConfigLoader.instance()
 
-    rtt_log_path = device_rtt.log_file
-    pi_log_path = getattr(pi_device, 'log_file', None)
+    rtt_log_path = device_rtt.log_dir
+    pi_log_path = getattr(pi_device, 'log_dir', None)
     if pi_log_path is None:
         pi_log_path = os.path.join(pi_device.log_dir, "pi_connection.log")
 
