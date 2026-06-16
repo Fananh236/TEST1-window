@@ -4,9 +4,18 @@ import os
 from utils.log_verifier import watch_logs_realtime
 
 def simulate_appends():
-    pi_log_path = r"../TEST1-window/test_auto/Test_Auto2/Log/pi_connection.log"
-    rtt_log_path = r"../TEST1-window/test_auto/Test_Auto2/-RTTTelnetPort"
-    
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+
+    pi_log_path = os.path.join(
+        base_dir, "..", "Log", "pi_connection.log"
+    )
+    rtt_log_path = os.path.join(
+        base_dir, "..", "-RTTTelnetPort"
+    )
+
+    pi_log_path = os.path.normpath(pi_log_path)
+    rtt_log_path = os.path.normpath(rtt_log_path)
+
     # Wait for the monitor to start
     time.sleep(1)
     
