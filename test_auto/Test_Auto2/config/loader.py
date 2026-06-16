@@ -74,7 +74,7 @@ class ConfigLoader:
         )
 
     def get_log_path(self):
-        log_path = self.get("log_path", "logs")
+        log_path = self.get("log_path", "Log")
         log_path = self.resolve_path(log_path)
 
         os.makedirs(log_path, exist_ok=True)

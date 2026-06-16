@@ -13,11 +13,12 @@ class DeviceRTT:
         self.ip = self._resolve_device_value("ip")
         self.log_dir = os.path.abspath(log_dir)
         self.sn = self._resolve_device_value("sn")
-        os.makedirs(self.log_dir, exist_ok=True)
         self.log_file = os.path.join(self.log_dir, "rtt_log.txt")
+        self.jlink_server_log = os.path.join(self.log_dir, "JLinkRemoteServer.log")
 
         self.server_proc = None
         self.rtt_proc = None
+        self.server_log_file = None
         self.stopped = False
 
     def _resolve_device_value(self, field_name):
@@ -52,10 +53,12 @@ class DeviceRTT:
         self._cleanup_processes()
 
         server_cmd = build_jlink_remote_server_command(self.sn)
+        self.server_log_file = open(self.jlink_server_log, "w")
         self.server_proc = subprocess.Popen(
             server_cmd,
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL,
+            stdout=self.server_log_file,
+            stderr=subprocess.STDOUT,
+            cwd=self.log_dir,
             preexec_fn=os.setsid if os.name == "posix" else None,
         )
 
@@ -66,6 +69,7 @@ class DeviceRTT:
             rtt_cmd,
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
+            cwd=self.log_dir,
             preexec_fn=os.setsid if os.name == "posix" else None,
         )
 
@@ -79,3 +83,6 @@ class DeviceRTT:
         self._terminate_process(self.rtt_proc)
         self._terminate_process(self.server_proc)
         self._cleanup_processes()
+        
+        if self.server_log_file:
+            self.server_log_file.close()

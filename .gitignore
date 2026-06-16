@@ -1,0 +1,22 @@
+# Virtual Environment
+venv/
+test_auto/Test_Auto2/venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+test_auto/Test_Auto2/.pytest_cache/
+
+# Logs and test outputs
+*.log
+Log/
+logs/
+test_auto/Test_Auto2/Log/
+test_auto/Test_Auto2/logs/
+test_auto/Test_Auto2/JLinkRemoteServer.log
+test_auto/Test_Auto2/-RTTTelnetPort
+test_auto/Test_Auto2/rtt_log.txt
+test_auto/Test_Auto2/report.html

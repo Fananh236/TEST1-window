@@ -3,8 +3,6 @@ import os
 
 
 def setup_file_logger(name, log_dir, file_name, level=logging.DEBUG, mode="w"):
-    os.makedirs(log_dir, exist_ok=True)
-
     logger = logging.getLogger(name)
     logger.setLevel(level)
 
