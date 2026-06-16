@@ -3,24 +3,39 @@ import signal
 import subprocess
 import time
 
-from .jlink import build_jlink_remote_server_command, build_jlink_rtt_logger_command
+from .jlink import (
+    build_jlink_remote_server_command,
+    build_jlink_rtt_logger_command,
+)
 
 
 class DeviceRTT:
     def __init__(self, serial_config, log_dir):
         self.serial_config = serial_config or {}
+
+        # Device info
         self.device = self.serial_config.get("device", "").replace("IM48", "")
         self.ip = self._resolve_device_value("ip")
-        self.log_dir = os.path.abspath(log_dir)
         self.sn = self._resolve_device_value("sn")
-        self.log_file = os.path.join(self.log_dir, "rtt_log.txt")
-        self.jlink_server_log = os.path.join(self.log_dir, "JLinkRemoteServer.log")
 
+        # Log directory
+        self.log_dir = os.path.abspath(log_dir)
+        os.makedirs(self.log_dir, exist_ok=True)
+
+        # Log files
+        self.jlink_server_log = os.path.join(self.log_dir, "JLinkRemoteServer.log")
+        self.rtt_log_file = os.path.join(self.log_dir, "rtt.log")
+
+        # Process handlers
         self.server_proc = None
         self.rtt_proc = None
         self.server_log_file = None
+
         self.stopped = False
 
+    # --------------------------------------------------
+    # Resolve config value (support multi-device config)
+    # --------------------------------------------------
     def _resolve_device_value(self, field_name):
         if field_name in self.serial_config and self.serial_config.get(field_name):
             return self.serial_config[field_name]
@@ -33,14 +48,29 @@ class DeviceRTT:
 
         return None
 
+    # --------------------------------------------------
+    # Cleanup fallback (avoid using in multi-device)
+    # --------------------------------------------------
     def _cleanup_processes(self):
         if os.name == "posix":
-            subprocess.run(["pkill", "-f", "JLinkRemoteServer"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            subprocess.run(["pkill", "-f", "JLinkRTTLogger"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            subprocess.run(
+                ["pkill", "-f", "JLinkRemoteServer"],
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+            )
+            subprocess.run(
+                ["pkill", "-f", "JLinkRTTLogger"],
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+            )
 
+    # --------------------------------------------------
+    # Kill specific process safely
+    # --------------------------------------------------
     def _terminate_process(self, proc):
         if proc is None:
             return
+
         try:
             if os.name == "posix":
                 os.killpg(os.getpgid(proc.pid), signal.SIGKILL)
@@ -49,11 +79,18 @@ class DeviceRTT:
         except Exception:
             pass
 
+    # --------------------------------------------------
+    # Start RTT logging
+    # --------------------------------------------------
     def start_rtt(self):
+        # ⚠️ optional: disable nếu bạn chạy multi-device
         self._cleanup_processes()
 
+        # ---- Start JLink Remote Server ----
         server_cmd = build_jlink_remote_server_command(self.sn)
+
         self.server_log_file = open(self.jlink_server_log, "w")
+
         self.server_proc = subprocess.Popen(
             server_cmd,
             stdout=self.server_log_file,
@@ -64,7 +101,13 @@ class DeviceRTT:
 
         time.sleep(2)
 
-        rtt_cmd = build_jlink_rtt_logger_command(self.device, self.ip, self.log_file)
+        # ---- Start RTT Logger ----
+        rtt_cmd = build_jlink_rtt_logger_command(
+            self.device,
+            self.ip,
+            self.rtt_log_file,
+        )
+
         self.rtt_proc = subprocess.Popen(
             rtt_cmd,
             stdout=subprocess.DEVNULL,
@@ -75,14 +118,33 @@ class DeviceRTT:
 
         time.sleep(2)
 
+    # --------------------------------------------------
+    # Stop RTT
+    # --------------------------------------------------
     def stop_rtt(self):
         if self.stopped:
             return
+
         self.stopped = True
 
+        # Stop RTT logger
         self._terminate_process(self.rtt_proc)
+
+        # Stop server
         self._terminate_process(self.server_proc)
+
+        # ⚠️ fallback cleanup
         self._cleanup_processes()
-        
+
+        # Close log file
         if self.server_log_file:
             self.server_log_file.close()
+
+    # --------------------------------------------------
+    # Helper: get log paths (useful for pytest/report)
+    # --------------------------------------------------
+    def get_log_files(self):
+        return {
+            "server_log": self.jlink_server_log,
+            "rtt_log": self.rtt_log_file,
+        }

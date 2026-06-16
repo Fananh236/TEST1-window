@@ -32,8 +32,15 @@ def test_verify_toggle_flow_from_logs(pi_device, flashed_device, device_rtt, con
         explicit_pi_path=pi_log_path
     )
 
-    # assert result["command_dispatched"], result["details"]
-    # assert result["device_received_command"], result["details"]
-    # assert result["device_executed_action"], result["details"]
+    # Single combined assertion: all three checks must pass.
+    overall = (
+        result["command_dispatched"]
+        and result["device_received_command"]
+        and result["device_executed_action"]
+    )
 
-    print(result["details"])
+    # Provide a single pass/fail via pytest assert with details on failure
+    assert overall, result["details"]
+
+    # Optional: print details on success for visibility
+    print("Log verification result:", result["details"])
