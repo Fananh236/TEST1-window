@@ -1,7 +1,10 @@
 import re
 import os
 
-def base_dir = os.path.dirname(os.path.abspath(__file__))
+def check_logs():
+    # pi_log_path = r"/home/phanhoanganh/TEST1-window/test_auto/Test_Auto2/Log/pi_connection.log"
+    # rtt_log_path = r"/home/phanhoanganh/TEST1-window/test_auto/Test_Auto2/-RTTTelnetPort"
+    base_dir = os.path.dirname(os.path.abspath(__file__))
 
     pi_log_path = os.path.join(
         base_dir, "..", "Log", "pi_connection.log"
@@ -13,7 +16,6 @@ def base_dir = os.path.dirname(os.path.abspath(__file__))
     pi_log_path = os.path.normpath(pi_log_path)
     rtt_log_path = os.path.normpath(rtt_log_path)
 
-    
     if not os.path.exists(pi_log_path):
         print(f"Error: Pi log not found at {pi_log_path}")
         return
