@@ -10,7 +10,7 @@ def simulate_appends():
         base_dir, "..", "Log", "pi_connection.log"
     )
     rtt_log_path = os.path.join(
-        base_dir, "..", "-RTTTelnetPort"
+        base_dir, "..", "rtt_log.txt"
     )
 
     pi_log_path = os.path.normpath(pi_log_path)
@@ -20,21 +20,21 @@ def simulate_appends():
     time.sleep(1)
     
     print("\n--- Simulating Realtime Command 1: onoff on 1 1 ---")
-    with open(pi_log, "a", encoding="utf-8") as f:
+    with open(pi_log_path, "a", encoding="utf-8") as f:
         f.write("2026-06-15 18:00:00,000 - INFO - --- EXECUTE COMMAND: chip-tool onoff on 1 1 ---\n")
     
     time.sleep(0.5)
-    with open(rtt_log, "a", encoding="utf-8") as f:
+    with open(rtt_log_path, "a", encoding="utf-8") as f:
         f.write("[00:02:00.000][silabs ]Turning light On\n")
         
     time.sleep(1.5)
     
     print("\n--- Simulating Realtime Command 2: onoff off 1 1 ---")
-    with open(pi_log, "a", encoding="utf-8") as f:
+    with open(pi_log_path, "a", encoding="utf-8") as f:
         f.write("2026-06-15 18:00:02,000 - INFO - --- EXECUTE COMMAND: chip-tool onoff off 1 1 ---\n")
         
     time.sleep(0.5)
-    with open(rtt_log, "a", encoding="utf-8") as f:
+    with open(rtt_log_path, "a", encoding="utf-8") as f:
         f.write("[00:02:02.000][silabs ]Turning light Off\n")
 
 if __name__ == "__main__":

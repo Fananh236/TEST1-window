@@ -9,8 +9,8 @@ def check_logs():
     pi_log_path = os.path.join(
         base_dir, "..", "Log", "pi_connection.log"
     )
-    rtt_log_path = os.path.join(
-        base_dir, "..", "-RTTTelnetPort"
+    jlink_log_path = os.path.join(
+        base_dir, "..", "Log", "JLinkRTTLogger.log"
     )
 
     pi_log_path = os.path.normpath(pi_log_path)
@@ -19,13 +19,13 @@ def check_logs():
     if not os.path.exists(pi_log_path):
         print(f"Error: Pi log not found at {pi_log_path}")
         return
-        
-    if not os.path.exists(rtt_log_path):
-        print(f"Error: RTT log not found at {rtt_log_path}")
+
+    if not os.path.exists(jlink_log_path):
+        print(f"Error: JLink RTT log not found at {jlink_log_path}")
         return
 
     pi_content = open(pi_log_path, 'r', encoding='utf-8', errors='ignore').read()
-    rtt_content = open(rtt_log_path, 'r', encoding='utf-8', errors='ignore').read()
+    jlink_content = open(jlink_log_path, 'r', encoding='utf-8', errors='ignore').read()
 
     print("=== Analyzing Logs ===")
     
@@ -49,40 +49,54 @@ def check_logs():
     if len(pi_commands) > 15:
         print(f"  ... and {len(pi_commands) - 15} more commands.")
 
-    # Extract RTT events: e.g. "Turning light On", "Turning light Off"
-    rtt_events = []
-    rtt_pattern = r"\[(\d{2}:\d{2}:\d{2}\.\d{3})\].*?Turning light\s+(On|Off)"
-    for match in re.finditer(rtt_pattern, rtt_content, re.IGNORECASE):
-        time_str, state = match.groups()
-        rtt_events.append({
-            "time": time_str,
-            "state": state.lower()
-        })
-        
-    print(f"\nFound {len(rtt_events)} light state events in -RTTTelnetPort:")
-    for event in rtt_events:
-        print(f"  - [{event['time']}] Turning light {event['state'].upper()}")
+    # Analyze JLink RTT logger for receipts/actions
+    jlink_lower = jlink_content.lower()
 
-    # Perform assertions
-    print("\n=== Assertions ===")
-    
-    # Assert that we found commands in both logs
-    assert len(pi_commands) > 0, "Assertion Failed: No 'onoff' commands found in pi_connection.log"
-    assert len(rtt_events) > 0, "Assertion Failed: No 'Turning light On/Off' messages found in -RTTTelnetPort"
-    
-    # Verify mapping
-    has_toggle = any(cmd['action'] == 'toggle' for cmd in pi_commands)
-    has_on = any(cmd['action'] == 'on' for cmd in pi_commands)
-    has_off = any(cmd['action'] == 'off' for cmd in pi_commands)
-    
-    if has_on:
-        assert any(event['state'] == 'on' for event in rtt_events), "Assertion Failed: 'onoff on' was sent but 'Turning light On' was not found in RTT log"
-    if has_off:
-        assert any(event['state'] == 'off' for event in rtt_events), "Assertion Failed: 'onoff off' was sent but 'Turning light Off' was not found in RTT log"
-    if has_toggle:
-        assert any(event['state'] in ['on', 'off'] for event in rtt_events), "Assertion Failed: 'onoff toggle' was sent but no light transition state was found in RTT log"
+    # Quick heuristics: receipt marker and action markers
+    receipt_marker = "im:invokecommandrequest"
+    action_on_re = re.compile(r"turning light\s+on", re.IGNORECASE)
+    action_off_re = re.compile(r"turning light\s+off", re.IGNORECASE)
 
-    print("\n[SUCCESS] Verification Successful: Both log files successfully analyzed and assertions match device actions!")
+    print(f"\nJLink RTT log size: {len(jlink_content)} bytes")
+
+    # Perform per-command verification against JLink RTT log
+    print("\n=== Verifying each Pi command against JLink RTT log ===")
+
+    if not pi_commands:
+        raise AssertionError("No 'onoff' commands found in pi_connection.log")
+
+    failures = []
+    for idx, cmd in enumerate(pi_commands, start=1):
+        expected_action = cmd['action']  # on/off/toggle
+        receipt_found = receipt_marker in jlink_lower
+        action_found = False
+
+        if expected_action == 'on':
+            action_found = bool(action_on_re.search(jlink_content))
+        elif expected_action == 'off':
+            action_found = bool(action_off_re.search(jlink_content))
+        else:
+            # toggle: accept either on or off
+            action_found = bool(action_on_re.search(jlink_content) or action_off_re.search(jlink_content))
+
+        print(f"Command #{idx}: onoff {expected_action} -> receipt: {receipt_found}, action: {action_found}")
+
+        if not receipt_found or not action_found:
+            failures.append({
+                'command': cmd,
+                'receipt_found': receipt_found,
+                'action_found': action_found,
+            })
+
+    if failures:
+        msg_lines = [f"FAILURE: {len(failures)} command(s) not verified:"]
+        for f in failures:
+            c = f['command']
+            msg_lines.append(f" - {c['action']} {c['node_id']}:{c['endpoint_id']} -> receipt={f['receipt_found']} action={f['action_found']}")
+        full_msg = "\n".join(msg_lines)
+        raise AssertionError(full_msg)
+
+    print("\n[SUCCESS] All Pi 'onoff' commands were observed in JLink RTT log with receipt and action markers.")
 
 if __name__ == "__main__":
     check_logs()

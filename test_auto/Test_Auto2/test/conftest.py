@@ -108,12 +108,19 @@ def device_rtt(config, tmp_path, request):
     RTT handler per test
     - Isolated log per test
     """
-    log_dir = str(tmp_path)
+    # Use persistent project Log folder so RTT outputs are easy to find
+    log_dir = os.path.abspath(config.get("log_path", LOG_DIR))
 
     rtt = DeviceRTT(
         serial_config=config.get("serial_config", {}),
         log_dir=log_dir
     )
+
+    # Start RTT processes so logs are actually produced during the test
+    try:
+        rtt.start_rtt()
+    except Exception as e:
+        print(f"⚠️ RTT start failed: {e}")
 
     print(f"RTT log dir: {log_dir}")
 

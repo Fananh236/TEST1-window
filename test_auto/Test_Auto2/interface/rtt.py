@@ -24,7 +24,12 @@ class DeviceRTT:
 
         # Log files
         self.jlink_server_log = os.path.join(self.log_dir, "JLinkRemoteServer.log")
-        self.rtt_log_file = os.path.join(self.log_dir, "rtt.log")
+        # Unified RTT log filename used across tools
+        self.rtt_log_file = os.path.join(self.log_dir, "rtt_log.txt")
+
+        # Logger for the JLinkRTTLogger process (captures stdout/stderr)
+        self.jlink_rtt_logger_log = os.path.join(self.log_dir, "JLinkRTTLogger.log")
+        self.jlink_rtt_logger_handle = None
 
         # Process handlers
         self.server_proc = None
@@ -108,10 +113,16 @@ class DeviceRTT:
             self.rtt_log_file,
         )
 
+        # Capture JLinkRTTLogger stdout/stderr to file for debugging
+        try:
+            self.jlink_rtt_logger_handle = open(self.jlink_rtt_logger_log, "w", encoding="utf-8")
+        except Exception:
+            self.jlink_rtt_logger_handle = None
+
         self.rtt_proc = subprocess.Popen(
             rtt_cmd,
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL,
+            stdout=self.jlink_rtt_logger_handle or subprocess.DEVNULL,
+            stderr=subprocess.STDOUT if self.jlink_rtt_logger_handle else subprocess.DEVNULL,
             cwd=self.log_dir,
             preexec_fn=os.setsid if os.name == "posix" else None,
         )
@@ -139,6 +150,11 @@ class DeviceRTT:
         # Close log file
         if self.server_log_file:
             self.server_log_file.close()
+        if self.jlink_rtt_logger_handle:
+            try:
+                self.jlink_rtt_logger_handle.close()
+            except Exception:
+                pass
 
     # --------------------------------------------------
     # Helper: get log paths (useful for pytest/report)

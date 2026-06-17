@@ -10,7 +10,7 @@ def test_check_logs():
         base_dir, "..", "Test_Auto2" ,"Log", "pi_connection.log"
     )
     rtt_log_path = os.path.join(
-        base_dir, "..","Test_Auto2", "-RTTTelnetPort"
+        base_dir, "..","Test_Auto2", "rtt_log.txt"
     )
 
     pi_log_path = os.path.normpath(pi_log_path)
@@ -59,7 +59,7 @@ def test_check_logs():
             "state": state.lower()
         })
         
-    print(f"\nFound {len(rtt_events)} light state events in -RTTTelnetPort:")
+    print(f"\nFound {len(rtt_events)} light state events in rtt_log.txt:")
     for event in rtt_events:
         print(f"  - [{event['time']}] Turning light {event['state'].upper()}")
 
@@ -68,7 +68,7 @@ def test_check_logs():
     
     # Assert that we found commands in both logs
     assert len(pi_commands) > 0, "Assertion Failed: No 'onoff' commands found in pi_connection.log"
-    assert len(rtt_events) > 0, "Assertion Failed: No 'Turning light On/Off' messages found in -RTTTelnetPort"
+    assert len(rtt_events) > 0, "Assertion Failed: No 'Turning light On/Off' messages found in rtt_log.txt"
     
     # Verify mapping
     has_toggle = any(cmd['action'] == 'toggle' for cmd in pi_commands)
