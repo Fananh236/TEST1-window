@@ -4,14 +4,12 @@
     "pi_port": 22,
     "ssh_username": "ubuntu",
     "ssh_password": "1",
-    "ssh_key_path": "",
     "chip_tool_path": "/usr/local/bin/chip-tool"
   },
 
   "chip_config": {
     "setup_pin_code": "20202021",
     "discovery_type": "ble-thread",
-    "thread_dataset": "",
     "discriminator": "3840"
   },
 
