@@ -18,14 +18,19 @@ class DeviceRTT:
         self.ip = self._resolve_device_value("ip")
         self.sn = self._resolve_device_value("sn")
 
-        # Log directory
+        # Log directory (per-instance)
         self.log_dir = os.path.abspath(log_dir)
         os.makedirs(self.log_dir, exist_ok=True)
 
+        # Project-level Log directory for RTT outputs (ensure RTT goes to project Log/)
+        project_log_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "Log"))
+        os.makedirs(project_log_dir, exist_ok=True)
+        self.project_log_dir = project_log_dir
+
         # Log files
         self.jlink_server_log = os.path.join(self.log_dir, "JLinkRemoteServer.log")
-        # Unified RTT log filename used across tools
-        self.rtt_log_file = os.path.join(self.log_dir, "rtt_log.txt")
+        # Unified RTT log filename used across tools -> placed in project Log/
+        self.rtt_log_file = os.path.join(self.project_log_dir, "rtt_log.txt")
 
         # Logger for the JLinkRTTLogger process (captures stdout/stderr)
         self.jlink_rtt_logger_log = os.path.join(self.log_dir, "JLinkRTTLogger.log")
