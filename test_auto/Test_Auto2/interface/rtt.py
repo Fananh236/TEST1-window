@@ -2,6 +2,7 @@ import os
 import signal
 import subprocess
 import time
+import threading
 
 from .jlink import (
     build_jlink_remote_server_command,
@@ -38,6 +39,9 @@ class DeviceRTT:
         # place the JLinkRTTLogger debug log in the project Log dir so errors are visible
         self.jlink_rtt_logger_log = os.path.join(self.project_log_dir, "JLinkRTTLogger.log")
         self.jlink_rtt_logger_handle = None
+        # Tail thread to extract RTT output from the JLinkRTTLogger debug log
+        self._tail_thread = None
+        self._tail_stop = threading.Event()
 
         # Process handlers
         self.server_proc = None
@@ -137,6 +141,31 @@ class DeviceRTT:
 
         time.sleep(2)
 
+        # Start a tailing thread that copies relevant RTT output from the debug log
+        # into the canonical rtt_log_file so tests and tools can read it.
+        def _tail_debug_log():
+            try:
+                with open(self.jlink_rtt_logger_log, "r", encoding="utf-8", errors="ignore") as src:
+                    # seek to end of file to only capture new writes
+                    src.seek(0, os.SEEK_END)
+                    while not self._tail_stop.is_set():
+                        line = src.readline()
+                        if not line:
+                            time.sleep(0.1)
+                            continue
+                        # Optionally filter lines; here we append all lines to RTT file
+                        try:
+                            with open(self.rtt_log_file, "a", encoding="utf-8", errors="ignore") as dst:
+                                dst.write(line)
+                        except Exception:
+                            pass
+            except Exception:
+                return
+
+        self._tail_stop.clear()
+        self._tail_thread = threading.Thread(target=_tail_debug_log, daemon=True)
+        self._tail_thread.start()
+
     # --------------------------------------------------
     # Stop RTT
     # --------------------------------------------------
@@ -163,6 +192,13 @@ class DeviceRTT:
                 self.jlink_rtt_logger_handle.close()
             except Exception:
                 pass
+        # Stop tail thread
+        try:
+            if self._tail_thread and self._tail_thread.is_alive():
+                self._tail_stop.set()
+                self._tail_thread.join(timeout=2)
+        except Exception:
+            pass
 
     # --------------------------------------------------
     # Helper: get log paths (useful for pytest/report)
