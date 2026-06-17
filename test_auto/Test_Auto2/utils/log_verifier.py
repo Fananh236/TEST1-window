@@ -21,6 +21,9 @@ def verify_chiptool_log_flow(
     root = Path(project_root or loader.root_dir).resolve()
 
     rtt_log_path = Path(explicit_rtt_path) if explicit_rtt_path else None
+    # If an explicit path is a directory, assume the log file resides inside it
+    if rtt_log_path and rtt_log_path.is_dir():
+        rtt_log_path = rtt_log_path / rtt_log_name
     if not rtt_log_path:
         for path in [
             log_dir / rtt_log_name,
@@ -35,6 +38,9 @@ def verify_chiptool_log_flow(
             rtt_log_path = log_dir / rtt_log_name
 
     pi_log_path = Path(explicit_pi_path) if explicit_pi_path else None
+    # If an explicit path is a directory, assume the log file resides inside it
+    if pi_log_path and pi_log_path.is_dir():
+        pi_log_path = pi_log_path / pi_log_name
     if not pi_log_path:
         for path in [
             log_dir / pi_log_name,
@@ -136,6 +142,9 @@ def watch_logs_realtime(
     root = Path(project_root or loader.root_dir).resolve()
 
     rtt_path = Path(explicit_rtt_path) if explicit_rtt_path else None
+    # If an explicit path is a directory, assume the RTT log file resides inside it
+    if rtt_path and rtt_path.is_dir():
+        rtt_path = rtt_path / rtt_log_name
     if not rtt_path:
         for path in [
             log_dir / rtt_log_name,
@@ -150,6 +159,9 @@ def watch_logs_realtime(
             rtt_path = log_dir / rtt_log_name
 
     pi_path = Path(explicit_pi_path) if explicit_pi_path else None
+    # If an explicit path is a directory, assume the Pi log file resides inside it
+    if pi_path and pi_path.is_dir():
+        pi_path = pi_path / pi_log_name
     if not pi_path:
         for path in [
             log_dir / pi_log_name,
