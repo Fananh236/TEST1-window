@@ -142,6 +142,7 @@ def pytest_collection_modifyitems(config, items):
         "test_chip_config_resolution.py": 5,
         "test_chiptool.py": 6,
         "test_log_verification.py": 7,
+        "test_check_logs.py" : 8,
     }
 
     def sort_key(item):

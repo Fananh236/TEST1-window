@@ -1,87 +1,70 @@
 import re
-import os
+from pathlib import Path
+
 
 def test_check_logs():
-    # pi_log_path = r"/home/phanhoanganh/TEST1-window/test_auto/Test_Auto2/Log/pi_connection.log"
-    # rtt_log_path = r"/home/phanhoanganh/TEST1-window/test_auto/Test_Auto2/-RTTTelnetPort"
-    base_dir = os.path.dirname(os.path.abspath(__file__))
+    base_dir = Path(__file__).resolve().parent
+    log_dir = base_dir.parent / "Log"
 
-    pi_log_path = os.path.join(
-        base_dir,"Log", "pi_connection.log"
-    )
-    rtt_log_path = os.path.join(
-        base_dir,"Log","rtt_log.txt"
-    )
+    pi_log_path = log_dir / "pi_connection.log"
+    rtt_log_path = log_dir / "rtt_log.txt"
 
-    pi_log_path = os.path.normpath(pi_log_path)
-    rtt_log_path = os.path.normpath(rtt_log_path)
+    assert pi_log_path.exists(), f"Pi log not found at {pi_log_path}"
+    assert rtt_log_path.exists(), f"RTT log not found at {rtt_log_path}"
 
-    if not os.path.exists(pi_log_path):
-        print(f"Error: Pi log not found at {pi_log_path}")
-        return
-        
-    if not os.path.exists(rtt_log_path):
-        print(f"Error: RTT log not found at {rtt_log_path}")
-        return
+    pi_text = pi_log_path.read_text(encoding="utf-8", errors="ignore")
+    rtt_text = rtt_log_path.read_text(encoding="utf-8", errors="ignore")
 
-    pi_content = open(pi_log_path, 'r', encoding='utf-8', errors='ignore').read()
-    rtt_content = open(rtt_log_path, 'r', encoding='utf-8', errors='ignore').read()
-
-    print("=== Analyzing Logs ===")
-    
-    # Extract commands from pi_connection.log
-    # Look for command patterns like "onoff on 1 1", "onoff off 1 1", "onoff toggle 1 1"
+    # Extract pi 'onoff' commands
     pi_commands = []
-    # Matching timestamp and command
-    pattern = r"(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2},\d{3}).*?EXECUTE COMMAND:.*?chip-tool\s+onoff\s+(on|off|toggle)\s+(\d+)\s+(\d+)"
-    for match in re.finditer(pattern, pi_content, re.IGNORECASE):
-        timestamp, action, node_id, endpoint_id = match.groups()
+    cmd_pattern = re.compile(r"chip-tool\s+onoff\s+(on|off|toggle)\s+(\d+)\s+(\d+)", re.IGNORECASE)
+    for m in cmd_pattern.finditer(pi_text):
+        action, node_id, endpoint_id = m.groups()
         pi_commands.append({
-            "timestamp": timestamp,
             "action": action.lower(),
             "node_id": node_id,
-            "endpoint_id": endpoint_id
+            "endpoint_id": endpoint_id,
         })
-        
-    print(f"Found {len(pi_commands)} 'onoff' commands in pi_connection.log:")
-    for cmd in pi_commands[:15]:  # print first 15 to keep it readable
-        print(f"  - [{cmd['timestamp']}] onoff {cmd['action']} {cmd['node_id']} {cmd['endpoint_id']}")
-    if len(pi_commands) > 15:
-        print(f"  ... and {len(pi_commands) - 15} more commands.")
 
-    # Extract RTT events: e.g. "Turning light On", "Turning light Off"
+    # Fallback: also try to capture when command is inside an "EXECUTE COMMAND:" line with timestamp
+    if not pi_commands:
+        fallback = re.compile(r"(\d{4}-\d{2}-\d{2} .*?)EXECUTE COMMAND:.*?chip-tool\s+onoff\s+(on|off|toggle)\s+(\d+)\s+(\d+)", re.IGNORECASE)
+        for m in fallback.finditer(pi_text):
+            _, action, node_id, endpoint_id = m.groups()
+            pi_commands.append({
+                "action": action.lower(),
+                "node_id": node_id,
+                "endpoint_id": endpoint_id,
+            })
+
+    # Extract RTT events
     rtt_events = []
-    rtt_pattern = r"\[(\d{2}:\d{2}:\d{2}\.\d{3})\].*?Turning light\s+(On|Off)"
-    for match in re.finditer(rtt_pattern, rtt_content, re.IGNORECASE):
-        time_str, state = match.groups()
-        rtt_events.append({
-            "time": time_str,
-            "state": state.lower()
-        })
-        
-    print(f"\nFound {len(rtt_events)} light state events in rtt_log.txt:")
-    for event in rtt_events:
-        print(f"  - [{event['time']}] Turning light {event['state'].upper()}")
+    rtt_pattern = re.compile(r"\[(\d{2}:\d{2}:\d{2}\.\d{3})\].*?Turning light\s+(On|Off)", re.IGNORECASE)
+    for m in rtt_pattern.finditer(rtt_text):
+        time_str, state = m.groups()
+        rtt_events.append({"time": time_str, "state": state.lower()})
 
-    # Perform assertions
-    print("\n=== Assertions ===")
-    
-    # Assert that we found commands in both logs
-    assert len(pi_commands) > 0, "Assertion Failed: No 'onoff' commands found in pi_connection.log"
-    assert len(rtt_events) > 0, "Assertion Failed: No 'Turning light On/Off' messages found in rtt_log.txt"
-    
-    # Verify mapping
-    has_toggle = any(cmd['action'] == 'toggle' for cmd in pi_commands)
-    has_on = any(cmd['action'] == 'on' for cmd in pi_commands)
-    has_off = any(cmd['action'] == 'off' for cmd in pi_commands)
-    
+    # Receipt marker
+    receipt_marker = "im:invokecommandrequest"
+    receipt_found = receipt_marker in rtt_text.lower()
+
+    # Basic assertions
+    assert len(pi_commands) > 0, "No 'onoff' commands found in pi_connection.log"
+    assert len(rtt_events) > 0, "No 'Turning light On/Off' messages found in rtt_log.txt"
+
+    has_on = any(c["action"] == "on" for c in pi_commands)
+    has_off = any(c["action"] == "off" for c in pi_commands)
+    has_toggle = any(c["action"] == "toggle" for c in pi_commands)
+
     if has_on:
-        assert any(event['state'] == 'on' for event in rtt_events), "Assertion Failed: 'onoff on' was sent but 'Turning light On' was not found in RTT log"
+        assert any(e["state"] == "on" for e in rtt_events), "'onoff on' was sent but 'Turning light On' was not found in RTT log"
     if has_off:
-        assert any(event['state'] == 'off' for event in rtt_events), "Assertion Failed: 'onoff off' was sent but 'Turning light Off' was not found in RTT log"
+        assert any(e["state"] == "off" for e in rtt_events), "'onoff off' was sent but 'Turning light Off' was not found in RTT log"
     if has_toggle:
-        assert any(event['state'] in ['on', 'off'] for event in rtt_events), "Assertion Failed: 'onoff toggle' was sent but no light transition state was found in RTT log"
+        assert any(e["state"] in ("on", "off") for e in rtt_events), "'onoff toggle' was sent but no light transition state was found in RTT log"
 
-    print("\n[SUCCESS] Verification Successful: Both log files successfully analyzed and assertions match device actions!")
+    # Also ensure the RTT log shows receipt of command
+    assert receipt_found, f"RTT log does not contain receipt marker '{receipt_marker}'"
 
-
+    # If all checks pass, print a short summary for CI logs
+    print(f"Found {len(pi_commands)} onoff command(s); {len(rtt_events)} RTT event(s); receipt={receipt_found}")
