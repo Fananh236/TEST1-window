@@ -28,12 +28,15 @@ class DeviceRTT:
         # Project-level Log directory for RTT outputs (ensure RTT goes to project Log/)
         project_log_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "Log"))
         os.makedirs(project_log_dir, exist_ok=True)
-        
+        # expose project log dir on the instance
+        self.project_log_dir = project_log_dir
+
         # Unified RTT log filename used across tools -> placed in project Log/
-        self.rtt_log_file = os.path.join(project_log_dir, "rtt_log.txt")
+        self.rtt_log_file = os.path.join(self.project_log_dir, "rtt_log.txt")
         
         # Logger for the JLinkRTTLogger process (captures stdout/stderr)
-        self.jlink_rtt_logger_log = os.path.join(self.log_dir, "JLinkRTTLogger.log")
+        # place the JLinkRTTLogger debug log in the project Log dir so errors are visible
+        self.jlink_rtt_logger_log = os.path.join(self.project_log_dir, "JLinkRTTLogger.log")
         self.jlink_rtt_logger_handle = None
 
         # Process handlers
@@ -128,7 +131,7 @@ class DeviceRTT:
             rtt_cmd,
             stdout=self.jlink_rtt_logger_handle or subprocess.DEVNULL,
             stderr=subprocess.STDOUT if self.jlink_rtt_logger_handle else subprocess.DEVNULL,
-            cwd=self.log_dir,
+            cwd=self.project_log_dir,
             preexec_fn=os.setsid if os.name == "posix" else None,
         )
 
