@@ -28,6 +28,7 @@ class DeviceRTT:
         
         # Project-level Log directory for RTT outputs (ensure RTT goes to project Log/)
         project_log_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "Log"))
+        
         os.makedirs(project_log_dir, exist_ok=True)
         # expose project log dir on the instance
         self.project_log_dir = project_log_dir
