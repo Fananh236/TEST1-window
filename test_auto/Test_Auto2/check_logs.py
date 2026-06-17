@@ -7,10 +7,10 @@ def check_logs():
     base_dir = os.path.dirname(os.path.abspath(__file__))
 
     pi_log_path = os.path.join(
-        base_dir, "..", "Log", "pi_connection.log"
+        base_dir,"Log", "pi_connection.log"
     )
     jlink_log_path = os.path.join(
-        base_dir, "..", "Log", "JLinkRTTLogger.log"
+        base_dir,"Log", "rtt_log.txt"
     )
 
     pi_log_path = os.path.normpath(pi_log_path)

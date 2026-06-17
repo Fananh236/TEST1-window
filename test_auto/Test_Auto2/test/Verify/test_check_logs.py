@@ -7,10 +7,10 @@ def test_check_logs():
     base_dir = os.path.dirname(os.path.abspath(__file__))
 
     pi_log_path = os.path.join(
-        base_dir, "..", "Test_Auto2" ,"Log", "pi_connection.log"
+        base_dir,"Log", "pi_connection.log"
     )
     rtt_log_path = os.path.join(
-        base_dir, "..","Test_Auto2", "rtt_log.txt"
+        base_dir,"Log","rtt_log.txt"
     )
 
     pi_log_path = os.path.normpath(pi_log_path)
