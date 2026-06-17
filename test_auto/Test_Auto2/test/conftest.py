@@ -108,8 +108,8 @@ def device_rtt(config, tmp_path, request):
     RTT handler per test
     - Isolated log per test
     """
-    # Use persistent project Log folder so RTT outputs are easy to find
-    log_dir = os.path.abspath(config.get("log_path", LOG_DIR))
+    
+    log_dir = str(tmp_path)
 
     rtt = DeviceRTT(
         serial_config=config.get("serial_config", {}),

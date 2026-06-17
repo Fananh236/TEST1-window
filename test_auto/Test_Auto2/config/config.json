@@ -42,7 +42,7 @@
         "endpoint_id": "1"
       }
     ],
-
+    "log_dir":"Log",
     "firmware_dir": "resources/firmware",
     "target_firmware": "resources/firmware/bt_soc_blinky.s37"
   }

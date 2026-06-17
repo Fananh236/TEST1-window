@@ -14,7 +14,7 @@ def test_check_logs():
         Path.cwd() / "Log",
     ]
 
-    log_dir = next((c for c in candidates if c.exists() and c.is_dir()), None)
+    log_dir = "../test_auto/Test_Auto2/Log"
     if log_dir is None:
         pytest.skip(f"Log directory not found in candidates: {candidates}")
 
