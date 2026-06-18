@@ -16,8 +16,8 @@ def build_jlink_rtt_logger_command(device, ip_address, log_file):
     ]
     if ip_address:
         if ":" not in ip_address:
-            cmd += ["-IP", f"{ip_address}:19020"]
+            cmd += ["-IP", f"{ip_address}" ,"-RTTTelnetPort" ,"19020", "-Silent"]
         else:
-            cmd += ["-IP", ip_address]
+            cmd += ["-IP", ip_address,"-RTTTelnetPort" ,"19020", "-Silent"]
     cmd += [log_file]
     return cmd

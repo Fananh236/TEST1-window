@@ -4,7 +4,7 @@ import subprocess
 import time
 import threading
 
-from .jlink import (
+from ..utils.jlink import (
     build_jlink_remote_server_command,
     build_jlink_rtt_logger_command,
 )
