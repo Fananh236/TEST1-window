@@ -3,6 +3,7 @@
 import pytest
 import os
 import time
+from pathlib import Path
 
 
 def _resolve_serial_value(serial_config, field_name):
@@ -28,9 +29,9 @@ class TestRTTSetup:
         log_path = config.get("log_path", "./Log")
         
         if not os.path.isabs(log_path):
-            # Resolve relative path
-            base_dir = os.path.abspath(os.path.dirname(__file__))
-            log_path = os.path.join(base_dir, "..", log_path)
+            # Resolve relative path relative to project root (two levels up from tests)
+            base_dir = Path(__file__).resolve().parents[2]
+            log_path = str(base_dir.joinpath(log_path))
         
         # assert os.path.isdir(log_path), f"Log directory not found: {log_path}"
         print(f"✅ Log directory: {log_path}")
@@ -40,8 +41,8 @@ class TestRTTSetup:
         log_path = config.get("log_path", "./Log")
         
         if not os.path.isabs(log_path):
-            base_dir = os.path.abspath(os.path.dirname(__file__))
-            log_path = os.path.join(base_dir, "..", log_path)
+            base_dir = Path(__file__).resolve().parents[2]
+            log_path = str(base_dir.joinpath(log_path))
         
         rtt_log_file = os.path.join(log_path, "rtt_log.txt")
         
@@ -62,8 +63,8 @@ class TestLogFileGeneration:
         log_path = config.get("log_path", "./Log")
         
         if not os.path.isabs(log_path):
-            base_dir = os.path.abspath(os.path.dirname(__file__))
-            log_path = os.path.join(base_dir, "..", log_path)
+            base_dir = Path(__file__).resolve().parents[2]
+            log_path = str(base_dir.joinpath(log_path))
         
         # Tìm .log files
         log_files = []
@@ -81,8 +82,8 @@ class TestLogFileGeneration:
         log_path = config.get("log_path", "./Log")
         
         if not os.path.isabs(log_path):
-            base_dir = os.path.abspath(os.path.dirname(__file__))
-            log_path = os.path.join(base_dir, "..", log_path)
+            base_dir = Path(__file__).resolve().parents[2]
+            log_path = str(base_dir.joinpath(log_path))
         
         if not os.path.isdir(log_path):
             pytest.skip("Log directory not created yet")
@@ -107,8 +108,8 @@ class TestLogFileGeneration:
         log_path = config.get("log_path", "./Log")
         
         if not os.path.isabs(log_path):
-            base_dir = os.path.abspath(os.path.dirname(__file__))
-            log_path = os.path.join(base_dir, "..", log_path)
+            base_dir = Path(__file__).resolve().parents[2]
+            log_path = str(base_dir.joinpath(log_path))
         
         if not os.path.isdir(log_path):
             pytest.skip("Log directory not created yet")
@@ -156,8 +157,8 @@ class TestRTTLogCapture:
         log_path = config.get("log_path", "./Log")
         
         if not os.path.isabs(log_path):
-            base_dir = os.path.abspath(os.path.dirname(__file__))
-            log_path = os.path.join(base_dir, "..", log_path)
+            base_dir = Path(__file__).resolve().parents[2]
+            log_path = str(base_dir.joinpath(log_path))
         
         # assert os.path.isdir(log_path), f"Log directory not found: {log_path}"
         # assert os.access(log_path, os.W_OK), f"Log directory not writable: {log_path}"
@@ -169,8 +170,8 @@ class TestRTTLogCapture:
         log_path = config.get("log_path", "./Log")
         
         if not os.path.isabs(log_path):
-            base_dir = os.path.abspath(os.path.dirname(__file__))
-            log_path = os.path.join(base_dir, "..", log_path)
+            base_dir = Path(__file__).resolve().parents[2]
+            log_path = str(base_dir.joinpath(log_path))
         
         import shutil
         

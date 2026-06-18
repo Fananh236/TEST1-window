@@ -209,3 +209,58 @@ class DeviceRTT:
             "server_log": self.jlink_server_log,
             "rtt_log": self.rtt_log_file,
         }
+
+    def verify_rtt_status(self, wait_seconds: int = 5, markers=None):
+        """Check that RTT logging is active and the RTT file receives expected markers.
+
+        - waits up to `wait_seconds` for any of the `markers` to appear in the RTT log
+        - returns a dict with status information
+        """
+        if markers is None:
+            markers = ["im:invokecommandrequest", "turning light"]
+
+        result = {
+            "rtt_log_path": self.rtt_log_file,
+            "exists": False,
+            "size": 0,
+            "markers_found": [],
+            "process_running": False,
+        }
+
+        # Check process
+        try:
+            if self.rtt_proc and self.rtt_proc.poll() is None:
+                result["process_running"] = True
+        except Exception:
+            result["process_running"] = False
+
+        # Wait and scan file for markers
+        deadline = time.time() + wait_seconds
+        while time.time() < deadline:
+            try:
+                if os.path.exists(self.rtt_log_file):
+                    result["exists"] = True
+                    result["size"] = os.path.getsize(self.rtt_log_file)
+                    # read file (bounded)
+                    with open(self.rtt_log_file, "r", encoding="utf-8", errors="ignore") as f:
+                        content = f.read()
+                    lower = content.lower()
+                    found = []
+                    for m in markers:
+                        if m.lower() in lower:
+                            found.append(m)
+                    result["markers_found"] = found
+                    if found:
+                        break
+            except Exception:
+                pass
+            time.sleep(0.25)
+
+        # Final size check
+        try:
+            if os.path.exists(self.rtt_log_file):
+                result["size"] = os.path.getsize(self.rtt_log_file)
+        except Exception:
+            pass
+
+        return result
