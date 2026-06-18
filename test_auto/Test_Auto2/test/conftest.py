@@ -41,11 +41,7 @@ def config():
 # =============================================================================
 @pytest.fixture(scope="session")
 def flashed_device(config):
-    """
-    Tự động phát hiện thiết bị nào đã được flash và đang online.
-    Trả về dict device info (name, ip, sn, node_id, endpoint_id) của thiết bị đầu tiên ping được.
-    Skip nếu không có thiết bị nào online.
-    """
+    
     devices = config.get("serial_config", {}).get("devices", [])
 
     for device in devices:
@@ -102,15 +98,17 @@ def pi_device(config):
 # =============================================================================
 # 3. RTT FIXTURE (PER TEST)
 # =============================================================================
-@pytest.fixture(scope="function")
+@pytest.fixture(scope="session")
 def device_rtt(config, tmp_path, request):
     """
     RTT handler per test
     - Isolated log per test
     """
-    
-    log_dir = str(tmp_path)
+    subprocess.run("pkill -f JLinkRemoteServer", shell=True)
+    subprocess.run("pkill -f JLinkRTTLogger", shell=True)
 
+    log_dir = str(tmp_path)
+    
     rtt = DeviceRTT(
         serial_config=config.get("serial_config", {}),
         log_dir=log_dir
@@ -118,6 +116,7 @@ def device_rtt(config, tmp_path, request):
 
     # Start RTT processes so logs are actually produced during the test
     try:
+        time.sleep(3)
         rtt.start_rtt()
     except Exception as e:
         print(f"⚠️ RTT start failed: {e}")
@@ -127,6 +126,10 @@ def device_rtt(config, tmp_path, request):
     yield rtt
 
     rtt.stop_rtt()
+
+    # ✅ force cleanup again
+    subprocess.run("pkill -f JLinkRemoteServer", shell=True)
+    subprocess.run("pkill -f JLinkRTTLogger", shell=True)
 
 
 # =============================================================================

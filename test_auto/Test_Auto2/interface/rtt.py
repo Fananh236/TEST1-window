@@ -2,57 +2,47 @@ import os
 import signal
 import subprocess
 import time
-import threading
 
-from ..utils.jlink import (
-    build_jlink_remote_server_command,
-    build_jlink_rtt_logger_command,
-)
-
+from utils.jlink import _build_jlink_remote_server_cmd, _build_jlink_rtt_logger_cmd
 
 class DeviceRTT:
     def __init__(self, serial_config, log_dir):
         self.serial_config = serial_config or {}
 
+        # -----------------------------
         # Device info
-        self.device = self.serial_config.get("device", "").replace("IM48", "")
+        # -----------------------------
+        self.device = "EFR32MG24BXXXF1536"
         self.ip = self._resolve_device_value("ip")
         self.sn = self._resolve_device_value("sn")
 
-        # Log directory (per-instance)
+        # -----------------------------
+        # Log directory
+        # -----------------------------
         self.log_dir = os.path.abspath(log_dir)
         os.makedirs(self.log_dir, exist_ok=True)
 
+        # -----------------------------
         # Log files
+        # -----------------------------
         self.jlink_server_log = os.path.join(self.log_dir, "JLinkRemoteServer.log")
-        
-        # Project-level Log directory for RTT outputs (ensure RTT goes to project Log/)
-        project_log_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "Log"))
-        
-        os.makedirs(project_log_dir, exist_ok=True)
-        # expose project log dir on the instance
-        self.project_log_dir = project_log_dir
 
-        # Unified RTT log filename used across tools -> placed in project Log/
-        self.rtt_log_file = os.path.join(self.project_log_dir, "rtt_log.txt")
-        
-        # Logger for the JLinkRTTLogger process (captures stdout/stderr)
-        # place the JLinkRTTLogger debug log in the project Log dir so errors are visible
-        self.jlink_rtt_logger_log = os.path.join(self.project_log_dir, "JLinkRTTLogger.log")
-        self.jlink_rtt_logger_handle = None
-        # Tail thread to extract RTT output from the JLinkRTTLogger debug log
-        self._tail_thread = None
-        self._tail_stop = threading.Event()
+        # RTT log (QUAN TRỌNG: log thật nằm ở đây)
+        self.rtt_log_file = os.path.join(self.log_dir, "rtt_log.txt")
 
-        # Process handlers
+        # Debug log của RTT logger
+        self.jlink_rtt_logger_log = os.path.join(self.log_dir, "JLinkRTTLogger.log")
+
         self.server_proc = None
         self.rtt_proc = None
-        self.server_log_file = None
+
+        self.server_log_handle = None
+        self.rtt_logger_handle = None
 
         self.stopped = False
 
     # --------------------------------------------------
-    # Resolve config value (support multi-device config)
+    # Resolve config (multi-device support)
     # --------------------------------------------------
     def _resolve_device_value(self, field_name):
         if field_name in self.serial_config and self.serial_config.get(field_name):
@@ -66,27 +56,12 @@ class DeviceRTT:
 
         return None
 
+ 
     # --------------------------------------------------
-    # Cleanup fallback (avoid using in multi-device)
+    # Kill process safely
     # --------------------------------------------------
-    def _cleanup_processes(self):
-        if os.name == "posix":
-            subprocess.run(
-                ["pkill", "-f", "JLinkRemoteServer"],
-                stdout=subprocess.DEVNULL,
-                stderr=subprocess.DEVNULL,
-            )
-            subprocess.run(
-                ["pkill", "-f", "JLinkRTTLogger"],
-                stdout=subprocess.DEVNULL,
-                stderr=subprocess.DEVNULL,
-            )
-
-    # --------------------------------------------------
-    # Kill specific process safely
-    # --------------------------------------------------
-    def _terminate_process(self, proc):
-        if proc is None:
+    def _terminate(self, proc):
+        if not proc:
             return
 
         try:
@@ -98,74 +73,49 @@ class DeviceRTT:
             pass
 
     # --------------------------------------------------
-    # Start RTT logging
+    # Start RTT
     # --------------------------------------------------
     def start_rtt(self):
-        # ⚠️ optional: disable nếu bạn chạy multi-device
-        self._cleanup_processes()
+        self.stopped = False
 
-        # ---- Start JLink Remote Server ----
-        server_cmd = build_jlink_remote_server_command(self.sn)
+        # -----------------------------
+        # Start JLink Remote Server
+        # -----------------------------
+        server_cmd = _build_jlink_remote_server_cmd(self.sn)
 
-        self.server_log_file = open(self.jlink_server_log, "w")
+
+
+        self.server_log_handle = open(self.jlink_server_log, "a", buffering=1)
 
         self.server_proc = subprocess.Popen(
             server_cmd,
-            stdout=self.server_log_file,
+            stdout=self.server_log_handle,
             stderr=subprocess.STDOUT,
-            cwd=self.log_dir,
             preexec_fn=os.setsid if os.name == "posix" else None,
         )
 
+        print("[RTT] JLinkRemoteServer started")
         time.sleep(2)
 
-        # ---- Start RTT Logger ----
-        rtt_cmd = build_jlink_rtt_logger_command(
-            self.device,
-            self.ip,
-            self.rtt_log_file,
-        )
+        # -----------------------------
+        # Start RTT Logger
+        # -----------------------------
+        rtt_cmd = _build_jlink_rtt_logger_cmd(self.device,self.ip,self.rtt_log_file)
 
-        # Capture JLinkRTTLogger stdout/stderr to file for debugging
-        try:
-            self.jlink_rtt_logger_handle = open(self.jlink_rtt_logger_log, "w", encoding="utf-8")
-        except Exception:
-            self.jlink_rtt_logger_handle = None
+        self.rtt_logger_handle = open(self.jlink_rtt_logger_log, "a", buffering=1)
 
         self.rtt_proc = subprocess.Popen(
             rtt_cmd,
-            stdout=self.jlink_rtt_logger_handle or subprocess.DEVNULL,
-            stderr=subprocess.STDOUT if self.jlink_rtt_logger_handle else subprocess.DEVNULL,
-            cwd=self.project_log_dir,
+            stdout=self.rtt_logger_handle,   # debug log
+            stderr=subprocess.STDOUT,
             preexec_fn=os.setsid if os.name == "posix" else None,
         )
 
-        time.sleep(2)
+        print("[RTT] RTT Logger started")
 
-        # Start a tailing thread that copies relevant RTT output from the debug log
-        # into the canonical rtt_log_file so tests and tools can read it.
-        def _tail_debug_log():
-            try:
-                with open(self.jlink_rtt_logger_log, "r", encoding="utf-8", errors="ignore") as src:
-                    # seek to end of file to only capture new writes
-                    src.seek(0, os.SEEK_END)
-                    while not self._tail_stop.is_set():
-                        line = src.readline()
-                        if not line:
-                            time.sleep(0.1)
-                            continue
-                        # Optionally filter lines; here we append all lines to RTT file
-                        try:
-                            with open(self.rtt_log_file, "a", encoding="utf-8", errors="ignore") as dst:
-                                dst.write(line)
-                        except Exception:
-                            pass
-            except Exception:
-                return
-
-        self._tail_stop.clear()
-        self._tail_thread = threading.Thread(target=_tail_debug_log, daemon=True)
-        self._tail_thread.start()
+        # Chờ RTT ready
+        if not self.wait_rtt_ready(timeout=5):
+            print("[RTT WARNING] No RTT data detected")
 
     # --------------------------------------------------
     # Stop RTT
@@ -176,91 +126,64 @@ class DeviceRTT:
 
         self.stopped = True
 
-        # Stop RTT logger
-        self._terminate_process(self.rtt_proc)
+        print("[RTT] Stopping...")
 
-        # Stop server
-        self._terminate_process(self.server_proc)
+        self._terminate(self.rtt_proc)
+        self._terminate(self.server_proc)
 
-        # ⚠️ fallback cleanup
-        self._cleanup_processes()
+        if self.server_log_handle:
+            self.server_log_handle.close()
 
-        # Close log file
-        if self.server_log_file:
-            self.server_log_file.close()
-        if self.jlink_rtt_logger_handle:
-            try:
-                self.jlink_rtt_logger_handle.close()
-            except Exception:
-                pass
-        # Stop tail thread
-        try:
-            if self._tail_thread and self._tail_thread.is_alive():
-                self._tail_stop.set()
-                self._tail_thread.join(timeout=2)
-        except Exception:
-            pass
+        if self.rtt_logger_handle:
+            self.rtt_logger_handle.close()
 
     # --------------------------------------------------
-    # Helper: get log paths (useful for pytest/report)
+    # Wait RTT data
     # --------------------------------------------------
-    def get_log_files(self):
-        return {
-            "server_log": self.jlink_server_log,
-            "rtt_log": self.rtt_log_file,
-        }
-
-    def verify_rtt_status(self, wait_seconds: int = 5, markers=None):
-        """Check that RTT logging is active and the RTT file receives expected markers.
-
-        - waits up to `wait_seconds` for any of the `markers` to appear in the RTT log
-        - returns a dict with status information
+    def wait_rtt_ready(self, timeout=5):
         """
-        if markers is None:
-            markers = ["im:invokecommandrequest", "turning light"]
+        Check if RTT file receives data
+        """
+        end_time = time.time() + timeout
 
-        result = {
-            "rtt_log_path": self.rtt_log_file,
-            "exists": False,
-            "size": 0,
-            "markers_found": [],
-            "process_running": False,
-        }
-
-        # Check process
-        try:
-            if self.rtt_proc and self.rtt_proc.poll() is None:
-                result["process_running"] = True
-        except Exception:
-            result["process_running"] = False
-
-        # Wait and scan file for markers
-        deadline = time.time() + wait_seconds
-        while time.time() < deadline:
-            try:
-                if os.path.exists(self.rtt_log_file):
-                    result["exists"] = True
-                    result["size"] = os.path.getsize(self.rtt_log_file)
-                    # read file (bounded)
-                    with open(self.rtt_log_file, "r", encoding="utf-8", errors="ignore") as f:
-                        content = f.read()
-                    lower = content.lower()
-                    found = []
-                    for m in markers:
-                        if m.lower() in lower:
-                            found.append(m)
-                    result["markers_found"] = found
-                    if found:
-                        break
-            except Exception:
-                pass
-            time.sleep(0.25)
-
-        # Final size check
-        try:
+        while time.time() < end_time:
             if os.path.exists(self.rtt_log_file):
-                result["size"] = os.path.getsize(self.rtt_log_file)
-        except Exception:
-            pass
+                if os.path.getsize(self.rtt_log_file) > 0:
+                    print("[RTT] RTT data detected")
+                    return True
+            time.sleep(0.5)
 
-        return result
+        return False
+
+    # --------------------------------------------------
+    # Read RTT log
+    # --------------------------------------------------
+    def read_rtt_log(self):
+        if not os.path.exists(self.rtt_log_file):
+            return ""
+
+        try:
+            with open(self.rtt_log_file, "r", encoding="utf-8", errors="ignore") as f:
+                return f.read()
+        except Exception:
+            return ""
+
+    # --------------------------------------------------
+    # Verify RTT markers
+    # --------------------------------------------------
+    def verify_rtt_status(self, markers=None, timeout=5):
+        if markers is None:
+            markers = ["invokecommand", "light"]
+
+        end_time = time.time() + timeout
+
+        while time.time() < end_time:
+            content = self.read_rtt_log().lower()
+
+            for m in markers:
+                if m.lower() in content:
+                    return True
+
+            time.sleep(0.5)
+
+        return False
