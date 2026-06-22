@@ -26,6 +26,17 @@ LOG_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "Log"))
 CONFIG_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "config", "config.json"))
 
 
+def _resolve_log_dir(log_path):
+    if not log_path:
+        return LOG_DIR
+
+    if os.path.isabs(log_path):
+        return log_path
+
+    project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+    return os.path.abspath(os.path.join(project_root, log_path))
+
+
 # =============================================================================
 # 1. CONFIG FIXTURE
 # =============================================================================
@@ -71,7 +82,9 @@ def flashed_device(config):
 @pytest.fixture(scope="session")
 def pi_device(config):
     """SSH connection to Raspberry Pi"""
-    log_dir = os.path.abspath(config.get("log_path", LOG_DIR))
+    log_dir = config.get("log_path") or config.get("serial_config", {}).get("log_dir") or LOG_DIR
+    log_dir = _resolve_log_dir(log_dir)
+    os.makedirs(log_dir, exist_ok=True)
     pi = SSHClient(config["pi_config"], log_dir=log_dir)
 
     print("\n" + "=" * 50)
@@ -100,14 +113,16 @@ def pi_device(config):
 # =============================================================================
 
 @pytest.fixture(scope="session")
-def device_rtt(config, tmp_path_factory):
+def device_rtt(config):
     
 
     # Kill old processes
     subprocess.run("pkill -f JLinkRemoteServer", shell=True)
     subprocess.run("pkill -f JLinkRTTLogger", shell=True)
 
-    log_dir = str(tmp_path_factory.mktemp("rtt_logs"))
+    log_dir = config.get("log_path") or config.get("serial_config", {}).get("log_dir") or LOG_DIR
+    log_dir = _resolve_log_dir(log_dir)
+    os.makedirs(log_dir, exist_ok=True)
 
     rtt = DeviceRTT(
         serial_config=config.get("serial_config", {}),
