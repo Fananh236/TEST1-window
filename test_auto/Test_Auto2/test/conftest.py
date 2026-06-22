@@ -155,10 +155,9 @@ def pytest_collection_modifyitems(items):
         "test_rtt_logging.py": 2,
         "test_pi_connectivity.py": 3,
         "test_form_network.py": 4,
-        "test_chip_config_resolution.py": 5,
-        "test_chiptool.py": 6,
-        "test_log_verification.py": 7,
-        "test_check_logs.py" : 8,
+        "test_chiptool.py": 5,
+        "test_log_verification.py": 6,
+        "test_check_logs.py" : 7,
     }
 
     def sort_key(item):

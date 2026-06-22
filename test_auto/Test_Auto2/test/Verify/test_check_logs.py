@@ -3,9 +3,12 @@ from pathlib import Path
 import pytest
 
 
-def test_check_logs():
-    # Search for Log dir in several likely locations
+# =========================
+# Utils
+# =========================
+def _find_log_dir():
     here = Path(__file__).resolve().parent
+
     candidates = [
         here / "Log",
         here.parent / "Log",
@@ -14,56 +17,166 @@ def test_check_logs():
         Path.cwd() / "Log",
     ]
 
-    log_dir = next((c for c in candidates if c.exists() and c.is_dir()), None)
+    for c in candidates:
+        if c.exists() and c.is_dir():
+            return c
+
+    return None
+
+
+def _read_file(path: Path):
+    return path.read_text(encoding="utf-8", errors="ignore")
+
+
+# =========================
+# Extractors
+# =========================
+def _extract_pi_commands(content: str):
+    commands = []
+
+    pattern = re.compile(
+        r"(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2},\d{3}).*?"
+        r"EXECUTE COMMAND:.*?chip-tool\s+onoff\s+(on|off|toggle)\s+(\d+)\s+(\d+)",
+        re.IGNORECASE,
+    )
+
+    for m in pattern.finditer(content):
+        timestamp, action, node_id, endpoint_id = m.groups()
+        commands.append({
+            "timestamp": timestamp,
+            "action": action.lower(),
+            "node_id": node_id,
+            "endpoint_id": endpoint_id,
+        })
+
+    # fallback
+    if not commands:
+        fallback = re.compile(
+            r"chip-tool\s+onoff\s+(on|off|toggle)\s+(\d+)\s+(\d+)",
+            re.IGNORECASE,
+        )
+
+        for m in fallback.finditer(content):
+            action, node_id, endpoint_id = m.groups()
+            commands.append({
+                "action": action.lower(),
+                "node_id": node_id,
+                "endpoint_id": endpoint_id,
+            })
+
+    return commands
+
+
+# =========================
+# Main Check Logic
+# =========================
+def check_logs():
+    log_dir = _find_log_dir()
+
     if log_dir is None:
-        pytest.skip(f"Log directory not found in candidates: {candidates}")
+        raise RuntimeError("Log directory not found")
 
     pi_log = log_dir / "pi_connection.log"
     rtt_log = log_dir / "rtt_log.txt"
 
     if not pi_log.exists():
-        pytest.skip(f"Pi log not found at {pi_log}")
+        raise RuntimeError(f"Missing {pi_log}")
+
     if not rtt_log.exists():
-        pytest.skip(f"RTT log not found at {rtt_log}")
+        raise RuntimeError(f"Missing {rtt_log}")
 
-    pi_content = pi_log.read_text(encoding="utf-8", errors="ignore")
-    rtt_content = rtt_log.read_text(encoding="utf-8", errors="ignore")
+    pi_content = _read_file(pi_log)
+    rtt_content = _read_file(rtt_log)
 
-    # Extract commands
-    pi_commands = []
-    pattern = re.compile(r"(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2},\d{3}).*?EXECUTE COMMAND:.*?chip-tool\s+onoff\s+(on|off|toggle)\s+(\d+)\s+(\d+)", re.IGNORECASE)
-    for m in pattern.finditer(pi_content):
-        timestamp, action, node_id, endpoint_id = m.groups()
-        pi_commands.append({"timestamp": timestamp, "action": action.lower(), "node_id": node_id, "endpoint_id": endpoint_id})
+    print("=== Analyzing Logs ===")
+
+    # =========================
+    # Extract PI commands
+    # =========================
+    pi_commands = _extract_pi_commands(pi_content)
+
+    print(f"Found {len(pi_commands)} 'onoff' commands:")
+    for cmd in pi_commands[:15]:
+        ts = cmd.get("timestamp", "N/A")
+        print(f"  - [{ts}] onoff {cmd['action']} {cmd['node_id']} {cmd['endpoint_id']}")
+
+    if len(pi_commands) > 15:
+        print(f"  ... and {len(pi_commands) - 15} more")
 
     if not pi_commands:
-        fallback = re.compile(r"chip-tool\s+onoff\s+(on|off|toggle)\s+(\d+)\s+(\d+)", re.IGNORECASE)
-        for m in fallback.finditer(pi_content):
-            action, node_id, endpoint_id = m.groups()
-            pi_commands.append({"action": action.lower(), "node_id": node_id, "endpoint_id": endpoint_id})
+        raise AssertionError("No 'onoff' commands found in pi log")
 
-    assert pi_commands, "No 'onoff' commands found in pi_connection.log"
+    # =========================
+    # RTT analysis
+    # =========================
+    jlink_lower = rtt_content.lower()
 
-    # Extract RTT events
-    rtt_events = []
-    rtt_pattern = re.compile(r"\[(\d{2}:\d{2}:\d{2}\.\d{3})\].*?Turning light\s+(On|Off)", re.IGNORECASE)
-    for m in rtt_pattern.finditer(rtt_content):
-        time_str, state = m.groups()
-        rtt_events.append({"time": time_str, "state": state.lower()})
+    receipt_marker = "im:invokecommandrequest"
+    action_on_re = re.compile(r"turning light\s+on", re.IGNORECASE)
+    action_off_re = re.compile(r"turning light\s+off", re.IGNORECASE)
 
-    assert rtt_events, "No 'Turning light On/Off' messages found in rtt_log.txt"
+    print(f"\nRTT log size: {len(rtt_content)} bytes")
+    print("\n=== Verifying each command ===")
 
-    has_on = any(c["action"] == "on" for c in pi_commands)
-    has_off = any(c["action"] == "off" for c in pi_commands)
-    has_toggle = any(c["action"] == "toggle" for c in pi_commands)
+    failures = []
 
-    if has_on:
-        assert any(e["state"] == "on" for e in rtt_events), "'onoff on' was sent but 'Turning light On' was not found in RTT log"
-    if has_off:
-        assert any(e["state"] == "off" for e in rtt_events), "'onoff off' was sent but 'Turning light Off' was not found in RTT log"
-    if has_toggle:
-        assert any(e["state"] in ("on", "off") for e in rtt_events), "'onoff toggle' was sent but no light transition state was found in RTT log"
+    for idx, cmd in enumerate(pi_commands, start=1):
+        expected_action = cmd["action"]
 
-    assert "im:invokecommandrequest" in rtt_content.lower(), "RTT log does not contain receipt marker 'im:invokecommandrequest'"
+        receipt_found = receipt_marker in jlink_lower
 
-    print(f"Found {len(pi_commands)} onoff command(s); {len(rtt_events)} RTT event(s)")
+        if expected_action == "on":
+            action_found = bool(action_on_re.search(rtt_content))
+        elif expected_action == "off":
+            action_found = bool(action_off_re.search(rtt_content))
+        else:
+            # toggle
+            action_found = bool(
+                action_on_re.search(rtt_content)
+                or action_off_re.search(rtt_content)
+            )
+
+        print(
+            f"Command #{idx}: onoff {expected_action} -> "
+            f"receipt={receipt_found}, action={action_found}"
+        )
+
+        if not receipt_found or not action_found:
+            failures.append({
+                "command": cmd,
+                "receipt_found": receipt_found,
+                "action_found": action_found,
+            })
+
+    # =========================
+    # Final assert
+    # =========================
+    if failures:
+        lines = [f"FAIL: {len(failures)} command(s) failed:"]
+        for f in failures:
+            c = f["command"]
+            lines.append(
+                f" - {c['action']} {c['node_id']}:{c['endpoint_id']} "
+                f"-> receipt={f['receipt_found']} action={f['action_found']}"
+            )
+
+        raise AssertionError("\n".join(lines))
+
+    print("\n✅ SUCCESS: All commands verified with RTT log")
+
+
+# =========================
+# Pytest entry
+# =========================
+def test_check_logs():
+    try:
+        check_logs()
+    except RuntimeError as e:
+        pytest.skip(str(e))
+
+
+# =========================
+# Standalone run
+# =========================
+if __name__ == "__main__":
+    check_logs()
