@@ -107,7 +107,7 @@ def run_pairing(pi_device, config):
 
     print("\n=========== START PAIRING ===========")
 
-    # ✅ CLEAN chip-tool KVS (rất quan trọng)
+    # ✅ CLEAN chip-tool KVS 
     pi_device.execute_command(
         f"echo '{pi_device.password}' | sudo -S rm -rf /tmp/chip_*"
     )

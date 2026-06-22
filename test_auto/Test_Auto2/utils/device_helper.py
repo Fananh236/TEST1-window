@@ -1,3 +1,4 @@
+import cmd
 import subprocess
 import os
 import shlex
@@ -43,19 +44,16 @@ class DeviceHelper:
     # =========================
     # COMMAND BUILDER
     # =========================
-    def _build_cmd(self, action, sn=None, ip=None, extra=None):
-        cmd = [self.commander, action]
+    def _build_cmd(self, action, command, sn=None, ip=None):
+        cmd = [self.commander, action, command]
 
-        if extra:
-            cmd += extra
+        cmd += ["--device", self.device]
 
         if sn:
-            cmd += ["-s", sn]
+            cmd += ["-s", str(sn)]
 
         if ip:
             cmd += ["--ip", ip]
-
-        cmd += ["--device", self.device]
 
         return cmd
 
@@ -63,27 +61,28 @@ class DeviceHelper:
     # ACTIONS
     # =========================
     def mass_erase(self, sn=None, ip=None, retry=2):
-        cmd = self._build_cmd("device", sn, ip, ["masserase"])
+        cmd = self._build_cmd("device", "masserase", sn, ip)
         return self._retry(cmd, retry)
 
+
     def reset(self, sn=None, ip=None, retry=2):
-        cmd = self._build_cmd("device", sn, ip, ["reset"])
+        cmd = self._build_cmd("device", "reset", sn, ip)
         return self._retry(cmd, retry)
 
     def flash(self, firmware_path, sn=None, ip=None, retry=2):
         if not firmware_path or not os.path.exists(firmware_path):
-            print(f"❌ Firmware not found: {firmware_path}")
             return False, "", "invalid firmware"
 
         cmd = [self.commander, "flash", firmware_path]
 
+    # ✅ giữ cùng order
+        cmd += ["--device", self.device]
+
         if sn:
-            cmd += ["-s", sn]
+            cmd += ["-s", str(sn)]
 
         if ip:
             cmd += ["--ip", ip]
-
-        cmd += ["--device", self.device]
 
         return self._retry(cmd, retry)
 

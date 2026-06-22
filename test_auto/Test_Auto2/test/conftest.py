@@ -98,47 +98,45 @@ def pi_device(config):
 # =============================================================================
 # 3. RTT FIXTURE (PER TEST)
 # =============================================================================
+
 @pytest.fixture(scope="session")
-def device_rtt(config, tmp_path, request):
-    """
-    RTT handler per test
-    - Isolated log per test
-    """
+def device_rtt(config, tmp_path_factory):
+    
+
+    # Kill old processes
     subprocess.run("pkill -f JLinkRemoteServer", shell=True)
     subprocess.run("pkill -f JLinkRTTLogger", shell=True)
 
-    log_dir = str(tmp_path)
-    
+    log_dir = str(tmp_path_factory.mktemp("rtt_logs"))
+
     rtt = DeviceRTT(
         serial_config=config.get("serial_config", {}),
         log_dir=log_dir
     )
 
-    # Start RTT processes so logs are actually produced during the test
     try:
-        time.sleep(3)
+        print("\n[GLOBAL RTT] Starting RTT (session)...")
         rtt.start_rtt()
+        time.sleep(3)
     except Exception as e:
-        print(f"⚠️ RTT start failed: {e}")
+        pytest.fail(f"RTT start failed: {e}")
 
-    print(f"RTT log dir: {log_dir}")
+    print(f"[GLOBAL RTT] Log dir: {log_dir}")
 
     yield rtt
 
+    print("\n[GLOBAL RTT] Stopping RTT...")
     rtt.stop_rtt()
 
-    # ✅ force cleanup again
     subprocess.run("pkill -f JLinkRemoteServer", shell=True)
     subprocess.run("pkill -f JLinkRTTLogger", shell=True)
-
-
 # =============================================================================
 # 4. TEST ORDERING
 # =============================================================================
-def pytest_collection_modifyitems(config, items):
+def pytest_collection_modifyitems(items):
     order = {
-        "test_flashing_sn.py": 0,
-        "test_flashing_ip.py": 1,
+        "test_flashing_ip.py": 0,
+        "test_flashing_sn.py": 1,
         "test_rtt_logging.py": 2,
         "test_pi_connectivity.py": 3,
         "test_form_network.py": 4,

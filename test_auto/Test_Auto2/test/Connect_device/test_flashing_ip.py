@@ -1,4 +1,3 @@
-from time import time
 
 import pytest
 
@@ -58,6 +57,5 @@ def test_mass_flashing_device(commander, flashing_context):
         # 4. Reset device
         print(f"   [3/3] Resetting device...")
         commander.reset_device_by_ip(ip)
-        time.sleep(5) 
 
         print(f"✅ Device {ip} flashed successfully!")
