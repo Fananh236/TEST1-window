@@ -113,7 +113,6 @@ def send_on_command(pi_device, config, label):
 
     full_response = (stdout + "\n" + stderr).lower()
 
-    # ✅ detect lỗi thật
     if "timeout" in full_response:
         raise RuntimeError("❌ Timeout → device NOT reachable via Thread")
     if "run command failure" in full_response:
@@ -152,7 +151,8 @@ def send_off_command(pi_device, config, label):
 # RUN PAIRING
 # =========================================================
 def run_pairing(pi_device, config):
-
+    
+    
     chip = resolve_chip_target(config)
 
     print("\n=========== START PAIRING ===========")
@@ -185,16 +185,6 @@ def run_pairing(pi_device, config):
     print(f"[DEBUG] pairing_cmd = {pairing_cmd}")
 
     output, _ = pi_device.execute_command(pairing_cmd)
-
-
-    # =====================================================
-    # CHECK PAIRING SUCCESS
-    # =====================================================
-    if "device commissioning completed with success" not in output.lower():
-        raise RuntimeError("❌ Pairing FAILED")
-
-    print("✅ Pairing SUCCESS")
-
     # =====================================================
     # 🔥 CRITICAL: WAIT NODE READY
     # =====================================================

@@ -1,6 +1,6 @@
 import pytest
 
-from utils.log_parser import (
+from utils.log_find import (
     find_log_dir,
     read_file,
     extract_pi_commands,

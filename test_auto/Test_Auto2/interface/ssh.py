@@ -1,7 +1,7 @@
 import os
 import paramiko
 
-from utils.logger import setup_file_logger
+from test_auto.Test_Auto2.utils.pi_logger import setup_file_logger
 
 
 class SSHClient:

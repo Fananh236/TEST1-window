@@ -3,7 +3,6 @@ import pytest
 from utils.chip_tool_helper import send_off_command, send_on_command, send_toggle_command, run_pairing
 
 def test_1_pairing_device(pi_device, flashed_device, config):
-    """Cleanup KVS và thực hiện BLE-Thread Commissioning với thiết bị đã flash."""
 
     print(f"\n🔌 Pairing with device: {flashed_device['name']} (IP: {flashed_device['ip']}, node_id: {flashed_device['node_id']})")
 
@@ -17,7 +16,6 @@ def test_1_pairing_device(pi_device, flashed_device, config):
     print(f"\n✅ Commissioning status: SUCCESS")
 
 def test_2_toggle_functionality(pi_device, flashed_device, config):
-    """Verify OnOff toggle functionality với thiết bị đã pair."""
 
     print(f"\n🔁 Toggle device: {flashed_device['name']} (node_id: {flashed_device['node_id']})")
 
