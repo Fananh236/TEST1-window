@@ -180,14 +180,8 @@ class DeviceRTT:
         if action not in ("on", "off", "toggle"):
             raise ValueError("action must be 'on', 'off' or 'toggle'")
 
-        # import parsers (pure functions)
-        from test_auto.Test_Auto2.utils.verifier import (
-            detect_receipt,
-            detect_on_start,
-            detect_on_done,
-            detect_off_start,
-            detect_off_done,
-        )
+        # import unified pattern detector
+        from utils.common import detect_pattern
 
         receipt_seen = False
         start_seen = False
@@ -202,33 +196,33 @@ class DeviceRTT:
                 continue
 
             # receipt -> start -> done
-            if not receipt_seen and detect_receipt(line):
+            if not receipt_seen and detect_pattern(line, "receipt"):
                 receipt_seen = True
                 print(f"[RTT DEBUG] receipt detected: {line}")
                 continue
 
             if receipt_seen and not start_seen:
-                if detect_on_start(line) and action in ("on", "toggle"):
+                if detect_pattern(line, "on_start") and action in ("on", "toggle"):
                     start_seen = True
                     start_type = "on"
                     print(f"[RTT DEBUG] start(on) detected: {line}")
                     continue
-                if detect_off_start(line) and action in ("off", "toggle"):
+                if detect_pattern(line, "off_start") and action in ("off", "toggle"):
                     start_seen = True
                     start_type = "off"
                     print(f"[RTT DEBUG] start(off) detected: {line}")
                     continue
 
             if start_seen:
-                if start_type == "on" and detect_on_done(line):
+                if start_type == "on" and detect_pattern(line, "on_done"):
                     print(f"[RTT DEBUG] done(on) detected: {line}")
                     return True
-                if start_type == "off" and detect_off_done(line):
+                if start_type == "off" and detect_pattern(line, "off_done"):
                     print(f"[RTT DEBUG] done(off) detected: {line}")
                     return True
 
             # If a new receipt arrives before start, treat as reset for a new command
-            if receipt_seen and not start_seen and detect_receipt(line):
+            if receipt_seen and not start_seen and detect_pattern(line, "receipt"):
                 receipt_seen = True
                 start_seen = False
                 start_type = None

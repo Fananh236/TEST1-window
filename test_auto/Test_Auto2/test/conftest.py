@@ -17,6 +17,7 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")
 from config.loader import ConfigLoader
 from interface.rtt import DeviceRTT
 from interface.ssh import SSHClient
+from utils.common import resolve_log_directory
 
 
 # =============================================================================
@@ -25,16 +26,13 @@ from interface.ssh import SSHClient
 LOG_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "Log"))
 CONFIG_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "config", "config.json"))
 
+# Project root for log path resolution
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
 
 def _resolve_log_dir(log_path):
-    if not log_path:
-        return LOG_DIR
-
-    if os.path.isabs(log_path):
-        return log_path
-
-    project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-    return os.path.abspath(os.path.join(project_root, log_path))
+    """Legacy wrapper for resolve_log_directory (for backward compatibility)."""
+    return resolve_log_directory(log_path, PROJECT_ROOT)
 
 
 # =============================================================================
@@ -109,8 +107,11 @@ def pi_device(config):
 
 
 # =============================================================================
-# 3. RTT FIXTURE (PER TEST)
+# 3. RTT FIXTURE (SESSION-SCOPED FOR INIT/CLEANUP)
 # =============================================================================
+# NOTE: RTT logging is now captured per-function-call via execute_command()
+# This fixture handles RTT setup/teardown only. Real-time log capture
+# happens in utils.rtt_reader and through SSHClient execute_command_with_rtt()
 
 @pytest.fixture(scope="session")
 def device_rtt(config):
@@ -130,13 +131,14 @@ def device_rtt(config):
     )
 
     try:
-        print("\n[GLOBAL RTT] Starting RTT (session)...")
+        print("\n[GLOBAL RTT] Starting RTT (session-scoped init)...")
         rtt.start_rtt()
         time.sleep(3)
     except Exception as e:
         pytest.fail(f"RTT start failed: {e}")
 
     print(f"[GLOBAL RTT] Log dir: {log_dir}")
+    print(f"[GLOBAL RTT] RTT log: {rtt.rtt_log_file}")
 
     yield rtt
 
@@ -145,6 +147,23 @@ def device_rtt(config):
 
     subprocess.run("pkill -f JLinkRemoteServer", shell=True)
     subprocess.run("pkill -f JLinkRTTLogger", shell=True)
+
+
+# =============================================================================
+# 3b. LOG PATHS FIXTURE
+# =============================================================================
+@pytest.fixture(scope="session")
+def log_paths(config, device_rtt):
+    """Provide log file paths for RTT and Pi connection logs."""
+    log_dir = config.get("log_path") or config.get("serial_config", {}).get("log_dir") or LOG_DIR
+    log_dir = _resolve_log_dir(log_dir)
+    
+    return {
+        "pi_log": os.path.join(log_dir, "pi_connection.log"),
+        "rtt_log": device_rtt.rtt_log_file,
+        "log_dir": log_dir,
+    }
+
 # =============================================================================
 # 4. TEST ORDERING
 # =============================================================================

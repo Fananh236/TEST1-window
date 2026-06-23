@@ -1,39 +1,35 @@
-import os
-import shutil
-from pathlib import Path
+"""
+Log directory and file utilities.
+These functions are now consolidated in utils.common module.
+This module is kept for backward compatibility.
+"""
+
+import warnings
+from utils.common import (
+    resolve_log_directory,
+    get_log_files,
+    read_log_file,
+    get_device_ip,
+)
 
 
 def resolve_log_path(config):
-    log_path = config.get("log_path", "./Log")
-
-    if not os.path.isabs(log_path):
-        base_dir = Path(__file__).resolve().parents[2]
-        log_path = str(base_dir.joinpath(log_path))
-
-    return log_path
-
-
-def get_log_files(log_path):
-    if not os.path.isdir(log_path):
-        return []
-    return [f for f in os.listdir(log_path) if f.endswith(".log")]
+    """Legacy wrapper for resolve_log_directory (backward compatible)."""
+    warnings.warn(
+        "resolve_log_path is deprecated. Use resolve_log_directory from utils.common",
+        DeprecationWarning,
+        stacklevel=2
+    )
+    log_path = config.get("log_path")
+    return resolve_log_directory(log_path)
 
 
-def read_log_file(full_path):
-    with open(full_path, "r") as f:
-        return f.read()
-
-
-def get_device_ip(config):
-    serial_config = config.get("serial_config", {})
-
-    ip = serial_config.get("ip")
-    if ip:
-        return ip
-
-    for d in serial_config.get("devices", []):
-        if isinstance(d, dict) and d.get("ip"):
-            return d["ip"]
-
-    return None
+__all__ = [
+    "resolve_log_path",
+    "get_log_files",
+    "read_log_file",
+    "get_device_ip",
+    # Re-export from common
+    "resolve_log_directory",
+]
 

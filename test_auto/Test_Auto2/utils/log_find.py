@@ -1,80 +1,67 @@
+"""
+DEPRECATED: Use utils.log_parser and utils.common instead.
+Kept for backward compatibility.
+"""
+
 import re
+import warnings
 from pathlib import Path
+from utils.log_parser import PiLogParser, RTTLogParser
+from utils.common import find_log_dir, read_log_file as read_log_file_util
 
 
 # =========================
-# File utils
+# File utils (legacy wrappers)
 # =========================
 def find_log_dir():
-    here = Path(__file__).resolve().parent.parent
-
-    candidates = [
-        here / "Log",
-        here.parent / "Log",
-        here.parents[1] / "Log",
-        Path.cwd() / "Log",
-    ]
-
-    for c in candidates:
-        if c.exists() and c.is_dir():
-            return c
-
-    return None
+    """Find log directory (backward compatible)."""
+    warnings.warn(
+        "find_log_dir is deprecated. Use find_log_dir from utils.common",
+        DeprecationWarning,
+        stacklevel=2
+    )
+    from utils.common import find_log_dir as find_log_dir_new
+    return find_log_dir_new()
 
 
 def read_file(path: Path):
-    return path.read_text(encoding="utf-8", errors="ignore")
+    """Read file contents (backward compatible)."""
+    try:
+        return path.read_text(encoding="utf-8", errors="ignore")
+    except Exception:
+        return ""
 
 
 # =========================
-# PI log parser
+# PI log parser (backward compatibility)
 # =========================
 def extract_pi_commands(content: str):
-    commands = []
-
-    pattern = re.compile(
-        r"(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2},\d{3}).*?"
-        r"chip-tool\s+onoff\s+(on|off|toggle)\s+(\d+)\s+(\d+)",
-        re.IGNORECASE,
+    """Extract chip-tool commands from Pi log (backward compatible)."""
+    warnings.warn(
+        "extract_pi_commands is deprecated. Use PiLogParser.extract_commands from utils.log_parser",
+        DeprecationWarning,
+        stacklevel=2
     )
-
-    for m in pattern.finditer(content):
-        ts, action, node_id, endpoint_id = m.groups()
-        commands.append({
-            "timestamp": ts,
-            "action": action.lower(),
-            "node_id": node_id,
-            "endpoint_id": endpoint_id,
-        })
-
-    if not commands:
-        raise AssertionError("❌ No onoff commands found in PI log")
-
-    return commands
+    return PiLogParser.extract_commands(content)
 
 
 # =========================
-# RTT parser
+# RTT parser (backward compatibility)
 # =========================
 def extract_device_results(rtt_content: str):
-    lines = rtt_content.splitlines()
-    results = []
-
-    turning_on_re = re.compile(r"Turning light On", re.IGNORECASE)
-    turning_off_re = re.compile(r"Turning light Off", re.IGNORECASE)
-    already_set_re = re.compile(
-        r"Endpoint\s+\d+\s+On/off\s+already\s+set",
-        re.IGNORECASE,
+    """Extract device results from RTT log (backward compatible)."""
+    warnings.warn(
+        "extract_device_results is deprecated. Use RTTLogParser.extract_device_responses from utils.log_parser",
+        DeprecationWarning,
+        stacklevel=2
     )
+    return RTTLogParser.extract_device_responses(rtt_content)
 
-    for line in lines:
-        if turning_on_re.search(line):
-            results.append("TURN_ON")
 
-        elif turning_off_re.search(line):
-            results.append("TURN_OFF")
+__all__ = [
+    "find_log_dir",
+    "read_file",
+    "extract_pi_commands",
+    "extract_device_results",
+]
 
-        elif already_set_re.search(line):
-            results.append("ALREADY_SET")
-
-    return results
