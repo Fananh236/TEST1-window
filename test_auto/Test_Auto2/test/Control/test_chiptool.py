@@ -1,9 +1,8 @@
 import time
 import pytest
-from utils.chip_tool_helper import send_toggle_command, run_pairing
+from utils.chip_tool_helper import send_off_command, send_on_command, send_toggle_command, run_pairing
 
-
-def test_pairing_device(pi_device, flashed_device, config):
+def test_1_pairing_device(pi_device, flashed_device, config):
     """Cleanup KVS và thực hiện BLE-Thread Commissioning với thiết bị đã flash."""
 
     print(f"\n🔌 Pairing with device: {flashed_device['name']} (IP: {flashed_device['ip']}, node_id: {flashed_device['node_id']})")
@@ -17,8 +16,7 @@ def test_pairing_device(pi_device, flashed_device, config):
     # assert success, "Commissioning failed!"
     print(f"\n✅ Commissioning status: SUCCESS")
 
-
-def test_toggle_functionality(pi_device, flashed_device, config):
+def test_2_toggle_functionality(pi_device, flashed_device, config):
     """Verify OnOff toggle functionality với thiết bị đã pair."""
 
     print(f"\n🔁 Toggle device: {flashed_device['name']} (node_id: {flashed_device['node_id']})")
@@ -33,3 +31,25 @@ def test_toggle_functionality(pi_device, flashed_device, config):
         send_toggle_command(pi_device, target_config, f"Toggle iteration {i + 2}")
 
     print("\n✅ All toggle commands executed successfully!")
+    
+def test_4_on_functionality(pi_device, flashed_device, config):
+    print(f"\n🔁 Turn On light device: {flashed_device['name']} (node_id: {flashed_device['node_id']})")
+
+    target_config = dict(config)
+    target_config["_target_device_name"] = flashed_device["name"]
+
+    send_on_command(pi_device, target_config, "Turn On")
+
+
+    print("\n✅ Turn On commands executed successfully!")
+    
+    
+def test_3_off_functionality(pi_device, flashed_device, config):
+    print(f"\n🔁 Turn Off light device: {flashed_device['name']} (node_id: {flashed_device['node_id']})")
+
+    target_config = dict(config)
+    target_config["_target_device_name"] = flashed_device["name"]
+
+    send_off_command(pi_device, target_config, "Turn Off")
+
+    print("\n✅ Turn Off commands executed successfully!")

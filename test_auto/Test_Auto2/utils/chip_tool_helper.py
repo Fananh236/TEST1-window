@@ -1,3 +1,4 @@
+from cProfile import label
 import re
 import time
 
@@ -97,6 +98,55 @@ def send_toggle_command(pi_device, config, label):
 
     return stdout
 
+def send_on_command(pi_device, config, label):
+
+    print(f"\n🚀 Sending command: {label}")
+
+    chip = resolve_chip_target(config)
+
+    on_cmd = (
+        f"echo '{pi_device.password}' | sudo -S -p '' {pi_device.chip_tool_path} "
+        f"onoff on {chip['node_id']} {chip['endpoint_id']}"
+    )
+
+    stdout, stderr = pi_device.execute_command(on_cmd)
+
+    full_response = (stdout + "\n" + stderr).lower()
+
+    # ✅ detect lỗi thật
+    if "timeout" in full_response:
+        raise RuntimeError("❌ Timeout → device NOT reachable via Thread")
+    if "run command failure" in full_response:
+        raise RuntimeError("❌ chip-tool execution failed")
+
+    print(f"✅ {label} executed successfully!\n")
+
+    return stdout
+
+def send_off_command(pi_device, config, label):
+
+    print(f"\n🚀 Sending command: {label}")
+
+    chip = resolve_chip_target(config)
+
+    off_cmd = (
+        f"echo '{pi_device.password}' | sudo -S -p '' {pi_device.chip_tool_path} "
+        f"onoff off {chip['node_id']} {chip['endpoint_id']}"
+    )
+
+    stdout, stderr = pi_device.execute_command(off_cmd)
+
+    full_response = (stdout + "\n" + stderr).lower()
+
+    # ✅ detect lỗi thật
+    if "timeout" in full_response:
+        raise RuntimeError("❌ Timeout → device NOT reachable via Thread")
+    if "run command failure" in full_response:
+        raise RuntimeError("❌ chip-tool execution failed")
+
+    print(f"✅ {label} executed successfully!\n")
+
+    return stdout
 
 # =========================================================
 # RUN PAIRING

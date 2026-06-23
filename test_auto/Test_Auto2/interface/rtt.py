@@ -181,7 +181,7 @@ class DeviceRTT:
             raise ValueError("action must be 'on', 'off' or 'toggle'")
 
         # import parsers (pure functions)
-        from utils.rtt_parser import (
+        from test_auto.Test_Auto2.utils.verifier import (
             detect_receipt,
             detect_on_start,
             detect_on_done,

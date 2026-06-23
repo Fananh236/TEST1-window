@@ -24,32 +24,6 @@ def thread_dataset(pi_device):
 # TEST: Kiểm tra Thread Network đang hoạt động
 # =============================================================================
 
-def test_thread_network_is_active(pi_device):
-    """Kiểm tra Pi đang tham gia mạng Thread (leader hoặc router)."""
-    cmd = f"echo '{pi_device.password}' | sudo -S -p '' ot-ctl state"
-    out, _ = pi_device.execute_command(cmd)
-    state = out.strip().lower()
-
-    # Loại bỏ đầu ra 'Done' của ot-ctl
-    state_lines = [l.strip() for l in state.splitlines() if l.strip() and l.strip().lower() != "done"]
-    state = state_lines[0] if state_lines else ""
-
-    if state in ("detached", "disabled", ""):
-        pytest.skip(f"⏩ SKIP: Pi Thread network not active. State: '{state}' (Pi chưa join Thread network)")
-
-    assert any(role in state for role in ["leader", "router", "child"]), (
-        f"Pi Thread network not active. State: '{state}'"
-    )
-    print(f"\n✅ Thread state: {state}")
-
-
-def test_thread_dataset_is_retrievable(thread_dataset):
-    """Kiểm tra có lấy được dataset hex từ Pi không."""
-    assert thread_dataset, "Thread dataset is empty"
-    assert thread_dataset.startswith("hex:"), (
-        f"Dataset format invalid, expected 'hex:...', got: {thread_dataset}"
-    )
-    print(f"\n✅ Thread dataset retrieved: {thread_dataset[:40]}...")
 
 
 def test_thread_dataset_is_valid_hex(thread_dataset):

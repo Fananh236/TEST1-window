@@ -1,0 +1,3834 @@
+SEGGER J-Link RTT Logger
+Compiled Jan 14 2026 15:55:45
+(c) 2016-2017 SEGGER Microcontroller GmbH, www.segger.com
+         Solutions for real time microcontroller applications
+
+Default logfile path: /home/phanhoanganh/.config/SEGGER
+
+------------------------------------------------------------ 
+
+
+ERROR: Can not connect to J-Link via TCP/IP (192.168.0.10, port 19020)
+Cannot connect to J-Link.
+Shutting down... Done.
+SEGGER J-Link RTT Logger
+Compiled Jan 14 2026 15:55:45
+(c) 2016-2017 SEGGER Microcontroller GmbH, www.segger.com
+         Solutions for real time microcontroller applications
+
+Default logfile path: /home/phanhoanganh/.config/SEGGER
+
+------------------------------------------------------------ 
+
+
+------------------------------------------------------------ 
+Connected to:
+  SEGGER J-Link (unknown)
+  S/N: 440221915
+
+Searching for RTT Control Block...OK.
+9 up-channels found:
+0: Terminal
+1: 
+2: 
+3: 
+4: 
+5: 
+6: 
+7: 
+8: Terminal
+Selected RTT Channel description: 
+  Index: 0
+  Name:  Terminal
+  Size:  1024 bytes.
+
+Output file: /home/phanhoanganh/TEST1-window/test_auto/Test_Auto2/Log/rtt_log.txt
+
+Getting RTT data from target. Press any key to quit.
+------------------------------------------------------------ 
+
+
+Transfer rate: 1.98 KB/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 216 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 1.26 KB/s Data written: 1.73 KB 
+Transfer rate: 313 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 1.13 KB/s Data written: 2.46 KB 
+Transfer rate: 4.94 KB/s Data written: 4.95 KB 
+Transfer rate: 3.04 KB/s Data written: 6.48 KB 
+Transfer rate: 2.66 KB/s Data written: 7.82 KB 
+Transfer rate: 2.06 KB/s Data written: 8.86 KB 
+Transfer rate: 1.73 KB/s Data written: 9.73 KB 
+Transfer rate: 2.38 KB/s Data written: 10.93 KB 
+Transfer rate: 2.52 KB/s Data written: 12.19 KB 
+Transfer rate: 1.81 KB/s Data written: 13.10 KB 
+Transfer rate: 1.60 KB/s Data written: 13.90 KB 
+Transfer rate: 4.58 KB/s Data written: 16.20 KB 
+Transfer rate: 1.19 KB/s Data written: 16.80 KB 
+Transfer rate: 0 Bytes/s Data written: 16.80 KB 
+Transfer rate: 0 Bytes/s Data written: 16.80 KB 
+Transfer rate: 0 Bytes/s Data written: 16.80 KB 
+Transfer rate: 0 Bytes/s Data written: 16.80 KB 
+Transfer rate: 1.96 KB/s Data written: 17.79 KB 
+Transfer rate: 0 Bytes/s Data written: 17.79 KB 
+Transfer rate: 368 Bytes/s Data written: 17.96 KB 
+Transfer rate: 0 Bytes/s Data written: 17.96 KB 
+Transfer rate: 0 Bytes/s Data written: 17.96 KB 
+Transfer rate: 243 Bytes/s Data written: 18.08 KB 
+Transfer rate: 521 Bytes/s Data written: 18.34 KB 
+Transfer rate: 0 Bytes/s Data written: 18.34 KB 
+Transfer rate: 0 Bytes/s Data written: 18.34 KB 
+Transfer rate: 0 Bytes/s Data written: 18.34 KB 
+Transfer rate: 335 Bytes/s Data written: 18.50 KB 
+Transfer rate: 1.09 KB/s Data written: 19.05 KB 
+Transfer rate: 109 Bytes/s Data written: 19.11 KB 
+Transfer rate: 0 Bytes/s Data written: 19.11 KB 
+Transfer rate: 2.17 KB/s Data written: 20.20 KB 
+Transfer rate: 6.43 KB/s Data written: 23.42 KB 
+Transfer rate: 434 Bytes/s Data written: 23.64 KB 
+Transfer rate: 668 Bytes/s Data written: 23.96 KB 
+Transfer rate: 0 Bytes/s Data written: 23.96 KB 
+Transfer rate: 0 Bytes/s Data written: 23.96 KB 
+Transfer rate: 0 Bytes/s Data written: 23.96 KB 
+Transfer rate: 0 Bytes/s Data written: 23.96 KB 
+Transfer rate: 0 Bytes/s Data written: 23.96 KB 
+Transfer rate: 149 Bytes/s Data written: 24.04 KB 
+Transfer rate: 0 Bytes/s Data written: 24.04 KB 
+Transfer rate: 0 Bytes/s Data written: 24.04 KB 
+Transfer rate: 0 Bytes/s Data written: 24.04 KB 
+Transfer rate: 0 Bytes/s Data written: 24.04 KB 
+Transfer rate: 0 Bytes/s Data written: 24.04 KB 
+Transfer rate: 3.12 KB/s Data written: 25.60 KB 
+Transfer rate: 4.46 KB/s Data written: 27.84 KB 
+Transfer rate: 0 Bytes/s Data written: 27.84 KB 
+Transfer rate: 0 Bytes/s Data written: 27.84 KB 
+Transfer rate: 0 Bytes/s Data written: 27.84 KB 
+Transfer rate: 0 Bytes/s Data written: 27.84 KB 
+Transfer rate: 0 Bytes/s Data written: 27.84 KB 
+Transfer rate: 3.10 KB/s Data written: 29.39 KB 
+Transfer rate: 4.61 KB/s Data written: 31.70 KB 
+Transfer rate: 0 Bytes/s Data written: 31.70 KB 
+Transfer rate: 0 Bytes/s Data written: 31.70 KB 
+Transfer rate: 0 Bytes/s Data written: 31.70 KB 
+Transfer rate: 0 Bytes/s Data written: 31.70 KB 
+Transfer rate: 0 Bytes/s Data written: 31.70 KB 
+Transfer rate: 2.17 KB/s Data written: 32.79 KB 
+SEGGER J-Link RTT Logger
+Compiled Jan 14 2026 15:55:45
+(c) 2016-2017 SEGGER Microcontroller GmbH, www.segger.com
+         Solutions for real time microcontroller applications
+
+Default logfile path: /home/phanhoanganh/.config/SEGGER
+
+------------------------------------------------------------ 
+
+
+------------------------------------------------------------ 
+Connected to:
+  SEGGER J-Link (unknown)
+  S/N: 440221915
+
+Searching for RTT Control Block...OK.
+9 up-channels found:
+0: Terminal
+1: 
+2: 
+3: 
+4: 
+5: 
+6: 
+7: 
+8: Terminal
+Selected RTT Channel description: 
+  Index: 0
+  Name:  Terminal
+  Size:  1024 bytes.
+
+Output file: /home/phanhoanganh/TEST1-window/test_auto/Test_Auto2/Log/rtt_log.txt
+
+Getting RTT data from target. Press any key to quit.
+------------------------------------------------------------ 
+
+
+Transfer rate: 1.99 KB/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 214 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 1.07 KB/s Data written: 1.63 KB 
+Transfer rate: 518 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 2.57 KB/s Data written: 3.17 KB 
+Transfer rate: 4.71 KB/s Data written: 5.54 KB 
+Transfer rate: 1.87 KB/s Data written: 6.48 KB 
+Transfer rate: 4.07 KB/s Data written: 8.53 KB 
+Transfer rate: 670 Bytes/s Data written: 8.86 KB 
+Transfer rate: 2.07 KB/s Data written: 9.89 KB 
+Transfer rate: 2.07 KB/s Data written: 10.93 KB 
+Transfer rate: 2.49 KB/s Data written: 12.19 KB 
+Transfer rate: 2.37 KB/s Data written: 13.38 KB 
+Transfer rate: 2.95 KB/s Data written: 14.86 KB 
+Transfer rate: 3.86 KB/s Data written: 16.80 KB 
+Transfer rate: 0 Bytes/s Data written: 16.80 KB 
+Transfer rate: 0 Bytes/s Data written: 16.80 KB 
+Transfer rate: 1.64 KB/s Data written: 17.62 KB 
+Transfer rate: 336 Bytes/s Data written: 17.79 KB 
+Transfer rate: 0 Bytes/s Data written: 17.79 KB 
+Transfer rate: 0 Bytes/s Data written: 17.79 KB 
+Transfer rate: 0 Bytes/s Data written: 17.79 KB 
+Transfer rate: 0 Bytes/s Data written: 17.79 KB 
+Transfer rate: 768 Bytes/s Data written: 18.16 KB 
+Transfer rate: 0 Bytes/s Data written: 18.16 KB 
+Transfer rate: 0 Bytes/s Data written: 18.16 KB 
+Transfer rate: 0 Bytes/s Data written: 18.16 KB 
+Transfer rate: 0 Bytes/s Data written: 18.16 KB 
+Transfer rate: 702 Bytes/s Data written: 18.50 KB 
+Transfer rate: 0 Bytes/s Data written: 18.50 KB 
+Transfer rate: 0 Bytes/s Data written: 18.50 KB 
+Transfer rate: 0 Bytes/s Data written: 18.50 KB 
+Transfer rate: 0 Bytes/s Data written: 18.50 KB 
+Transfer rate: 244 Bytes/s Data written: 18.62 KB 
+Transfer rate: 0 Bytes/s Data written: 18.62 KB 
+Transfer rate: 0 Bytes/s Data written: 18.62 KB 
+Transfer rate: 0 Bytes/s Data written: 18.62 KB 
+Transfer rate: 0 Bytes/s Data written: 18.62 KB 
+Transfer rate: 1.53 KB/s Data written: 19.39 KB 
+Transfer rate: 0 Bytes/s Data written: 19.39 KB 
+Transfer rate: 0 Bytes/s Data written: 19.39 KB 
+Transfer rate: 2.16 KB/s Data written: 20.48 KB 
+Transfer rate: 6.61 KB/s Data written: 23.80 KB 
+Transfer rate: 387 Bytes/s Data written: 23.99 KB 
+Transfer rate: 288 Bytes/s Data written: 24.13 KB 
+Transfer rate: 0 Bytes/s Data written: 24.13 KB 
+Transfer rate: 0 Bytes/s Data written: 24.13 KB 
+Transfer rate: 0 Bytes/s Data written: 24.13 KB 
+Transfer rate: 0 Bytes/s Data written: 24.13 KB 
+Transfer rate: 0 Bytes/s Data written: 24.13 KB 
+Transfer rate: 0 Bytes/s Data written: 24.13 KB 
+Transfer rate: 0 Bytes/s Data written: 24.13 KB 
+Transfer rate: 0 Bytes/s Data written: 24.13 KB 
+Transfer rate: 0 Bytes/s Data written: 24.13 KB 
+Transfer rate: 0 Bytes/s Data written: 24.13 KB 
+Transfer rate: 2.17 KB/s Data written: 25.22 KB 
+Transfer rate: 5.39 KB/s Data written: 27.92 KB 
+Transfer rate: 0 Bytes/s Data written: 27.92 KB 
+Transfer rate: 0 Bytes/s Data written: 27.92 KB 
+Transfer rate: 0 Bytes/s Data written: 27.92 KB 
+Transfer rate: 0 Bytes/s Data written: 27.92 KB 
+Transfer rate: 0 Bytes/s Data written: 27.92 KB 
+Transfer rate: 2.16 KB/s Data written: 29.00 KB 
+Transfer rate: 5.52 KB/s Data written: 31.78 KB 
+Transfer rate: 0 Bytes/s Data written: 31.78 KB 
+Transfer rate: 0 Bytes/s Data written: 31.78 KB 
+Transfer rate: 0 Bytes/s Data written: 31.78 KB 
+Transfer rate: 0 Bytes/s Data written: 31.78 KB 
+Transfer rate: 0 Bytes/s Data written: 31.78 KB 
+Transfer rate: 4.44 KB/s Data written: 34.00 KB 
+SEGGER J-Link RTT Logger
+Compiled Jan 14 2026 15:55:45
+(c) 2016-2017 SEGGER Microcontroller GmbH, www.segger.com
+         Solutions for real time microcontroller applications
+
+Default logfile path: /home/phanhoanganh/.config/SEGGER
+
+------------------------------------------------------------ 
+
+
+------------------------------------------------------------ 
+Connected to:
+  SEGGER J-Link (unknown)
+  S/N: 440221915
+
+Searching for RTT Control Block...OK.
+9 up-channels found:
+0: Terminal
+1: 
+2: 
+3: 
+4: 
+5: 
+6: 
+7: 
+8: Terminal
+Selected RTT Channel description: 
+  Index: 0
+  Name:  Terminal
+  Size:  1024 bytes.
+
+Output file: /home/phanhoanganh/TEST1-window/test_auto/Test_Auto2/Log/rtt_log.txt
+
+Getting RTT data from target. Press any key to quit.
+------------------------------------------------------------ 
+
+
+Transfer rate: 1.99 KB/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 216 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 1.26 KB/s Data written: 1.73 KB 
+Transfer rate: 312 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 623 Bytes/s Data written: 2.19 KB 
+Transfer rate: 2.82 KB/s Data written: 3.62 KB 
+Transfer rate: 4.13 KB/s Data written: 5.70 KB 
+Transfer rate: 2.95 KB/s Data written: 7.18 KB 
+Transfer rate: 2.67 KB/s Data written: 8.53 KB 
+Transfer rate: 2.07 KB/s Data written: 9.57 KB 
+Transfer rate: 2.39 KB/s Data written: 10.77 KB 
+Transfer rate: 670 Bytes/s Data written: 11.10 KB 
+Transfer rate: 2.76 KB/s Data written: 12.48 KB 
+Transfer rate: 1.81 KB/s Data written: 13.39 KB 
+Transfer rate: 4.21 KB/s Data written: 15.50 KB 
+Transfer rate: 2.59 KB/s Data written: 16.81 KB 
+Transfer rate: 0 Bytes/s Data written: 16.81 KB 
+Transfer rate: 0 Bytes/s Data written: 16.81 KB 
+Transfer rate: 1.96 KB/s Data written: 17.79 KB 
+Transfer rate: 0 Bytes/s Data written: 17.79 KB 
+Transfer rate: 0 Bytes/s Data written: 17.79 KB 
+Transfer rate: 0 Bytes/s Data written: 17.79 KB 
+Transfer rate: 0 Bytes/s Data written: 17.79 KB 
+Transfer rate: 244 Bytes/s Data written: 17.91 KB 
+Transfer rate: 520 Bytes/s Data written: 18.17 KB 
+Transfer rate: 149 Bytes/s Data written: 18.24 KB 
+Transfer rate: 367 Bytes/s Data written: 18.42 KB 
+Transfer rate: 0 Bytes/s Data written: 18.42 KB 
+Transfer rate: 336 Bytes/s Data written: 18.58 KB 
+Transfer rate: 1.19 KB/s Data written: 19.19 KB 
+Transfer rate: 0 Bytes/s Data written: 19.19 KB 
+Transfer rate: 2.17 KB/s Data written: 20.27 KB 
+Transfer rate: 6.46 KB/s Data written: 23.54 KB 
+Transfer rate: 388 Bytes/s Data written: 23.73 KB 
+Transfer rate: 0 Bytes/s Data written: 23.73 KB 
+Transfer rate: 286 Bytes/s Data written: 23.87 KB 
+Transfer rate: 0 Bytes/s Data written: 23.87 KB 
+Transfer rate: 0 Bytes/s Data written: 23.87 KB 
+Transfer rate: 0 Bytes/s Data written: 23.87 KB 
+Transfer rate: 0 Bytes/s Data written: 23.87 KB 
+Transfer rate: 0 Bytes/s Data written: 23.87 KB 
+Transfer rate: 0 Bytes/s Data written: 23.87 KB 
+Transfer rate: 0 Bytes/s Data written: 23.87 KB 
+Transfer rate: 0 Bytes/s Data written: 23.87 KB 
+Transfer rate: 0 Bytes/s Data written: 23.87 KB 
+Transfer rate: 1.29 KB/s Data written: 24.51 KB 
+Transfer rate: 5.90 KB/s Data written: 27.47 KB 
+Transfer rate: 390 Bytes/s Data written: 27.66 KB 
+Transfer rate: 0 Bytes/s Data written: 27.66 KB 
+Transfer rate: 0 Bytes/s Data written: 27.66 KB 
+Transfer rate: 0 Bytes/s Data written: 27.66 KB 
+Transfer rate: 0 Bytes/s Data written: 27.66 KB 
+Transfer rate: 2.16 KB/s Data written: 28.74 KB 
+Transfer rate: 5.51 KB/s Data written: 31.51 KB 
+Transfer rate: 0 Bytes/s Data written: 31.51 KB 
+Transfer rate: 0 Bytes/s Data written: 31.51 KB 
+Transfer rate: 0 Bytes/s Data written: 31.51 KB 
+Transfer rate: 0 Bytes/s Data written: 31.51 KB 
+Transfer rate: 0 Bytes/s Data written: 31.51 KB 
+Transfer rate: 3.11 KB/s Data written: 33.06 KB 
+SEGGER J-Link RTT Logger
+Compiled Jan 14 2026 15:55:45
+(c) 2016-2017 SEGGER Microcontroller GmbH, www.segger.com
+         Solutions for real time microcontroller applications
+
+Default logfile path: /home/phanhoanganh/.config/SEGGER
+
+------------------------------------------------------------ 
+
+
+------------------------------------------------------------ 
+Connected to:
+  SEGGER J-Link (unknown)
+  S/N: 440221915
+
+Searching for RTT Control Block...OK.
+9 up-channels found:
+0: Terminal
+1: 
+2: 
+3: 
+4: 
+5: 
+6: 
+7: 
+8: Terminal
+Selected RTT Channel description: 
+  Index: 0
+  Name:  Terminal
+  Size:  1024 bytes.
+
+Output file: /home/phanhoanganh/TEST1-window/test_auto/Test_Auto2/Log/rtt_log.txt
+
+Getting RTT data from target. Press any key to quit.
+------------------------------------------------------------ 
+
+
+Transfer rate: 1.99 KB/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 215 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 1.06 KB/s Data written: 1.63 KB 
+Transfer rate: 515 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 623 Bytes/s Data written: 2.19 KB 
+Transfer rate: 2.83 KB/s Data written: 3.62 KB 
+Transfer rate: 4.14 KB/s Data written: 5.70 KB 
+Transfer rate: 2.96 KB/s Data written: 7.18 KB 
+Transfer rate: 3.00 KB/s Data written: 8.69 KB 
+Transfer rate: 1.75 KB/s Data written: 9.56 KB 
+Transfer rate: 2.40 KB/s Data written: 10.77 KB 
+Transfer rate: 670 Bytes/s Data written: 11.09 KB 
+Transfer rate: 2.75 KB/s Data written: 12.47 KB 
+Transfer rate: 1.80 KB/s Data written: 13.38 KB 
+Transfer rate: 3.47 KB/s Data written: 15.15 KB 
+Transfer rate: 3.31 KB/s Data written: 16.80 KB 
+Transfer rate: 0 Bytes/s Data written: 16.80 KB 
+Transfer rate: 0 Bytes/s Data written: 16.80 KB 
+Transfer rate: 1.63 KB/s Data written: 17.62 KB 
+Transfer rate: 335 Bytes/s Data written: 17.79 KB 
+Transfer rate: 0 Bytes/s Data written: 17.79 KB 
+Transfer rate: 0 Bytes/s Data written: 17.79 KB 
+Transfer rate: 0 Bytes/s Data written: 17.79 KB 
+Transfer rate: 244 Bytes/s Data written: 17.91 KB 
+Transfer rate: 521 Bytes/s Data written: 18.16 KB 
+Transfer rate: 0 Bytes/s Data written: 18.16 KB 
+Transfer rate: 0 Bytes/s Data written: 18.16 KB 
+Transfer rate: 366 Bytes/s Data written: 18.34 KB 
+Transfer rate: 0 Bytes/s Data written: 18.34 KB 
+Transfer rate: 333 Bytes/s Data written: 18.51 KB 
+Transfer rate: 0 Bytes/s Data written: 18.51 KB 
+Transfer rate: 0 Bytes/s Data written: 18.51 KB 
+Transfer rate: 0 Bytes/s Data written: 18.51 KB 
+Transfer rate: 0 Bytes/s Data written: 18.51 KB 
+Transfer rate: 243 Bytes/s Data written: 18.63 KB 
+Transfer rate: 0 Bytes/s Data written: 18.63 KB 
+Transfer rate: 0 Bytes/s Data written: 18.63 KB 
+Transfer rate: 0 Bytes/s Data written: 18.63 KB 
+Transfer rate: 0 Bytes/s Data written: 18.63 KB 
+Transfer rate: 335 Bytes/s Data written: 18.79 KB 
+Transfer rate: 1.20 KB/s Data written: 19.39 KB 
+Transfer rate: 0 Bytes/s Data written: 19.39 KB 
+Transfer rate: 0 Bytes/s Data written: 19.39 KB 
+Transfer rate: 2.16 KB/s Data written: 20.48 KB 
+Transfer rate: 6.73 KB/s Data written: 23.86 KB 
+Transfer rate: 390 Bytes/s Data written: 24.05 KB 
+Transfer rate: 287 Bytes/s Data written: 24.19 KB 
+Transfer rate: 0 Bytes/s Data written: 24.19 KB 
+Transfer rate: 0 Bytes/s Data written: 24.19 KB 
+Transfer rate: 0 Bytes/s Data written: 24.19 KB 
+Transfer rate: 0 Bytes/s Data written: 24.19 KB 
+Transfer rate: 0 Bytes/s Data written: 24.19 KB 
+Transfer rate: 0 Bytes/s Data written: 24.19 KB 
+Transfer rate: 0 Bytes/s Data written: 24.19 KB 
+Transfer rate: 0 Bytes/s Data written: 24.19 KB 
+Transfer rate: 0 Bytes/s Data written: 24.19 KB 
+Transfer rate: 0 Bytes/s Data written: 24.19 KB 
+Transfer rate: 2.17 KB/s Data written: 25.28 KB 
+Transfer rate: 5.39 KB/s Data written: 27.97 KB 
+Transfer rate: 0 Bytes/s Data written: 27.97 KB 
+Transfer rate: 0 Bytes/s Data written: 27.97 KB 
+Transfer rate: 0 Bytes/s Data written: 27.97 KB 
+Transfer rate: 0 Bytes/s Data written: 27.97 KB 
+Transfer rate: 0 Bytes/s Data written: 27.97 KB 
+Transfer rate: 2.17 KB/s Data written: 29.06 KB 
+Transfer rate: 5.56 KB/s Data written: 31.84 KB 
+Transfer rate: 0 Bytes/s Data written: 31.84 KB 
+Transfer rate: 0 Bytes/s Data written: 31.84 KB 
+Transfer rate: 0 Bytes/s Data written: 31.84 KB 
+Transfer rate: 0 Bytes/s Data written: 31.84 KB 
+Transfer rate: 0 Bytes/s Data written: 31.84 KB 
+Transfer rate: 3.09 KB/s Data written: 33.39 KB 
+SEGGER J-Link RTT Logger
+Compiled Jan 14 2026 15:55:45
+(c) 2016-2017 SEGGER Microcontroller GmbH, www.segger.com
+         Solutions for real time microcontroller applications
+
+Default logfile path: /home/phanhoanganh/.config/SEGGER
+
+------------------------------------------------------------ 
+
+SEGGER J-Link RTT Logger
+Compiled Jan 14 2026 15:55:45
+(c) 2016-2017 SEGGER Microcontroller GmbH, www.segger.com
+         Solutions for real time microcontroller applications
+
+Default logfile path: /home/phanhoanganh/.config/SEGGER
+
+------------------------------------------------------------ 
+
+
+ERROR: Can not connect to J-Link via TCP/IP (192.168.0.10, port 19020)
+Cannot connect to J-Link.
+Shutting down... Done.
+SEGGER J-Link RTT Logger
+Compiled Jan 14 2026 15:55:45
+(c) 2016-2017 SEGGER Microcontroller GmbH, www.segger.com
+         Solutions for real time microcontroller applications
+
+Default logfile path: /home/phanhoanganh/.config/SEGGER
+
+------------------------------------------------------------ 
+
+
+------------------------------------------------------------ 
+Connected to:
+  SEGGER J-Link (unknown)
+  S/N: 440221915
+
+Searching for RTT Control Block...
+SEGGER J-Link RTT Logger
+Compiled Jan 14 2026 15:55:45
+(c) 2016-2017 SEGGER Microcontroller GmbH, www.segger.com
+         Solutions for real time microcontroller applications
+
+Default logfile path: /home/phanhoanganh/.config/SEGGER
+
+------------------------------------------------------------ 
+
+
+------------------------------------------------------------ 
+Connected to:
+  SEGGER J-Link (unknown)
+  S/N: 440221915
+
+Searching for RTT Control Block...
+SEGGER J-Link RTT Logger
+Compiled Jan 14 2026 15:55:45
+(c) 2016-2017 SEGGER Microcontroller GmbH, www.segger.com
+         Solutions for real time microcontroller applications
+
+Default logfile path: /home/phanhoanganh/.config/SEGGER
+
+------------------------------------------------------------ 
+
+
+------------------------------------------------------------ 
+Connected to:
+  SEGGER J-Link (unknown)
+  S/N: 440221915
+
+Searching for RTT Control Block...OK.
+9 up-channels found:
+0: Terminal
+1: 
+2: 
+3: 
+4: 
+5: 
+6: 
+7: 
+8: Terminal
+Selected RTT Channel description: 
+  Index: 0
+  Name:  Terminal
+  Size:  1024 bytes.
+
+Output file: /home/phanhoanganh/TEST1-window/test_auto/Test_Auto2/Log/rtt_log.txt
+
+Getting RTT data from target. Press any key to quit.
+------------------------------------------------------------ 
+
+
+Transfer rate: 1.98 KB/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 215 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 1.26 KB/s Data written: 1.73 KB 
+Transfer rate: 314 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 1.13 KB/s Data written: 2.46 KB 
+Transfer rate: 4.97 KB/s Data written: 4.95 KB 
+Transfer rate: 1.83 KB/s Data written: 5.87 KB 
+Transfer rate: 2.62 KB/s Data written: 7.19 KB 
+Transfer rate: 3.00 KB/s Data written: 8.69 KB 
+Transfer rate: 2.08 KB/s Data written: 9.73 KB 
+Transfer rate: 669 Bytes/s Data written: 10.06 KB 
+Transfer rate: 2.06 KB/s Data written: 11.10 KB 
+Transfer rate: 2.19 KB/s Data written: 12.20 KB 
+Transfer rate: 2.37 KB/s Data written: 13.39 KB 
+Transfer rate: 2.96 KB/s Data written: 14.87 KB 
+Transfer rate: 3.88 KB/s Data written: 16.81 KB 
+Transfer rate: 0 Bytes/s Data written: 16.81 KB 
+Transfer rate: 0 Bytes/s Data written: 16.81 KB 
+Transfer rate: 1.95 KB/s Data written: 17.79 KB 
+Transfer rate: 0 Bytes/s Data written: 17.79 KB 
+Transfer rate: 0 Bytes/s Data written: 17.79 KB 
+Transfer rate: 0 Bytes/s Data written: 17.79 KB 
+Transfer rate: 0 Bytes/s Data written: 17.79 KB 
+Transfer rate: 241 Bytes/s Data written: 17.91 KB 
+Transfer rate: 524 Bytes/s Data written: 18.17 KB 
+Transfer rate: 0 Bytes/s Data written: 18.17 KB 
+Transfer rate: 367 Bytes/s Data written: 18.35 KB 
+Transfer rate: 0 Bytes/s Data written: 18.35 KB 
+Transfer rate: 334 Bytes/s Data written: 18.51 KB 
+Transfer rate: 0 Bytes/s Data written: 18.51 KB 
+Transfer rate: 0 Bytes/s Data written: 18.51 KB 
+Transfer rate: 0 Bytes/s Data written: 18.51 KB 
+Transfer rate: 0 Bytes/s Data written: 18.51 KB 
+Transfer rate: 240 Bytes/s Data written: 18.63 KB 
+Transfer rate: 0 Bytes/s Data written: 18.63 KB 
+Transfer rate: 0 Bytes/s Data written: 18.63 KB 
+Transfer rate: 1.20 KB/s Data written: 19.24 KB 
+Transfer rate: 0 Bytes/s Data written: 19.24 KB 
+Transfer rate: 2.50 KB/s Data written: 20.49 KB 
+Transfer rate: 6.11 KB/s Data written: 23.55 KB 
+Transfer rate: 826 Bytes/s Data written: 23.95 KB 
+Transfer rate: 0 Bytes/s Data written: 23.95 KB 
+Transfer rate: 288 Bytes/s Data written: 24.09 KB 
+Transfer rate: 0 Bytes/s Data written: 24.09 KB 
+Transfer rate: 0 Bytes/s Data written: 24.09 KB 
+Transfer rate: 0 Bytes/s Data written: 24.09 KB 
+Transfer rate: 0 Bytes/s Data written: 24.09 KB 
+Transfer rate: 0 Bytes/s Data written: 24.09 KB 
+Transfer rate: 0 Bytes/s Data written: 24.09 KB 
+Transfer rate: 0 Bytes/s Data written: 24.09 KB 
+Transfer rate: 0 Bytes/s Data written: 24.09 KB 
+Transfer rate: 0 Bytes/s Data written: 24.09 KB 
+Transfer rate: 0 Bytes/s Data written: 24.09 KB 
+Transfer rate: 4.42 KB/s Data written: 26.31 KB 
+Transfer rate: 3.12 KB/s Data written: 27.88 KB 
+Transfer rate: 0 Bytes/s Data written: 27.88 KB 
+Transfer rate: 0 Bytes/s Data written: 27.88 KB 
+Transfer rate: 0 Bytes/s Data written: 27.88 KB 
+Transfer rate: 0 Bytes/s Data written: 27.88 KB 
+Transfer rate: 1.28 KB/s Data written: 28.52 KB 
+Transfer rate: 6.43 KB/s Data written: 31.74 KB 
+Transfer rate: 0 Bytes/s Data written: 31.74 KB 
+Transfer rate: 0 Bytes/s Data written: 31.74 KB 
+Transfer rate: 0 Bytes/s Data written: 31.74 KB 
+Transfer rate: 0 Bytes/s Data written: 31.74 KB 
+Transfer rate: 0 Bytes/s Data written: 31.74 KB 
+Transfer rate: 2.17 KB/s Data written: 32.83 KB 
+Transfer rate: 5.40 KB/s Data written: 35.53 KB 
+Transfer rate: 0 Bytes/s Data written: 35.53 KB 
+Transfer rate: 0 Bytes/s Data written: 35.53 KB 
+Transfer rate: 0 Bytes/s Data written: 35.53 KB 
+Transfer rate: 0 Bytes/s Data written: 35.53 KB 
+Transfer rate: 0 Bytes/s Data written: 35.53 KB 
+Transfer rate: 0 Bytes/s Data written: 35.53 KB 
+Transfer rate: 0 Bytes/s Data written: 35.53 KB 
+Transfer rate: 0 Bytes/s Data written: 35.53 KB 
+Transfer rate: 0 Bytes/s Data written: 35.53 KB 
+Transfer rate: 0 Bytes/s Data written: 35.53 KB 
+Transfer rate: 0 Bytes/s Data written: 35.53 KB 
+Transfer rate: 0 Bytes/s Data written: 35.53 KB 
+Transfer rate: 0 Bytes/s Data written: 35.53 KB 
+SEGGER J-Link RTT Logger
+Compiled Jan 14 2026 15:55:45
+(c) 2016-2017 SEGGER Microcontroller GmbH, www.segger.com
+         Solutions for real time microcontroller applications
+
+Default logfile path: /home/phanhoanganh/.config/SEGGER
+
+------------------------------------------------------------ 
+
+
+------------------------------------------------------------ 
+Connected to:
+  SEGGER J-Link (unknown)
+  S/N: 440221915
+
+Searching for RTT Control Block...OK.
+9 up-channels found:
+0: Terminal
+1: 
+2: 
+3: 
+4: 
+5: 
+6: 
+7: 
+8: Terminal
+Selected RTT Channel description: 
+  Index: 0
+  Name:  Terminal
+  Size:  1024 bytes.
+
+Output file: /home/phanhoanganh/TEST1-window/test_auto/Test_Auto2/Log/rtt_log.txt
+
+Getting RTT data from target. Press any key to quit.
+------------------------------------------------------------ 
+
+
+Transfer rate: 1.99 KB/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 213 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 1.26 KB/s Data written: 1.73 KB 
+Transfer rate: 314 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 2.55 KB/s Data written: 3.17 KB 
+Transfer rate: 3.53 KB/s Data written: 4.94 KB 
+Transfer rate: 3.03 KB/s Data written: 6.46 KB 
+Transfer rate: 2.66 KB/s Data written: 7.79 KB 
+Transfer rate: 2.06 KB/s Data written: 8.83 KB 
+Transfer rate: 1.74 KB/s Data written: 9.70 KB 
+Transfer rate: 2.39 KB/s Data written: 10.90 KB 
+Transfer rate: 2.51 KB/s Data written: 12.16 KB 
+Transfer rate: 1.81 KB/s Data written: 13.07 KB 
+Transfer rate: 822 Bytes/s Data written: 13.47 KB 
+Transfer rate: 5.34 KB/s Data written: 16.16 KB 
+Transfer rate: 1.19 KB/s Data written: 16.76 KB 
+Transfer rate: 0 Bytes/s Data written: 16.76 KB 
+Transfer rate: 1.96 KB/s Data written: 17.75 KB 
+Transfer rate: 0 Bytes/s Data written: 17.75 KB 
+Transfer rate: 0 Bytes/s Data written: 17.75 KB 
+Transfer rate: 0 Bytes/s Data written: 17.75 KB 
+Transfer rate: 0 Bytes/s Data written: 17.75 KB 
+Transfer rate: 243 Bytes/s Data written: 17.86 KB 
+Transfer rate: 521 Bytes/s Data written: 18.12 KB 
+Transfer rate: 0 Bytes/s Data written: 18.12 KB 
+Transfer rate: 0 Bytes/s Data written: 18.12 KB 
+Transfer rate: 0 Bytes/s Data written: 18.12 KB 
+Transfer rate: 702 Bytes/s Data written: 18.46 KB 
+Transfer rate: 0 Bytes/s Data written: 18.46 KB 
+Transfer rate: 0 Bytes/s Data written: 18.46 KB 
+Transfer rate: 0 Bytes/s Data written: 18.46 KB 
+Transfer rate: 0 Bytes/s Data written: 18.46 KB 
+Transfer rate: 243 Bytes/s Data written: 18.58 KB 
+Transfer rate: 0 Bytes/s Data written: 18.58 KB 
+Transfer rate: 0 Bytes/s Data written: 18.58 KB 
+Transfer rate: 0 Bytes/s Data written: 18.58 KB 
+Transfer rate: 0 Bytes/s Data written: 18.58 KB 
+Transfer rate: 334 Bytes/s Data written: 18.75 KB 
+Transfer rate: 0 Bytes/s Data written: 18.75 KB 
+Transfer rate: 0 Bytes/s Data written: 18.75 KB 
+Transfer rate: 0 Bytes/s Data written: 18.75 KB 
+Transfer rate: 0 Bytes/s Data written: 18.75 KB 
+Transfer rate: 243 Bytes/s Data written: 18.87 KB 
+Transfer rate: 0 Bytes/s Data written: 18.87 KB 
+Transfer rate: 1.20 KB/s Data written: 19.47 KB 
+Transfer rate: 0 Bytes/s Data written: 19.47 KB 
+Transfer rate: 0 Bytes/s Data written: 19.47 KB 
+Transfer rate: 2.48 KB/s Data written: 20.71 KB 
+Transfer rate: 6.57 KB/s Data written: 24.01 KB 
+Transfer rate: 383 Bytes/s Data written: 24.20 KB 
+Transfer rate: 288 Bytes/s Data written: 24.34 KB 
+Transfer rate: 0 Bytes/s Data written: 24.34 KB 
+Transfer rate: 0 Bytes/s Data written: 24.34 KB 
+Transfer rate: 0 Bytes/s Data written: 24.34 KB 
+Transfer rate: 0 Bytes/s Data written: 24.34 KB 
+Transfer rate: 0 Bytes/s Data written: 24.34 KB 
+Transfer rate: 0 Bytes/s Data written: 24.34 KB 
+Transfer rate: 0 Bytes/s Data written: 24.34 KB 
+Transfer rate: 0 Bytes/s Data written: 24.34 KB 
+Transfer rate: 0 Bytes/s Data written: 24.34 KB 
+Transfer rate: 0 Bytes/s Data written: 24.34 KB 
+Transfer rate: 1.28 KB/s Data written: 24.98 KB 
+Transfer rate: 5.50 KB/s Data written: 27.73 KB 
+Transfer rate: 756 Bytes/s Data written: 28.11 KB 
+Transfer rate: 0 Bytes/s Data written: 28.11 KB 
+Transfer rate: 0 Bytes/s Data written: 28.11 KB 
+Transfer rate: 0 Bytes/s Data written: 28.11 KB 
+Transfer rate: 0 Bytes/s Data written: 28.11 KB 
+Transfer rate: 2.16 KB/s Data written: 29.19 KB 
+Transfer rate: 5.52 KB/s Data written: 31.95 KB 
+Transfer rate: 0 Bytes/s Data written: 31.95 KB 
+Transfer rate: 0 Bytes/s Data written: 31.95 KB 
+Transfer rate: 0 Bytes/s Data written: 31.95 KB 
+Transfer rate: 0 Bytes/s Data written: 31.95 KB 
+Transfer rate: 0 Bytes/s Data written: 31.95 KB 
+Transfer rate: 2.15 KB/s Data written: 33.03 KB 
+SEGGER J-Link RTT Logger
+Compiled Jan 14 2026 15:55:45
+(c) 2016-2017 SEGGER Microcontroller GmbH, www.segger.com
+         Solutions for real time microcontroller applications
+
+Default logfile path: /home/phanhoanganh/.config/SEGGER
+
+------------------------------------------------------------ 
+
+
+------------------------------------------------------------ 
+Connected to:
+  SEGGER J-Link (unknown)
+  S/N: 440221915
+
+Searching for RTT Control Block...OK.
+9 up-channels found:
+0: Terminal
+1: 
+2: 
+3: 
+4: 
+5: 
+6: 
+7: 
+8: Terminal
+Selected RTT Channel description: 
+  Index: 0
+  Name:  Terminal
+  Size:  1024 bytes.
+
+Output file: /home/phanhoanganh/TEST1-window/test_auto/Test_Auto2/Log/rtt_log.txt
+
+Getting RTT data from target. Press any key to quit.
+------------------------------------------------------------ 
+
+
+Transfer rate: 1.86 KB/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 214 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 1.06 KB/s Data written: 1.63 KB 
+Transfer rate: 516 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 624 Bytes/s Data written: 2.19 KB 
+Transfer rate: 3.20 KB/s Data written: 3.80 KB 
+Transfer rate: 3.80 KB/s Data written: 5.70 KB 
+Transfer rate: 2.96 KB/s Data written: 7.19 KB 
+Transfer rate: 2.67 KB/s Data written: 8.53 KB 
+Transfer rate: 2.07 KB/s Data written: 9.57 KB 
+Transfer rate: 665 Bytes/s Data written: 9.90 KB 
+Transfer rate: 2.39 KB/s Data written: 11.10 KB 
+Transfer rate: 2.61 KB/s Data written: 12.41 KB 
+Transfer rate: 1.94 KB/s Data written: 13.39 KB 
+Transfer rate: 4.21 KB/s Data written: 15.50 KB 
+Transfer rate: 2.59 KB/s Data written: 16.81 KB 
+Transfer rate: 0 Bytes/s Data written: 16.81 KB 
+Transfer rate: 1.84 KB/s Data written: 17.74 KB 
+Transfer rate: 336 Bytes/s Data written: 17.90 KB 
+Transfer rate: 1.08 KB/s Data written: 18.45 KB 
+Transfer rate: 110 Bytes/s Data written: 18.50 KB 
+Transfer rate: 0 Bytes/s Data written: 18.50 KB 
+Transfer rate: 5.29 KB/s Data written: 21.16 KB 
+Transfer rate: 3.54 KB/s Data written: 22.95 KB 
+Transfer rate: 388 Bytes/s Data written: 23.13 KB 
+Transfer rate: 522 Bytes/s Data written: 23.39 KB 
+Transfer rate: 0 Bytes/s Data written: 23.39 KB 
+Transfer rate: 0 Bytes/s Data written: 23.39 KB 
+Transfer rate: 0 Bytes/s Data written: 23.39 KB 
+Transfer rate: 0 Bytes/s Data written: 23.39 KB 
+Transfer rate: 0 Bytes/s Data written: 23.39 KB 
+Transfer rate: 0 Bytes/s Data written: 23.39 KB 
+Transfer rate: 0 Bytes/s Data written: 23.39 KB 
+Transfer rate: 0 Bytes/s Data written: 23.39 KB 
+Transfer rate: 0 Bytes/s Data written: 23.39 KB 
+Transfer rate: 0 Bytes/s Data written: 23.39 KB 
+Transfer rate: 149 Bytes/s Data written: 23.46 KB 
+Transfer rate: 0 Bytes/s Data written: 23.46 KB 
+Transfer rate: 0 Bytes/s Data written: 23.46 KB 
+Transfer rate: 0 Bytes/s Data written: 23.46 KB 
+Transfer rate: 2.16 KB/s Data written: 24.55 KB 
+Transfer rate: 5.36 KB/s Data written: 27.24 KB 
+Transfer rate: 0 Bytes/s Data written: 27.24 KB 
+Transfer rate: 0 Bytes/s Data written: 27.24 KB 
+Transfer rate: 0 Bytes/s Data written: 27.24 KB 
+Transfer rate: 0 Bytes/s Data written: 27.24 KB 
+Transfer rate: 0 Bytes/s Data written: 27.24 KB 
+Transfer rate: 2.16 KB/s Data written: 28.32 KB 
+Transfer rate: 5.52 KB/s Data written: 31.10 KB 
+Transfer rate: 0 Bytes/s Data written: 31.10 KB 
+Transfer rate: 0 Bytes/s Data written: 31.10 KB 
+Transfer rate: 0 Bytes/s Data written: 31.10 KB 
+Transfer rate: 0 Bytes/s Data written: 31.10 KB 
+Transfer rate: 0 Bytes/s Data written: 31.10 KB 
+Transfer rate: 3.91 KB/s Data written: 33.05 KB 
+SEGGER J-Link RTT Logger
+Compiled Jan 14 2026 15:55:45
+(c) 2016-2017 SEGGER Microcontroller GmbH, www.segger.com
+         Solutions for real time microcontroller applications
+
+Default logfile path: /home/phanhoanganh/.config/SEGGER
+
+------------------------------------------------------------ 
+
+
+------------------------------------------------------------ 
+Connected to:
+  SEGGER J-Link (unknown)
+  S/N: 440221915
+
+Searching for RTT Control Block...OK.
+9 up-channels found:
+0: Terminal
+1: 
+2: 
+3: 
+4: 
+5: 
+6: 
+7: 
+8: Terminal
+Selected RTT Channel description: 
+  Index: 0
+  Name:  Terminal
+  Size:  1024 bytes.
+
+Output file: /home/phanhoanganh/TEST1-window/test_auto/Test_Auto2/Log/rtt_log.txt
+
+Getting RTT data from target. Press any key to quit.
+------------------------------------------------------------ 
+
+
+Transfer rate: 1.99 KB/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 215 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 1.06 KB/s Data written: 1.63 KB 
+Transfer rate: 516 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 829 Bytes/s Data written: 2.46 KB 
+Transfer rate: 1.90 KB/s Data written: 3.80 KB 
+Transfer rate: 5.54 KB/s Data written: 7.19 KB 
+Transfer rate: 2.45 KB/s Data written: 8.69 KB 
+Transfer rate: 1.74 KB/s Data written: 9.57 KB 
+Transfer rate: 1.91 KB/s Data written: 10.94 KB 
+Transfer rate: 2.51 KB/s Data written: 12.20 KB 
+Transfer rate: 2.36 KB/s Data written: 13.39 KB 
+Transfer rate: 2.95 KB/s Data written: 14.87 KB 
+Transfer rate: 3.58 KB/s Data written: 16.66 KB 
+Transfer rate: 297 Bytes/s Data written: 16.81 KB 
+Transfer rate: 0 Bytes/s Data written: 16.81 KB 
+Transfer rate: 1.95 KB/s Data written: 17.79 KB 
+Transfer rate: 0 Bytes/s Data written: 17.79 KB 
+Transfer rate: 0 Bytes/s Data written: 17.79 KB 
+Transfer rate: 0 Bytes/s Data written: 17.79 KB 
+Transfer rate: 0 Bytes/s Data written: 17.79 KB 
+Transfer rate: 243 Bytes/s Data written: 17.91 KB 
+Transfer rate: 522 Bytes/s Data written: 18.17 KB 
+Transfer rate: 0 Bytes/s Data written: 18.17 KB 
+Transfer rate: 0 Bytes/s Data written: 18.17 KB 
+Transfer rate: 0 Bytes/s Data written: 18.17 KB 
+Transfer rate: 704 Bytes/s Data written: 18.51 KB 
+Transfer rate: 0 Bytes/s Data written: 18.51 KB 
+Transfer rate: 0 Bytes/s Data written: 18.51 KB 
+Transfer rate: 0 Bytes/s Data written: 18.51 KB 
+Transfer rate: 0 Bytes/s Data written: 18.51 KB 
+Transfer rate: 243 Bytes/s Data written: 18.63 KB 
+Transfer rate: 0 Bytes/s Data written: 18.63 KB 
+Transfer rate: 0 Bytes/s Data written: 18.63 KB 
+Transfer rate: 0 Bytes/s Data written: 18.63 KB 
+Transfer rate: 0 Bytes/s Data written: 18.63 KB 
+Transfer rate: 336 Bytes/s Data written: 18.80 KB 
+Transfer rate: 0 Bytes/s Data written: 18.80 KB 
+Transfer rate: 0 Bytes/s Data written: 18.80 KB 
+Transfer rate: 0 Bytes/s Data written: 18.80 KB 
+Transfer rate: 0 Bytes/s Data written: 18.80 KB 
+Transfer rate: 241 Bytes/s Data written: 18.92 KB 
+Transfer rate: 0 Bytes/s Data written: 18.92 KB 
+Transfer rate: 0 Bytes/s Data written: 18.92 KB 
+Transfer rate: 0 Bytes/s Data written: 18.92 KB 
+Transfer rate: 1.20 KB/s Data written: 19.52 KB 
+Transfer rate: 336 Bytes/s Data written: 19.68 KB 
+Transfer rate: 0 Bytes/s Data written: 19.68 KB 
+Transfer rate: 2.17 KB/s Data written: 20.77 KB 
+Transfer rate: 6.50 KB/s Data written: 24.04 KB 
+Transfer rate: 387 Bytes/s Data written: 24.23 KB 
+Transfer rate: 287 Bytes/s Data written: 24.37 KB 
+Transfer rate: 0 Bytes/s Data written: 24.37 KB 
+Transfer rate: 0 Bytes/s Data written: 24.37 KB 
+Transfer rate: 0 Bytes/s Data written: 24.37 KB 
+Transfer rate: 0 Bytes/s Data written: 24.37 KB 
+Transfer rate: 0 Bytes/s Data written: 24.37 KB 
+Transfer rate: 0 Bytes/s Data written: 24.37 KB 
+Transfer rate: 0 Bytes/s Data written: 24.37 KB 
+Transfer rate: 0 Bytes/s Data written: 24.37 KB 
+Transfer rate: 0 Bytes/s Data written: 24.37 KB 
+Transfer rate: 0 Bytes/s Data written: 24.37 KB 
+Transfer rate: 2.17 KB/s Data written: 25.46 KB 
+Transfer rate: 5.34 KB/s Data written: 28.17 KB 
+Transfer rate: 0 Bytes/s Data written: 28.17 KB 
+Transfer rate: 0 Bytes/s Data written: 28.17 KB 
+Transfer rate: 0 Bytes/s Data written: 28.17 KB 
+Transfer rate: 0 Bytes/s Data written: 28.17 KB 
+Transfer rate: 0 Bytes/s Data written: 28.17 KB 
+Transfer rate: 2.16 KB/s Data written: 29.26 KB 
+Transfer rate: 5.52 KB/s Data written: 32.03 KB 
+Transfer rate: 0 Bytes/s Data written: 32.03 KB 
+Transfer rate: 0 Bytes/s Data written: 32.03 KB 
+Transfer rate: 0 Bytes/s Data written: 32.03 KB 
+Transfer rate: 0 Bytes/s Data written: 32.03 KB 
+Transfer rate: 0 Bytes/s Data written: 32.03 KB 
+Transfer rate: 4.43 KB/s Data written: 34.25 KB 
+SEGGER J-Link RTT Logger
+Compiled Jan 14 2026 15:55:45
+(c) 2016-2017 SEGGER Microcontroller GmbH, www.segger.com
+         Solutions for real time microcontroller applications
+
+Default logfile path: /home/phanhoanganh/.config/SEGGER
+
+------------------------------------------------------------ 
+
+
+------------------------------------------------------------ 
+Connected to:
+  SEGGER J-Link (unknown)
+  S/N: 440221915
+
+Searching for RTT Control Block...OK.
+9 up-channels found:
+0: Terminal
+1: 
+2: 
+3: 
+4: 
+5: 
+6: 
+7: 
+8: Terminal
+Selected RTT Channel description: 
+  Index: 0
+  Name:  Terminal
+  Size:  1024 bytes.
+
+Output file: /home/phanhoanganh/TEST1-window/test_auto/Test_Auto2/Log/rtt_log.txt
+
+Getting RTT data from target. Press any key to quit.
+------------------------------------------------------------ 
+
+
+Transfer rate: 1.99 KB/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 215 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 1.26 KB/s Data written: 1.73 KB 
+Transfer rate: 314 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 2.03 KB/s Data written: 2.91 KB 
+Transfer rate: 4.06 KB/s Data written: 4.95 KB 
+Transfer rate: 1.82 KB/s Data written: 5.86 KB 
+Transfer rate: 2.62 KB/s Data written: 7.18 KB 
+Transfer rate: 3.00 KB/s Data written: 8.68 KB 
+Transfer rate: 1.74 KB/s Data written: 9.56 KB 
+Transfer rate: 2.39 KB/s Data written: 10.76 KB 
+Transfer rate: 672 Bytes/s Data written: 11.09 KB 
+Transfer rate: 2.74 KB/s Data written: 12.46 KB 
+Transfer rate: 2.05 KB/s Data written: 13.49 KB 
+Transfer rate: 3.98 KB/s Data written: 15.48 KB 
+Transfer rate: 2.59 KB/s Data written: 16.79 KB 
+Transfer rate: 0 Bytes/s Data written: 16.79 KB 
+Transfer rate: 0 Bytes/s Data written: 16.79 KB 
+Transfer rate: 1.62 KB/s Data written: 17.61 KB 
+Transfer rate: 336 Bytes/s Data written: 17.77 KB 
+Transfer rate: 0 Bytes/s Data written: 17.77 KB 
+Transfer rate: 0 Bytes/s Data written: 17.77 KB 
+Transfer rate: 0 Bytes/s Data written: 17.77 KB 
+Transfer rate: 0 Bytes/s Data written: 17.77 KB 
+Transfer rate: 1.10 KB/s Data written: 18.32 KB 
+Transfer rate: 0 Bytes/s Data written: 18.32 KB 
+Transfer rate: 0 Bytes/s Data written: 18.32 KB 
+Transfer rate: 0 Bytes/s Data written: 18.32 KB 
+Transfer rate: 0 Bytes/s Data written: 18.32 KB 
+Transfer rate: 335 Bytes/s Data written: 18.49 KB 
+Transfer rate: 0 Bytes/s Data written: 18.49 KB 
+Transfer rate: 0 Bytes/s Data written: 18.49 KB 
+Transfer rate: 0 Bytes/s Data written: 18.49 KB 
+Transfer rate: 0 Bytes/s Data written: 18.49 KB 
+Transfer rate: 244 Bytes/s Data written: 18.61 KB 
+Transfer rate: 0 Bytes/s Data written: 18.61 KB 
+Transfer rate: 0 Bytes/s Data written: 18.61 KB 
+Transfer rate: 0 Bytes/s Data written: 18.61 KB 
+Transfer rate: 0 Bytes/s Data written: 18.61 KB 
+Transfer rate: 336 Bytes/s Data written: 18.77 KB 
+Transfer rate: 0 Bytes/s Data written: 18.77 KB 
+Transfer rate: 0 Bytes/s Data written: 18.77 KB 
+Transfer rate: 0 Bytes/s Data written: 18.77 KB 
+Transfer rate: 0 Bytes/s Data written: 18.77 KB 
+Transfer rate: 243 Bytes/s Data written: 18.89 KB 
+Transfer rate: 1.20 KB/s Data written: 19.49 KB 
+Transfer rate: 0 Bytes/s Data written: 19.49 KB 
+Transfer rate: 0 Bytes/s Data written: 19.49 KB 
+Transfer rate: 2.98 KB/s Data written: 21.00 KB 
+Transfer rate: 5.67 KB/s Data written: 23.85 KB 
+Transfer rate: 389 Bytes/s Data written: 24.04 KB 
+Transfer rate: 286 Bytes/s Data written: 24.18 KB 
+Transfer rate: 0 Bytes/s Data written: 24.18 KB 
+Transfer rate: 0 Bytes/s Data written: 24.18 KB 
+Transfer rate: 0 Bytes/s Data written: 24.18 KB 
+Transfer rate: 0 Bytes/s Data written: 24.18 KB 
+Transfer rate: 0 Bytes/s Data written: 24.18 KB 
+Transfer rate: 0 Bytes/s Data written: 24.18 KB 
+Transfer rate: 0 Bytes/s Data written: 24.18 KB 
+Transfer rate: 0 Bytes/s Data written: 24.18 KB 
+Transfer rate: 0 Bytes/s Data written: 24.18 KB 
+Transfer rate: 318 Bytes/s Data written: 24.34 KB 
+Transfer rate: 2.15 KB/s Data written: 25.43 KB 
+Transfer rate: 5.37 KB/s Data written: 28.12 KB 
+Transfer rate: 0 Bytes/s Data written: 28.12 KB 
+Transfer rate: 0 Bytes/s Data written: 28.12 KB 
+Transfer rate: 0 Bytes/s Data written: 28.12 KB 
+Transfer rate: 0 Bytes/s Data written: 28.12 KB 
+Transfer rate: 0 Bytes/s Data written: 28.12 KB 
+Transfer rate: 2.17 KB/s Data written: 29.21 KB 
+Transfer rate: 5.56 KB/s Data written: 31.99 KB 
+Transfer rate: 0 Bytes/s Data written: 31.99 KB 
+Transfer rate: 0 Bytes/s Data written: 31.99 KB 
+Transfer rate: 0 Bytes/s Data written: 31.99 KB 
+Transfer rate: 149 Bytes/s Data written: 32.07 KB 
+Transfer rate: 0 Bytes/s Data written: 32.07 KB 
+Transfer rate: 2.54 KB/s Data written: 33.34 KB 
+SEGGER J-Link RTT Logger
+Compiled Jan 14 2026 15:55:45
+(c) 2016-2017 SEGGER Microcontroller GmbH, www.segger.com
+         Solutions for real time microcontroller applications
+
+Default logfile path: /home/phanhoanganh/.config/SEGGER
+
+------------------------------------------------------------ 
+
+
+------------------------------------------------------------ 
+Connected to:
+  SEGGER J-Link (unknown)
+  S/N: 440221915
+
+Searching for RTT Control Block...OK.
+9 up-channels found:
+0: Terminal
+1: 
+2: 
+3: 
+4: 
+5: 
+6: 
+7: 
+8: Terminal
+Selected RTT Channel description: 
+  Index: 0
+  Name:  Terminal
+  Size:  1024 bytes.
+
+Output file: /home/phanhoanganh/TEST1-window/test_auto/Test_Auto2/Log/rtt_log.txt
+
+Getting RTT data from target. Press any key to quit.
+------------------------------------------------------------ 
+
+
+Transfer rate: 1.99 KB/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 213 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 1.06 KB/s Data written: 1.63 KB 
+Transfer rate: 516 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 626 Bytes/s Data written: 2.19 KB 
+Transfer rate: 1.95 KB/s Data written: 3.17 KB 
+Transfer rate: 3.54 KB/s Data written: 4.94 KB 
+Transfer rate: 3.04 KB/s Data written: 6.47 KB 
+Transfer rate: 4.06 KB/s Data written: 8.52 KB 
+Transfer rate: 670 Bytes/s Data written: 8.85 KB 
+Transfer rate: 2.08 KB/s Data written: 9.89 KB 
+Transfer rate: 2.07 KB/s Data written: 10.93 KB 
+Transfer rate: 2.19 KB/s Data written: 12.03 KB 
+Transfer rate: 2.13 KB/s Data written: 13.10 KB 
+Transfer rate: 822 Bytes/s Data written: 13.50 KB 
+Transfer rate: 5.39 KB/s Data written: 16.20 KB 
+Transfer rate: 1.20 KB/s Data written: 16.80 KB 
+Transfer rate: 0 Bytes/s Data written: 16.80 KB 
+Transfer rate: 1.64 KB/s Data written: 17.62 KB 
+Transfer rate: 334 Bytes/s Data written: 17.79 KB 
+Transfer rate: 0 Bytes/s Data written: 17.79 KB 
+Transfer rate: 0 Bytes/s Data written: 17.79 KB 
+Transfer rate: 0 Bytes/s Data written: 17.79 KB 
+Transfer rate: 243 Bytes/s Data written: 17.91 KB 
+Transfer rate: 522 Bytes/s Data written: 18.16 KB 
+Transfer rate: 0 Bytes/s Data written: 18.16 KB 
+Transfer rate: 0 Bytes/s Data written: 18.16 KB 
+Transfer rate: 0 Bytes/s Data written: 18.16 KB 
+Transfer rate: 0 Bytes/s Data written: 18.16 KB 
+Transfer rate: 333 Bytes/s Data written: 18.33 KB 
+Transfer rate: 368 Bytes/s Data written: 18.51 KB 
+Transfer rate: 0 Bytes/s Data written: 18.51 KB 
+Transfer rate: 0 Bytes/s Data written: 18.51 KB 
+Transfer rate: 0 Bytes/s Data written: 18.51 KB 
+Transfer rate: 242 Bytes/s Data written: 18.63 KB 
+Transfer rate: 0 Bytes/s Data written: 18.63 KB 
+Transfer rate: 0 Bytes/s Data written: 18.63 KB 
+Transfer rate: 0 Bytes/s Data written: 18.63 KB 
+Transfer rate: 0 Bytes/s Data written: 18.63 KB 
+Transfer rate: 1.53 KB/s Data written: 19.39 KB 
+Transfer rate: 0 Bytes/s Data written: 19.39 KB 
+Transfer rate: 0 Bytes/s Data written: 19.39 KB 
+Transfer rate: 4.41 KB/s Data written: 21.60 KB 
+Transfer rate: 4.35 KB/s Data written: 23.78 KB 
+Transfer rate: 384 Bytes/s Data written: 23.97 KB 
+Transfer rate: 286 Bytes/s Data written: 24.11 KB 
+Transfer rate: 0 Bytes/s Data written: 24.11 KB 
+Transfer rate: 0 Bytes/s Data written: 24.11 KB 
+Transfer rate: 0 Bytes/s Data written: 24.11 KB 
+Transfer rate: 0 Bytes/s Data written: 24.11 KB 
+Transfer rate: 0 Bytes/s Data written: 24.11 KB 
+Transfer rate: 0 Bytes/s Data written: 24.11 KB 
+Transfer rate: 0 Bytes/s Data written: 24.11 KB 
+Transfer rate: 0 Bytes/s Data written: 24.11 KB 
+Transfer rate: 0 Bytes/s Data written: 24.11 KB 
+Transfer rate: 0 Bytes/s Data written: 24.11 KB 
+Transfer rate: 2.16 KB/s Data written: 25.19 KB 
+Transfer rate: 5.37 KB/s Data written: 27.89 KB 
+Transfer rate: 0 Bytes/s Data written: 27.89 KB 
+Transfer rate: 0 Bytes/s Data written: 27.89 KB 
+Transfer rate: 0 Bytes/s Data written: 27.89 KB 
+Transfer rate: 0 Bytes/s Data written: 27.89 KB 
+Transfer rate: 0 Bytes/s Data written: 27.89 KB 
+Transfer rate: 5.30 KB/s Data written: 30.56 KB 
+Transfer rate: 2.34 KB/s Data written: 31.74 KB 
+Transfer rate: 0 Bytes/s Data written: 31.74 KB 
+Transfer rate: 0 Bytes/s Data written: 31.74 KB 
+Transfer rate: 0 Bytes/s Data written: 31.74 KB 
+Transfer rate: 0 Bytes/s Data written: 31.74 KB 
+Transfer rate: 2.15 KB/s Data written: 32.81 KB 
+Transfer rate: 5.36 KB/s Data written: 35.50 KB 
+Transfer rate: 0 Bytes/s Data written: 35.50 KB 
+Transfer rate: 2.15 KB/s Data written: 36.58 KB 
+Transfer rate: 4.30 KB/s Data written: 38.73 KB 
+Transfer rate: 0 Bytes/s Data written: 38.73 KB 
+Transfer rate: 2.16 KB/s Data written: 39.81 KB 
+SEGGER J-Link RTT Logger
+Compiled Jan 14 2026 15:55:45
+(c) 2016-2017 SEGGER Microcontroller GmbH, www.segger.com
+         Solutions for real time microcontroller applications
+
+Default logfile path: /home/phanhoanganh/.config/SEGGER
+
+------------------------------------------------------------ 
+
+
+------------------------------------------------------------ 
+Connected to:
+  SEGGER J-Link (unknown)
+  S/N: 440221915
+
+Searching for RTT Control Block...OK.
+9 up-channels found:
+0: Terminal
+1: 
+2: 
+3: 
+4: 
+5: 
+6: 
+7: 
+8: Terminal
+Selected RTT Channel description: 
+  Index: 0
+  Name:  Terminal
+  Size:  1024 bytes.
+
+Output file: /home/phanhoanganh/TEST1-window/test_auto/Test_Auto2/Log/rtt_log.txt
+
+Getting RTT data from target. Press any key to quit.
+------------------------------------------------------------ 
+
+
+Transfer rate: 1.99 KB/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 216 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 1.26 KB/s Data written: 1.73 KB 
+Transfer rate: 313 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 1.13 KB/s Data written: 2.46 KB 
+Transfer rate: 2.67 KB/s Data written: 3.80 KB 
+Transfer rate: 3.78 KB/s Data written: 5.70 KB 
+Transfer rate: 2.95 KB/s Data written: 7.18 KB 
+Transfer rate: 2.65 KB/s Data written: 8.52 KB 
+Transfer rate: 2.06 KB/s Data written: 9.56 KB 
+Transfer rate: 1.70 KB/s Data written: 10.42 KB 
+Transfer rate: 1.34 KB/s Data written: 11.09 KB 
+Transfer rate: 2.74 KB/s Data written: 12.47 KB 
+Transfer rate: 1.81 KB/s Data written: 13.38 KB 
+Transfer rate: 4.22 KB/s Data written: 15.49 KB 
+Transfer rate: 2.61 KB/s Data written: 16.79 KB 
+Transfer rate: 0 Bytes/s Data written: 16.79 KB 
+Transfer rate: 0 Bytes/s Data written: 16.79 KB 
+Transfer rate: 1.95 KB/s Data written: 17.78 KB 
+Transfer rate: 0 Bytes/s Data written: 17.78 KB 
+Transfer rate: 0 Bytes/s Data written: 17.78 KB 
+Transfer rate: 0 Bytes/s Data written: 17.78 KB 
+Transfer rate: 0 Bytes/s Data written: 17.78 KB 
+Transfer rate: 243 Bytes/s Data written: 17.90 KB 
+Transfer rate: 522 Bytes/s Data written: 18.15 KB 
+Transfer rate: 0 Bytes/s Data written: 18.15 KB 
+Transfer rate: 0 Bytes/s Data written: 18.15 KB 
+Transfer rate: 0 Bytes/s Data written: 18.15 KB 
+Transfer rate: 333 Bytes/s Data written: 18.32 KB 
+Transfer rate: 0 Bytes/s Data written: 18.32 KB 
+Transfer rate: 0 Bytes/s Data written: 18.32 KB 
+Transfer rate: 0 Bytes/s Data written: 18.32 KB 
+Transfer rate: 0 Bytes/s Data written: 18.32 KB 
+Transfer rate: 244 Bytes/s Data written: 18.44 KB 
+Transfer rate: 367 Bytes/s Data written: 18.62 KB 
+Transfer rate: 0 Bytes/s Data written: 18.62 KB 
+Transfer rate: 0 Bytes/s Data written: 18.62 KB 
+Transfer rate: 0 Bytes/s Data written: 18.62 KB 
+Transfer rate: 336 Bytes/s Data written: 18.78 KB 
+Transfer rate: 0 Bytes/s Data written: 18.78 KB 
+Transfer rate: 1.20 KB/s Data written: 19.38 KB 
+Transfer rate: 0 Bytes/s Data written: 19.38 KB 
+Transfer rate: 0 Bytes/s Data written: 19.38 KB 
+Transfer rate: 1.52 KB/s Data written: 20.15 KB 
+Transfer rate: 7.08 KB/s Data written: 23.69 KB 
+Transfer rate: 435 Bytes/s Data written: 23.90 KB 
+Transfer rate: 675 Bytes/s Data written: 24.23 KB 
+Transfer rate: 0 Bytes/s Data written: 24.23 KB 
+Transfer rate: 0 Bytes/s Data written: 24.23 KB 
+Transfer rate: 0 Bytes/s Data written: 24.23 KB 
+Transfer rate: 0 Bytes/s Data written: 24.23 KB 
+Transfer rate: 0 Bytes/s Data written: 24.23 KB 
+Transfer rate: 0 Bytes/s Data written: 24.23 KB 
+Transfer rate: 0 Bytes/s Data written: 24.23 KB 
+Transfer rate: 0 Bytes/s Data written: 24.23 KB 
+Transfer rate: 0 Bytes/s Data written: 24.23 KB 
+Transfer rate: 0 Bytes/s Data written: 24.23 KB 
+Transfer rate: 0 Bytes/s Data written: 24.23 KB 
+Transfer rate: 4.39 KB/s Data written: 26.45 KB 
+Transfer rate: 3.14 KB/s Data written: 28.02 KB 
+Transfer rate: 0 Bytes/s Data written: 28.02 KB 
+Transfer rate: 0 Bytes/s Data written: 28.02 KB 
+Transfer rate: 0 Bytes/s Data written: 28.02 KB 
+Transfer rate: 0 Bytes/s Data written: 28.02 KB 
+Transfer rate: 1.28 KB/s Data written: 28.66 KB 
+Transfer rate: 6.41 KB/s Data written: 31.88 KB 
+Transfer rate: 0 Bytes/s Data written: 31.88 KB 
+Transfer rate: 0 Bytes/s Data written: 31.88 KB 
+Transfer rate: 0 Bytes/s Data written: 31.88 KB 
+Transfer rate: 0 Bytes/s Data written: 31.88 KB 
+Transfer rate: 0 Bytes/s Data written: 31.88 KB 
+Transfer rate: 2.17 KB/s Data written: 32.97 KB 
+Transfer rate: 5.38 KB/s Data written: 35.67 KB 
+Transfer rate: 0 Bytes/s Data written: 35.67 KB 
+Transfer rate: 2.54 KB/s Data written: 36.94 KB 
+Transfer rate: 3.94 KB/s Data written: 38.91 KB 
+Transfer rate: 0 Bytes/s Data written: 38.91 KB 
+Transfer rate: 6.47 KB/s Data written: 42.16 KB 
+SEGGER J-Link RTT Logger
+Compiled Jan 14 2026 15:55:45
+(c) 2016-2017 SEGGER Microcontroller GmbH, www.segger.com
+         Solutions for real time microcontroller applications
+
+Default logfile path: /home/phanhoanganh/.config/SEGGER
+
+------------------------------------------------------------ 
+
+
+------------------------------------------------------------ 
+Connected to:
+  SEGGER J-Link (unknown)
+  S/N: 440221915
+
+Searching for RTT Control Block...OK.
+9 up-channels found:
+0: Terminal
+1: 
+2: 
+3: 
+4: 
+5: 
+6: 
+7: 
+8: Terminal
+Selected RTT Channel description: 
+  Index: 0
+  Name:  Terminal
+  Size:  1024 bytes.
+
+Output file: /home/phanhoanganh/TEST1-window/test_auto/Test_Auto2/Log/rtt_log.txt
+
+Getting RTT data from target. Press any key to quit.
+------------------------------------------------------------ 
+
+
+Transfer rate: 1.98 KB/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 215 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 446 Bytes/s Data written: 1.32 KB 
+Transfer rate: 846 Bytes/s Data written: 1.73 KB 
+Transfer rate: 312 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 1.46 KB/s Data written: 2.62 KB 
+Transfer rate: 4.64 KB/s Data written: 4.95 KB 
+Transfer rate: 3.04 KB/s Data written: 6.47 KB 
+Transfer rate: 2.66 KB/s Data written: 7.81 KB 
+Transfer rate: 2.07 KB/s Data written: 8.85 KB 
+Transfer rate: 1.74 KB/s Data written: 9.72 KB 
+Transfer rate: 2.39 KB/s Data written: 10.92 KB 
+Transfer rate: 2.18 KB/s Data written: 12.02 KB 
+Transfer rate: 2.13 KB/s Data written: 13.09 KB 
+Transfer rate: 1.60 KB/s Data written: 13.89 KB 
+Transfer rate: 4.58 KB/s Data written: 16.19 KB 
+Transfer rate: 1.19 KB/s Data written: 16.79 KB 
+Transfer rate: 0 Bytes/s Data written: 16.79 KB 
+Transfer rate: 1.63 KB/s Data written: 17.61 KB 
+Transfer rate: 334 Bytes/s Data written: 17.77 KB 
+Transfer rate: 0 Bytes/s Data written: 17.77 KB 
+Transfer rate: 0 Bytes/s Data written: 17.77 KB 
+Transfer rate: 0 Bytes/s Data written: 17.77 KB 
+Transfer rate: 244 Bytes/s Data written: 17.89 KB 
+Transfer rate: 521 Bytes/s Data written: 18.14 KB 
+Transfer rate: 367 Bytes/s Data written: 18.32 KB 
+Transfer rate: 0 Bytes/s Data written: 18.32 KB 
+Transfer rate: 0 Bytes/s Data written: 18.32 KB 
+Transfer rate: 0 Bytes/s Data written: 18.32 KB 
+Transfer rate: 336 Bytes/s Data written: 18.49 KB 
+Transfer rate: 0 Bytes/s Data written: 18.49 KB 
+Transfer rate: 0 Bytes/s Data written: 18.49 KB 
+Transfer rate: 0 Bytes/s Data written: 18.49 KB 
+Transfer rate: 0 Bytes/s Data written: 18.49 KB 
+Transfer rate: 243 Bytes/s Data written: 18.61 KB 
+Transfer rate: 0 Bytes/s Data written: 18.61 KB 
+Transfer rate: 0 Bytes/s Data written: 18.61 KB 
+Transfer rate: 0 Bytes/s Data written: 18.61 KB 
+Transfer rate: 0 Bytes/s Data written: 18.61 KB 
+Transfer rate: 335 Bytes/s Data written: 18.77 KB 
+Transfer rate: 0 Bytes/s Data written: 18.77 KB 
+Transfer rate: 0 Bytes/s Data written: 18.77 KB 
+Transfer rate: 0 Bytes/s Data written: 18.77 KB 
+Transfer rate: 0 Bytes/s Data written: 18.77 KB 
+Transfer rate: 243 Bytes/s Data written: 18.89 KB 
+Transfer rate: 0 Bytes/s Data written: 18.89 KB 
+Transfer rate: 824 Bytes/s Data written: 19.49 KB 
+Transfer rate: 1.58 KB/s Data written: 20.58 KB 
+Transfer rate: 5.54 KB/s Data written: 23.90 KB 
+Transfer rate: 311 Bytes/s Data written: 24.09 KB 
+Transfer rate: 225 Bytes/s Data written: 24.23 KB 
+Transfer rate: 0 Bytes/s Data written: 24.23 KB 
+Transfer rate: 0 Bytes/s Data written: 24.23 KB 
+Transfer rate: 0 Bytes/s Data written: 24.23 KB 
+Transfer rate: 0 Bytes/s Data written: 24.23 KB 
+Transfer rate: 0 Bytes/s Data written: 24.23 KB 
+Transfer rate: 0 Bytes/s Data written: 24.23 KB 
+Transfer rate: 0 Bytes/s Data written: 24.23 KB 
+Transfer rate: 0 Bytes/s Data written: 24.23 KB 
+Transfer rate: 318 Bytes/s Data written: 24.38 KB 
+Transfer rate: 0 Bytes/s Data written: 24.38 KB 
+Transfer rate: 4.40 KB/s Data written: 26.60 KB 
+Transfer rate: 3.12 KB/s Data written: 28.16 KB 
+Transfer rate: 0 Bytes/s Data written: 28.16 KB 
+Transfer rate: 0 Bytes/s Data written: 28.16 KB 
+Transfer rate: 0 Bytes/s Data written: 28.16 KB 
+Transfer rate: 0 Bytes/s Data written: 28.16 KB 
+Transfer rate: 1.28 KB/s Data written: 28.80 KB 
+Transfer rate: 6.41 KB/s Data written: 32.02 KB 
+Transfer rate: 0 Bytes/s Data written: 32.02 KB 
+Transfer rate: 0 Bytes/s Data written: 32.02 KB 
+Transfer rate: 0 Bytes/s Data written: 32.02 KB 
+Transfer rate: 0 Bytes/s Data written: 32.02 KB 
+Transfer rate: 0 Bytes/s Data written: 32.02 KB 
+Transfer rate: 2.17 KB/s Data written: 33.11 KB 
+Transfer rate: 5.36 KB/s Data written: 35.80 KB 
+Transfer rate: 0 Bytes/s Data written: 35.80 KB 
+Transfer rate: 2.15 KB/s Data written: 36.88 KB 
+Transfer rate: 4.26 KB/s Data written: 39.03 KB 
+Transfer rate: 0 Bytes/s Data written: 39.03 KB 
+Transfer rate: 4.89 KB/s Data written: 41.48 KB 
+SEGGER J-Link RTT Logger
+Compiled Jan 14 2026 15:55:45
+(c) 2016-2017 SEGGER Microcontroller GmbH, www.segger.com
+         Solutions for real time microcontroller applications
+
+Default logfile path: /home/phanhoanganh/.config/SEGGER
+
+------------------------------------------------------------ 
+
+SEGGER J-Link RTT Logger
+Compiled Jan 14 2026 15:55:45
+(c) 2016-2017 SEGGER Microcontroller GmbH, www.segger.com
+         Solutions for real time microcontroller applications
+
+Default logfile path: /home/phanhoanganh/.config/SEGGER
+
+------------------------------------------------------------ 
+
+
+------------------------------------------------------------ 
+Connected to:
+  SEGGER J-Link (unknown)
+  S/N: 440221915
+
+Searching for RTT Control Block...OK.
+9 up-channels found:
+0: Terminal
+1: 
+2: 
+3: 
+4: 
+5: 
+6: 
+7: 
+8: Terminal
+Selected RTT Channel description: 
+  Index: 0
+  Name:  Terminal
+  Size:  1024 bytes.
+
+Output file: /home/phanhoanganh/TEST1-window/test_auto/Test_Auto2/Log/rtt_log.txt
+
+Getting RTT data from target. Press any key to quit.
+------------------------------------------------------------ 
+
+
+Transfer rate: 1.99 KB/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 215 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 1.25 KB/s Data written: 1.73 KB 
+Transfer rate: 314 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 1.13 KB/s Data written: 2.46 KB 
+Transfer rate: 4.97 KB/s Data written: 4.95 KB 
+Transfer rate: 1.82 KB/s Data written: 5.87 KB 
+Transfer rate: 2.62 KB/s Data written: 7.18 KB 
+Transfer rate: 3.00 KB/s Data written: 8.69 KB 
+Transfer rate: 1.74 KB/s Data written: 9.56 KB 
+Transfer rate: 2.39 KB/s Data written: 10.76 KB 
+Transfer rate: 1.82 KB/s Data written: 11.68 KB 
+Transfer rate: 1.55 KB/s Data written: 12.47 KB 
+Transfer rate: 2.04 KB/s Data written: 13.49 KB 
+Transfer rate: 3.98 KB/s Data written: 15.48 KB 
+Transfer rate: 2.59 KB/s Data written: 16.79 KB 
+Transfer rate: 0 Bytes/s Data written: 16.79 KB 
+Transfer rate: 1.96 KB/s Data written: 17.77 KB 
+Transfer rate: 0 Bytes/s Data written: 17.77 KB 
+Transfer rate: 0 Bytes/s Data written: 17.77 KB 
+Transfer rate: 0 Bytes/s Data written: 17.77 KB 
+Transfer rate: 0 Bytes/s Data written: 17.77 KB 
+Transfer rate: 243 Bytes/s Data written: 17.89 KB 
+Transfer rate: 522 Bytes/s Data written: 18.15 KB 
+Transfer rate: 0 Bytes/s Data written: 18.15 KB 
+Transfer rate: 0 Bytes/s Data written: 18.15 KB 
+Transfer rate: 0 Bytes/s Data written: 18.15 KB 
+Transfer rate: 334 Bytes/s Data written: 18.31 KB 
+Transfer rate: 0 Bytes/s Data written: 18.31 KB 
+Transfer rate: 0 Bytes/s Data written: 18.31 KB 
+Transfer rate: 0 Bytes/s Data written: 18.31 KB 
+Transfer rate: 0 Bytes/s Data written: 18.31 KB 
+Transfer rate: 610 Bytes/s Data written: 18.61 KB 
+Transfer rate: 0 Bytes/s Data written: 18.61 KB 
+Transfer rate: 0 Bytes/s Data written: 18.61 KB 
+Transfer rate: 0 Bytes/s Data written: 18.61 KB 
+Transfer rate: 0 Bytes/s Data written: 18.61 KB 
+Transfer rate: 0 Bytes/s Data written: 18.61 KB 
+Transfer rate: 336 Bytes/s Data written: 18.77 KB 
+Transfer rate: 1.19 KB/s Data written: 19.38 KB 
+Transfer rate: 0 Bytes/s Data written: 19.38 KB 
+Transfer rate: 0 Bytes/s Data written: 19.38 KB 
+Transfer rate: 2.41 KB/s Data written: 20.59 KB 
+Transfer rate: 6.61 KB/s Data written: 23.90 KB 
+Transfer rate: 385 Bytes/s Data written: 24.09 KB 
+Transfer rate: 286 Bytes/s Data written: 24.23 KB 
+Transfer rate: 0 Bytes/s Data written: 24.23 KB 
+Transfer rate: 0 Bytes/s Data written: 24.23 KB 
+Transfer rate: 0 Bytes/s Data written: 24.23 KB 
+Transfer rate: 0 Bytes/s Data written: 24.23 KB 
+Transfer rate: 0 Bytes/s Data written: 24.23 KB 
+Transfer rate: 0 Bytes/s Data written: 24.23 KB 
+Transfer rate: 0 Bytes/s Data written: 24.23 KB 
+Transfer rate: 0 Bytes/s Data written: 24.23 KB 
+Transfer rate: 0 Bytes/s Data written: 24.23 KB 
+Transfer rate: 0 Bytes/s Data written: 24.23 KB 
+Transfer rate: 2.16 KB/s Data written: 25.32 KB 
+Transfer rate: 5.39 KB/s Data written: 28.02 KB 
+Transfer rate: 0 Bytes/s Data written: 28.02 KB 
+Transfer rate: 0 Bytes/s Data written: 28.02 KB 
+Transfer rate: 0 Bytes/s Data written: 28.02 KB 
+Transfer rate: 0 Bytes/s Data written: 28.02 KB 
+Transfer rate: 0 Bytes/s Data written: 28.02 KB 
+Transfer rate: 2.18 KB/s Data written: 29.11 KB 
+Transfer rate: 5.55 KB/s Data written: 31.89 KB 
+Transfer rate: 0 Bytes/s Data written: 31.89 KB 
+Transfer rate: 0 Bytes/s Data written: 31.89 KB 
+Transfer rate: 0 Bytes/s Data written: 31.89 KB 
+Transfer rate: 0 Bytes/s Data written: 31.89 KB 
+Transfer rate: 0 Bytes/s Data written: 31.89 KB 
+Transfer rate: 4.44 KB/s Data written: 34.12 KB 
+Transfer rate: 3.12 KB/s Data written: 35.68 KB 
+Transfer rate: 0 Bytes/s Data written: 35.68 KB 
+Transfer rate: 2.17 KB/s Data written: 36.77 KB 
+Transfer rate: 4.31 KB/s Data written: 38.93 KB 
+Transfer rate: 0 Bytes/s Data written: 38.93 KB 
+Transfer rate: 6.45 KB/s Data written: 42.17 KB 
+SEGGER J-Link RTT Logger
+Compiled Jan 14 2026 15:55:45
+(c) 2016-2017 SEGGER Microcontroller GmbH, www.segger.com
+         Solutions for real time microcontroller applications
+
+Default logfile path: /home/phanhoanganh/.config/SEGGER
+
+------------------------------------------------------------ 
+
+
+------------------------------------------------------------ 
+Connected to:
+  SEGGER J-Link (unknown)
+  S/N: 440221915
+
+Searching for RTT Control Block...OK.
+9 up-channels found:
+0: Terminal
+1: 
+2: 
+3: 
+4: 
+5: 
+6: 
+7: 
+8: Terminal
+Selected RTT Channel description: 
+  Index: 0
+  Name:  Terminal
+  Size:  1024 bytes.
+
+Output file: /home/phanhoanganh/TEST1-window/test_auto/Test_Auto2/Log/rtt_log.txt
+
+Getting RTT data from target. Press any key to quit.
+------------------------------------------------------------ 
+
+
+Transfer rate: 1.99 KB/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 216 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 1.07 KB/s Data written: 1.63 KB 
+Transfer rate: 515 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 626 Bytes/s Data written: 2.19 KB 
+Transfer rate: 2.85 KB/s Data written: 3.62 KB 
+Transfer rate: 4.15 KB/s Data written: 5.70 KB 
+Transfer rate: 2.93 KB/s Data written: 7.19 KB 
+Transfer rate: 2.68 KB/s Data written: 8.53 KB 
+Transfer rate: 670 Bytes/s Data written: 8.86 KB 
+Transfer rate: 2.08 KB/s Data written: 9.90 KB 
+Transfer rate: 2.39 KB/s Data written: 11.10 KB 
+Transfer rate: 2.19 KB/s Data written: 12.20 KB 
+Transfer rate: 1.81 KB/s Data written: 13.11 KB 
+Transfer rate: 2.48 KB/s Data written: 14.35 KB 
+Transfer rate: 3.72 KB/s Data written: 16.21 KB 
+Transfer rate: 1.18 KB/s Data written: 16.81 KB 
+Transfer rate: 0 Bytes/s Data written: 16.81 KB 
+Transfer rate: 1.64 KB/s Data written: 17.63 KB 
+Transfer rate: 336 Bytes/s Data written: 17.79 KB 
+Transfer rate: 0 Bytes/s Data written: 17.79 KB 
+Transfer rate: 0 Bytes/s Data written: 17.79 KB 
+Transfer rate: 0 Bytes/s Data written: 17.79 KB 
+Transfer rate: 0 Bytes/s Data written: 17.79 KB 
+Transfer rate: 766 Bytes/s Data written: 18.17 KB 
+Transfer rate: 0 Bytes/s Data written: 18.17 KB 
+Transfer rate: 0 Bytes/s Data written: 18.17 KB 
+Transfer rate: 0 Bytes/s Data written: 18.17 KB 
+Transfer rate: 0 Bytes/s Data written: 18.17 KB 
+Transfer rate: 336 Bytes/s Data written: 18.33 KB 
+Transfer rate: 366 Bytes/s Data written: 18.51 KB 
+Transfer rate: 0 Bytes/s Data written: 18.51 KB 
+Transfer rate: 0 Bytes/s Data written: 18.51 KB 
+Transfer rate: 0 Bytes/s Data written: 18.51 KB 
+Transfer rate: 243 Bytes/s Data written: 18.63 KB 
+Transfer rate: 1.20 KB/s Data written: 19.24 KB 
+Transfer rate: 0 Bytes/s Data written: 19.24 KB 
+Transfer rate: 0 Bytes/s Data written: 19.24 KB 
+Transfer rate: 0 Bytes/s Data written: 19.24 KB 
+Transfer rate: 6.23 KB/s Data written: 22.36 KB 
+Transfer rate: 2.86 KB/s Data written: 23.81 KB 
+Transfer rate: 673 Bytes/s Data written: 24.14 KB 
+Transfer rate: 0 Bytes/s Data written: 24.14 KB 
+Transfer rate: 0 Bytes/s Data written: 24.14 KB 
+Transfer rate: 0 Bytes/s Data written: 24.14 KB 
+Transfer rate: 0 Bytes/s Data written: 24.14 KB 
+Transfer rate: 0 Bytes/s Data written: 24.14 KB 
+Transfer rate: 0 Bytes/s Data written: 24.14 KB 
+Transfer rate: 0 Bytes/s Data written: 24.14 KB 
+Transfer rate: 0 Bytes/s Data written: 24.14 KB 
+Transfer rate: 0 Bytes/s Data written: 24.14 KB 
+Transfer rate: 0 Bytes/s Data written: 24.14 KB 
+Transfer rate: 0 Bytes/s Data written: 24.14 KB 
+Transfer rate: 2.17 KB/s Data written: 25.23 KB 
+Transfer rate: 5.40 KB/s Data written: 27.94 KB 
+Transfer rate: 0 Bytes/s Data written: 27.94 KB 
+Transfer rate: 0 Bytes/s Data written: 27.94 KB 
+Transfer rate: 0 Bytes/s Data written: 27.94 KB 
+Transfer rate: 0 Bytes/s Data written: 27.94 KB 
+Transfer rate: 0 Bytes/s Data written: 27.94 KB 
+Transfer rate: 4.45 KB/s Data written: 30.16 KB 
+Transfer rate: 3.27 KB/s Data written: 31.81 KB 
+Transfer rate: 0 Bytes/s Data written: 31.81 KB 
+Transfer rate: 0 Bytes/s Data written: 31.81 KB 
+Transfer rate: 0 Bytes/s Data written: 31.81 KB 
+Transfer rate: 0 Bytes/s Data written: 31.81 KB 
+Transfer rate: 2.16 KB/s Data written: 32.90 KB 
+Transfer rate: 5.40 KB/s Data written: 35.60 KB 
+Transfer rate: 0 Bytes/s Data written: 35.60 KB 
+Transfer rate: 2.17 KB/s Data written: 36.69 KB 
+Transfer rate: 5.55 KB/s Data written: 39.46 KB 
+Transfer rate: 0 Bytes/s Data written: 39.46 KB 
+Transfer rate: 2.18 KB/s Data written: 40.56 KB 
+SEGGER J-Link RTT Logger
+Compiled Jan 14 2026 15:55:45
+(c) 2016-2017 SEGGER Microcontroller GmbH, www.segger.com
+         Solutions for real time microcontroller applications
+
+Default logfile path: /home/phanhoanganh/.config/SEGGER
+
+------------------------------------------------------------ 
+
+
+------------------------------------------------------------ 
+Connected to:
+  SEGGER J-Link (unknown)
+  S/N: 440221915
+
+Searching for RTT Control Block...OK.
+9 up-channels found:
+0: Terminal
+1: 
+2: 
+3: 
+4: 
+5: 
+6: 
+7: 
+8: Terminal
+Selected RTT Channel description: 
+  Index: 0
+  Name:  Terminal
+  Size:  1024 bytes.
+
+Output file: /home/phanhoanganh/TEST1-window/test_auto/Test_Auto2/Log/rtt_log.txt
+
+Getting RTT data from target. Press any key to quit.
+------------------------------------------------------------ 
+
+
+Transfer rate: 1.99 KB/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 215 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 1.26 KB/s Data written: 1.73 KB 
+Transfer rate: 314 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 1.13 KB/s Data written: 2.46 KB 
+Transfer rate: 4.98 KB/s Data written: 4.95 KB 
+Transfer rate: 2.71 KB/s Data written: 6.31 KB 
+Transfer rate: 3.00 KB/s Data written: 7.81 KB 
+Transfer rate: 1.74 KB/s Data written: 8.69 KB 
+Transfer rate: 2.07 KB/s Data written: 9.72 KB 
+Transfer rate: 2.06 KB/s Data written: 10.76 KB 
+Transfer rate: 2.51 KB/s Data written: 12.02 KB 
+Transfer rate: 336 Bytes/s Data written: 12.19 KB 
+Transfer rate: 2.59 KB/s Data written: 13.50 KB 
+Transfer rate: 5.39 KB/s Data written: 16.20 KB 
+Transfer rate: 1.18 KB/s Data written: 16.79 KB 
+Transfer rate: 0 Bytes/s Data written: 16.79 KB 
+Transfer rate: 0 Bytes/s Data written: 16.79 KB 
+Transfer rate: 1.95 KB/s Data written: 17.78 KB 
+Transfer rate: 0 Bytes/s Data written: 17.78 KB 
+Transfer rate: 0 Bytes/s Data written: 17.78 KB 
+Transfer rate: 0 Bytes/s Data written: 17.78 KB 
+Transfer rate: 0 Bytes/s Data written: 17.78 KB 
+Transfer rate: 244 Bytes/s Data written: 17.90 KB 
+Transfer rate: 522 Bytes/s Data written: 18.15 KB 
+Transfer rate: 0 Bytes/s Data written: 18.15 KB 
+Transfer rate: 0 Bytes/s Data written: 18.15 KB 
+Transfer rate: 0 Bytes/s Data written: 18.15 KB 
+Transfer rate: 334 Bytes/s Data written: 18.32 KB 
+Transfer rate: 366 Bytes/s Data written: 18.50 KB 
+Transfer rate: 0 Bytes/s Data written: 18.50 KB 
+Transfer rate: 0 Bytes/s Data written: 18.50 KB 
+Transfer rate: 0 Bytes/s Data written: 18.50 KB 
+Transfer rate: 242 Bytes/s Data written: 18.62 KB 
+Transfer rate: 0 Bytes/s Data written: 18.62 KB 
+Transfer rate: 0 Bytes/s Data written: 18.62 KB 
+Transfer rate: 0 Bytes/s Data written: 18.62 KB 
+Transfer rate: 0 Bytes/s Data written: 18.62 KB 
+Transfer rate: 334 Bytes/s Data written: 18.78 KB 
+Transfer rate: 1.20 KB/s Data written: 19.38 KB 
+Transfer rate: 0 Bytes/s Data written: 19.38 KB 
+Transfer rate: 0 Bytes/s Data written: 19.38 KB 
+Transfer rate: 2.16 KB/s Data written: 20.47 KB 
+Transfer rate: 6.70 KB/s Data written: 23.83 KB 
+Transfer rate: 817 Bytes/s Data written: 24.23 KB 
+Transfer rate: 288 Bytes/s Data written: 24.37 KB 
+Transfer rate: 0 Bytes/s Data written: 24.37 KB 
+Transfer rate: 0 Bytes/s Data written: 24.37 KB 
+Transfer rate: 0 Bytes/s Data written: 24.37 KB 
+Transfer rate: 0 Bytes/s Data written: 24.37 KB 
+Transfer rate: 0 Bytes/s Data written: 24.37 KB 
+Transfer rate: 0 Bytes/s Data written: 24.37 KB 
+Transfer rate: 0 Bytes/s Data written: 24.37 KB 
+Transfer rate: 0 Bytes/s Data written: 24.37 KB 
+Transfer rate: 0 Bytes/s Data written: 24.37 KB 
+Transfer rate: 0 Bytes/s Data written: 24.37 KB 
+Transfer rate: 0 Bytes/s Data written: 24.37 KB 
+Transfer rate: 5.30 KB/s Data written: 27.03 KB 
+Transfer rate: 2.23 KB/s Data written: 28.15 KB 
+Transfer rate: 0 Bytes/s Data written: 28.15 KB 
+Transfer rate: 0 Bytes/s Data written: 28.15 KB 
+Transfer rate: 0 Bytes/s Data written: 28.15 KB 
+Transfer rate: 0 Bytes/s Data written: 28.15 KB 
+Transfer rate: 2.16 KB/s Data written: 29.24 KB 
+Transfer rate: 5.52 KB/s Data written: 32.01 KB 
+Transfer rate: 0 Bytes/s Data written: 32.01 KB 
+Transfer rate: 0 Bytes/s Data written: 32.01 KB 
+Transfer rate: 0 Bytes/s Data written: 32.01 KB 
+Transfer rate: 0 Bytes/s Data written: 32.01 KB 
+Transfer rate: 0 Bytes/s Data written: 32.01 KB 
+Transfer rate: 2.17 KB/s Data written: 33.09 KB 
+Transfer rate: 5.38 KB/s Data written: 35.79 KB 
+Transfer rate: 0 Bytes/s Data written: 35.79 KB 
+Transfer rate: 4.27 KB/s Data written: 37.93 KB 
+Transfer rate: 3.43 KB/s Data written: 39.65 KB 
+Transfer rate: 0 Bytes/s Data written: 39.65 KB 
+Transfer rate: 4.42 KB/s Data written: 41.86 KB 
+SEGGER J-Link RTT Logger
+Compiled Jan 14 2026 15:55:45
+(c) 2016-2017 SEGGER Microcontroller GmbH, www.segger.com
+         Solutions for real time microcontroller applications
+
+Default logfile path: /home/phanhoanganh/.config/SEGGER
+
+------------------------------------------------------------ 
+
+
+------------------------------------------------------------ 
+Connected to:
+  SEGGER J-Link (unknown)
+  S/N: 440221915
+
+Searching for RTT Control Block...OK.
+9 up-channels found:
+0: Terminal
+1: 
+2: 
+3: 
+4: 
+5: 
+6: 
+7: 
+8: Terminal
+Selected RTT Channel description: 
+  Index: 0
+  Name:  Terminal
+  Size:  1024 bytes.
+
+Output file: /home/phanhoanganh/TEST1-window/test_auto/Test_Auto2/Log/rtt_log.txt
+
+Getting RTT data from target. Press any key to quit.
+------------------------------------------------------------ 
+
+
+Transfer rate: 1.99 KB/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 0 Bytes/s Data written: 1023 Bytes 
+Transfer rate: 210 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 0 Bytes/s Data written: 1.10 KB 
+Transfer rate: 1.07 KB/s Data written: 1.63 KB 
+Transfer rate: 515 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 0 Bytes/s Data written: 1.89 KB 
+Transfer rate: 617 Bytes/s Data written: 2.19 KB 
+Transfer rate: 2.86 KB/s Data written: 3.62 KB 
+Transfer rate: 4.15 KB/s Data written: 5.70 KB 
+Transfer rate: 2.95 KB/s Data written: 7.18 KB 
+Transfer rate: 2.67 KB/s Data written: 8.52 KB 
+Transfer rate: 2.07 KB/s Data written: 9.56 KB 
+Transfer rate: 669 Bytes/s Data written: 9.89 KB 
+Transfer rate: 2.37 KB/s Data written: 11.09 KB 
+Transfer rate: 2.75 KB/s Data written: 12.47 KB 
+Transfer rate: 1.81 KB/s Data written: 13.37 KB 
+Transfer rate: 4.20 KB/s Data written: 15.48 KB 
+Transfer rate: 2.60 KB/s Data written: 16.79 KB 
+Transfer rate: 0 Bytes/s Data written: 16.79 KB 
+Transfer rate: 1.85 KB/s Data written: 17.71 KB 
+Transfer rate: 335 Bytes/s Data written: 17.88 KB 
+Transfer rate: 0 Bytes/s Data written: 17.88 KB 
+Transfer rate: 1.20 KB/s Data written: 18.48 KB 
+Transfer rate: 0 Bytes/s Data written: 18.48 KB 
+Transfer rate: 0 Bytes/s Data written: 18.48 KB 
+Transfer rate: 8.47 KB/s Data written: 22.72 KB 
+Transfer rate: 435 Bytes/s Data written: 22.93 KB 
+Transfer rate: 389 Bytes/s Data written: 23.12 KB 
+Transfer rate: 522 Bytes/s Data written: 23.38 KB 
+Transfer rate: 0 Bytes/s Data written: 23.38 KB 
+Transfer rate: 0 Bytes/s Data written: 23.38 KB 
+Transfer rate: 0 Bytes/s Data written: 23.38 KB 
+Transfer rate: 0 Bytes/s Data written: 23.38 KB 
+Transfer rate: 0 Bytes/s Data written: 23.38 KB 
+Transfer rate: 0 Bytes/s Data written: 23.38 KB 
+Transfer rate: 0 Bytes/s Data written: 23.38 KB 
+Transfer rate: 0 Bytes/s Data written: 23.38 KB 
+Transfer rate: 0 Bytes/s Data written: 23.38 KB 
+Transfer rate: 0 Bytes/s Data written: 23.38 KB 
+Transfer rate: 3.11 KB/s Data written: 24.94 KB 
+Transfer rate: 4.46 KB/s Data written: 27.17 KB 
+Transfer rate: 0 Bytes/s Data written: 27.17 KB 
+Transfer rate: 0 Bytes/s Data written: 27.17 KB 
+Transfer rate: 0 Bytes/s Data written: 27.17 KB 
+Transfer rate: 0 Bytes/s Data written: 27.17 KB 
+Transfer rate: 0 Bytes/s Data written: 27.17 KB 
+Transfer rate: 3.09 KB/s Data written: 28.73 KB 
+Transfer rate: 4.62 KB/s Data written: 31.05 KB 
+Transfer rate: 0 Bytes/s Data written: 31.05 KB 
+Transfer rate: 0 Bytes/s Data written: 31.05 KB 
+Transfer rate: 0 Bytes/s Data written: 31.05 KB 
+Transfer rate: 0 Bytes/s Data written: 31.05 KB 
+Transfer rate: 0 Bytes/s Data written: 31.05 KB 
+Transfer rate: 4.43 KB/s Data written: 33.27 KB 
+Transfer rate: 3.12 KB/s Data written: 34.83 KB 
+Transfer rate: 1.28 KB/s Data written: 35.48 KB 
+Transfer rate: 6.37 KB/s Data written: 38.70 KB 
+Transfer rate: 0 Bytes/s Data written: 38.70 KB 
+Transfer rate: 2.16 KB/s Data written: 39.79 KB 
