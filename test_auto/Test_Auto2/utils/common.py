@@ -11,59 +11,7 @@ Functions:
 """
 
 import os
-from pathlib import Path
 from typing import List, Dict, Optional
-
-
-# ============================================================================
-# UNIFIED PATTERN DETECTION
-# ============================================================================
-
-def detect_pattern(line: str, pattern_type: str) -> bool:
-    """
-    Unified pattern detection for RTT log line matching.
-    Replaces: detect_receipt, detect_on_start, detect_on_done, detect_off_start, detect_off_done
-    
-    Args:
-        line: RTT log line to check
-        pattern_type: Type of pattern to detect
-            - "receipt": Look for command receipt marker
-            - "on_start": Look for "Turning ... On" pattern
-            - "on_done": Look for "On ... done" completion
-            - "off_start": Look for "Turning ... Off" pattern
-            - "off_done": Look for "Off ... done" completion
-            - Custom keywords can be passed as "keyword1,keyword2" (AND logic)
-    
-    Returns:
-        True if pattern matches the line
-    """
-    line_lower = line.lower()
-    
-    if pattern_type == "receipt":
-        return "receipt" in line_lower or "invokecommandrequest" in line_lower
-    
-    elif pattern_type == "on_start":
-        return ("turning" in line_lower or "turn on" in line_lower) and "on" in line_lower
-    
-    elif pattern_type == "on_done":
-        return "on" in line_lower and ("done" in line_lower or "confirm" in line_lower)
-    
-    elif pattern_type == "off_start":
-        return ("turning" in line_lower or "turn off" in line_lower) and "off" in line_lower
-    
-    elif pattern_type == "off_done":
-        return "off" in line_lower and ("done" in line_lower or "confirm" in line_lower)
-    
-    # Support custom patterns: "keyword1,keyword2" means ALL keywords must match
-    elif "," in pattern_type:
-        keywords = [k.strip().lower() for k in pattern_type.split(",")]
-        return all(k in line_lower for k in keywords)
-    
-    # Single keyword pattern
-    else:
-        return pattern_type.lower() in line_lower
-
-
 
 
 
@@ -99,28 +47,6 @@ def resolve_log_directory(log_path: Optional[str] = None, project_root: Optional
     return os.path.abspath(os.path.join(project_root, log_path))
 
 
-def find_log_dir() -> Optional[Path]:
-    """
-    Find log directory by searching common locations.
-    Replaces: find_log_dir() in log_find.py
-    
-    Returns:
-        Path to log directory if found, None otherwise
-    """
-    here = Path(__file__).resolve().parent.parent
-    
-    candidates = [
-        here / "Log",
-        here.parent / "Log",
-        here.parents[1] / "Log",
-        Path.cwd() / "Log",
-    ]
-    
-    for candidate in candidates:
-        if candidate.exists() and candidate.is_dir():
-            return candidate
-    
-    return None
 
 
 # ============================================================================
@@ -209,9 +135,7 @@ def get_device_ip(config: Dict) -> Optional[str]:
 
 __all__ = [
     # New consolidated functions
-    "detect_pattern",
     "resolve_log_directory",
-    "find_log_dir",
     "get_log_files",
     "read_log_file",
     "get_device_ip",

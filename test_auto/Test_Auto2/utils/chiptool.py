@@ -1,18 +1,16 @@
 """
 Refactored chip-tool command execution with RTT capture and expect patterns.
-- execute_command(): Execute chip-tool with RTT capture and expect matching
-- send_on_command(): Turn on with RTT verification
-- send_off_command(): Turn off with RTT verification
-- send_toggle_command(): Toggle with RTT verification
 - validate_pairing(): Validate pairing from logs
 """
 
+import os
 import re
 import shlex
 import time
-from typing import Union, List, Dict
+from typing import List, Dict
 
-from utils.log_parser import PiLogParser
+from utils.common import read_log_file
+from utils.log_parser import PiLogParser, RTTLogParser, LogMatcher
 from utils.rtt_reader import read_rtt_log_file, get_rtt_delta
 
 
@@ -29,95 +27,6 @@ def build_sudo_command(pi_device, command: str) -> str:
         f"echo {shlex.quote(str(password))} | "
         f"sudo -S -p '' {command}"
     )
-
-
-def execute_command(
-    pi_device,
-    config,
-    chip_command: str,
-    expect: Union[str, List[str], None] = None,
-    rtt_log_file: str = None,
-    timeout: float = 15.0,
-) -> Dict:
-    """
-    Execute chip-tool command with RTT capture and optional pattern matching.
-    """
-    try:
-        baseline_rtt = read_rtt_log_file(rtt_log_file) if rtt_log_file else ""
-
-        stdout, stderr = pi_device.execute_command(chip_command, timeout=timeout)
-
-        new_rtt = (
-            get_rtt_delta(rtt_log_file, baseline_rtt)
-            if rtt_log_file
-            else ""
-        )
-
-        full_output = f"{stdout}\n{stderr}".lower()
-
-        sudo_errors = [
-            "a password is required",
-            "incorrect password attempt",
-            "sorry, try again",
-            "[sudo] password",
-        ]
-
-        if (
-            "timeout" in full_output
-            or "run command failure" in full_output
-            or any(error in full_output for error in sudo_errors)
-        ):
-            return {
-                "command": chip_command,
-                "result": "fail",
-                "matched_log": "",
-                "raw_log": new_rtt,
-                "stdout": stdout,
-                "stderr": stderr or stdout,
-            }
-
-        if not expect:
-            return {
-                "command": chip_command,
-                "result": "success",
-                "matched_log": "",
-                "raw_log": new_rtt,
-                "stdout": stdout,
-                "stderr": stderr,
-            }
-
-        expect_list = [expect] if isinstance(expect, str) else expect
-        matched_log = ""
-        result = "fail"
-
-        for pattern in expect_list:
-            if re.search(pattern, new_rtt, re.IGNORECASE):
-                matched_log = new_rtt
-                result = "success"
-                break
-
-        if "already" in new_rtt.lower() and "set" in new_rtt.lower():
-            matched_log = new_rtt
-            result = "already_set"
-
-        return {
-            "command": chip_command,
-            "result": result,
-            "matched_log": matched_log,
-            "raw_log": new_rtt,
-            "stdout": stdout,
-            "stderr": stderr,
-        }
-
-    except Exception as e:
-        return {
-            "command": chip_command,
-            "result": "fail",
-            "matched_log": "",
-            "raw_log": "",
-            "stdout": "",
-            "stderr": str(e),
-        }
 
 
 def resolve_chip_target(config, device_name=None):
@@ -326,103 +235,67 @@ def run_pairing(pi_device, config, pi_log_file: str = None):
     return True, chip.get("node_id")
 
 
-def send_on_command(
-    pi_device,
-    config,
-    label: str = "Turn On",
-    rtt_log_file: str = None,
-) -> Dict:
-    """Send on command to device with RTT verification."""
-    print(f"\n🚀 Sending command: {label}")
+def run_and_verify(pi_device, device_rtt, log_paths, chip_cmd, label):
+    """
+    Execute one chip-tool command and verify via the full workflow:
+    open RTT → send → close Pi → check Pi log → close RTT → check RTT log → compare.
 
-    chip = resolve_chip_target(config)
+    After verification, reconnects SSH and restarts RTT for the next command.
+    """
+    rtt_log_file = log_paths["rtt_log"]
+    pi_log_file = log_paths["pi_log"]
 
-    on_raw_cmd = (
-        f"{shlex.quote(pi_device.chip_tool_path)} "
-        f"onoff on {shlex.quote(str(chip['node_id']))} "
-        f"{shlex.quote(str(chip['endpoint_id']))}"
-    )
+    # === STEP 1: Open RTT (ensure active, record baselines) ===
+    if device_rtt.rtt_proc is None:
+        device_rtt.start_rtt()
+        time.sleep(3)
+    if pi_device._ssh_client is None:
+        pi_device.connect()
 
-    on_cmd = build_sudo_command(pi_device, on_raw_cmd)
+    rtt_baseline = read_rtt_log_file(rtt_log_file)
+    pi_baseline = read_log_file(pi_log_file) if os.path.exists(pi_log_file) else ""
 
-    result = execute_command(
-        pi_device,
-        config,
-        on_cmd,
-        expect=["Turning", "already set"],
-        rtt_log_file=rtt_log_file,
-    )
+    # === STEP 2: Send command ===
+    print(f"{chip_cmd}")
+    pi_device.execute_command(chip_cmd, timeout=15)
+    time.sleep(2)
+    print("✅ Command sent")
 
-    if result["result"] == "fail":
-        raise RuntimeError(f"❌ {label} failed: {result['stderr']}")
+    # === STEP 3: Close Pi ===
+    pi_device.disconnect()
 
-    print(f"✅ {label} executed successfully!")
-    return result
+    # === STEP 4: Check Pi log ===
+    assert os.path.exists(pi_log_file), f"Pi log not found: {pi_log_file}"
+    pi_full = read_log_file(pi_log_file)
+    assert len(pi_full) > 0, "Pi log is empty"
 
+    # Extract delta (only new content since baseline)
+    if pi_baseline and pi_full.startswith(pi_baseline):
+        pi_new = pi_full[len(pi_baseline):]
+    else:
+        pi_new = pi_full
 
-def send_off_command(
-    pi_device,
-    config,
-    label: str = "Turn Off",
-    rtt_log_file: str = None,
-) -> Dict:
-    """Send off command to device with RTT verification."""
-    print(f"\n🚀 Sending command: {label}")
+    pi_commands = PiLogParser.extract_commands(pi_new)
+    assert len(pi_commands) >= 1, "No chip-tool commands found in Pi log delta"
 
-    chip = resolve_chip_target(config)
+    # === STEP 5: Close RTT ===
+    device_rtt.stop_rtt()
+    time.sleep(1)
 
-    off_raw_cmd = (
-        f"{shlex.quote(pi_device.chip_tool_path)} "
-        f"onoff off {shlex.quote(str(chip['node_id']))} "
-        f"{shlex.quote(str(chip['endpoint_id']))}"
-    )
+    # === STEP 6: Check RTT log (end device) ===
+    assert os.path.exists(rtt_log_file), f"RTT log not found: {rtt_log_file}"
+    rtt_new = get_rtt_delta(rtt_log_file, rtt_baseline)
+    assert len(rtt_new) > 0, "No new RTT log content after command"
 
-    off_cmd = build_sudo_command(pi_device, off_raw_cmd)
+    device_results = RTTLogParser.extract_device_responses(rtt_new)
+    assert len(device_results) >= 1, "No device responses found in RTT log delta"
 
-    result = execute_command(
-        pi_device,
-        config,
-        off_cmd,
-        expect=["Turning", "already set"],
-        rtt_log_file=rtt_log_file,
-    )
+    # === STEP 7: Compare Pi command ↔ Device response ===
+    LogMatcher.verify_all_commands([pi_commands[-1]], [device_results[-1]])
 
-    if result["result"] == "fail":
-        raise RuntimeError(f"❌ {label} failed: {result['stderr']}")
+    print(f"\n[{label}] VERIFICATION PASSED!")
 
-    print(f"✅ {label} executed successfully!")
-    return result
-
-
-def send_toggle_command(
-    pi_device,
-    config,
-    label: str = "Toggle",
-    rtt_log_file: str = None,
-) -> Dict:
-    """Send toggle command to device with RTT verification."""
-    print(f"\n🚀 Sending command: {label}")
-
-    chip = resolve_chip_target(config)
-
-    toggle_raw_cmd = (
-        f"{shlex.quote(pi_device.chip_tool_path)} "
-        f"onoff toggle {shlex.quote(str(chip['node_id']))} "
-        f"{shlex.quote(str(chip['endpoint_id']))}"
-    )
-
-    toggle_cmd = build_sudo_command(pi_device, toggle_raw_cmd)
-
-    result = execute_command(
-        pi_device,
-        config,
-        toggle_cmd,
-        expect=["Turning"],
-        rtt_log_file=rtt_log_file,
-    )
-
-    if result["result"] == "fail":
-        raise RuntimeError(f"❌ {label} failed: {result['stderr']}")
-
-    print(f"✅ {label} executed successfully!")
-    return result
+    # === Reconnect for next command ===
+    pi_device.connect()
+    device_rtt.start_rtt()
+    time.sleep(2)

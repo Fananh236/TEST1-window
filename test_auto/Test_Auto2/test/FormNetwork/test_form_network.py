@@ -13,7 +13,7 @@ def thread_dataset(pi_device):
 
 
 
-def thread_dataset_is_valid_hex(thread_dataset):
+def test_thread_dataset_is_valid_hex(thread_dataset):
     hex_part = thread_dataset.removeprefix("hex:")
 
     assert len(hex_part) > 0, "Dataset hex part is empty"

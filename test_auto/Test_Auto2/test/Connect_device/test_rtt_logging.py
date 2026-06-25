@@ -12,7 +12,7 @@ from utils.common import (
 def test_rtt_fixture_active(device_rtt):
     print("✅ RTT fixture active")
 
-def log_file_readable(config):
+def test_log_file_readable(config):
     log_path = resolve_log_directory(config.get("log_path"))
     log_files = get_log_files(log_path)
 
@@ -26,7 +26,7 @@ def log_file_readable(config):
     print(f"✅ Read OK: {log_files[0]}")
 
 
-def rtt_config(config):
+def test_rtt_config(config):
     ip = get_device_ip(config)
     assert ip is not None, "No device IP configured"
     print(f"✅ RTT IP: {ip}")

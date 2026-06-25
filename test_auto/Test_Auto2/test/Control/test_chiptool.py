@@ -14,103 +14,9 @@ Each command follows the complete E2E workflow:
 Test order: Device check → Pairing → Toggle → On → Off
 """
 
-import os
-import time
 import pytest
 
-from utils.common import read_log_file
-from utils.log_parser import PiLogParser, RTTLogParser, LogMatcher
-from utils.chiptool import resolve_chip_target, validate_device_state, run_pairing
-from utils.rtt_reader import read_rtt_log_file, get_rtt_delta
-
-
-# =====================================================================
-# HELPER: Full 7-step workflow for one chip-tool command
-# =====================================================================
-
-def _run_and_verify(pi_device, device_rtt, log_paths, chip_cmd, label):
-    """
-    Execute one chip-tool command and verify via the full workflow:
-    open RTT → send → close Pi → check Pi log → close RTT → check RTT log → compare.
-
-    After verification, reconnects SSH and restarts RTT for the next command.
-
-    Reuses existing functions:
-      - read_rtt_log_file(), get_rtt_delta()  (rtt_reader)
-      - read_log_file()                       (common)
-      - PiLogParser, RTTLogParser, LogMatcher  (log_parser)
-    """
-    rtt_log_file = log_paths["rtt_log"]
-    pi_log_file = log_paths["pi_log"]
-
-    # === STEP 1: Open RTT (ensure active, record baselines) ===
-   
-
-    if device_rtt.rtt_proc is None:
-        device_rtt.start_rtt()
-        time.sleep(3)
-    if pi_device._ssh_client is None:
-        pi_device.connect()
-
-    rtt_baseline = read_rtt_log_file(rtt_log_file)
-    pi_baseline = read_log_file(pi_log_file) if os.path.exists(pi_log_file) else ""
-    
-
-    # === STEP 2: Send command ===
-   
-
-    print(f"{chip_cmd}")
-    pi_device.execute_command(chip_cmd, timeout=15)
-    time.sleep(2)
-    print("✅ Command sent")
-
-    # === STEP 3: Close Pi ===
-    pi_device.disconnect()
-    
-
-    # === STEP 4: Check Pi log ===
-
-    assert os.path.exists(pi_log_file), f"Pi log not found: {pi_log_file}"
-    pi_full = read_log_file(pi_log_file)
-    assert len(pi_full) > 0, "Pi log is empty"
-
-    # Extract delta (only new content since baseline)
-    if pi_baseline and pi_full.startswith(pi_baseline):
-        pi_new = pi_full[len(pi_baseline):]
-    else:
-        pi_new = pi_full
-
-    pi_commands = PiLogParser.extract_commands(pi_new)
-    assert len(pi_commands) >= 1, "No chip-tool commands found in Pi log delta"
-
-    cmd_info = pi_commands[-1]
-
-
-    # === STEP 5: Close RTT ===
-    
-    device_rtt.stop_rtt()
-    time.sleep(1)
-
-    # === STEP 6: Check RTT log (end device) ===
-
-    assert os.path.exists(rtt_log_file), f"RTT log not found: {rtt_log_file}"
-    rtt_new = get_rtt_delta(rtt_log_file, rtt_baseline)
-    assert len(rtt_new) > 0, "No new RTT log content after command"
-
-    device_results = RTTLogParser.extract_device_responses(rtt_new)
-    assert len(device_results) >= 1, "No device responses found in RTT log delta"
-
-
-    # === STEP 7: Compare Pi command ↔ Device response ===
-
-    LogMatcher.verify_all_commands([pi_commands[-1]], [device_results[-1]])
-
-    print(f"\n[{label}] VERIFICATION PASSED!")
-
-    # === Reconnect for next command ===
-    pi_device.connect()
-    device_rtt.start_rtt()
-    time.sleep(2)
+from utils.chiptool import resolve_chip_target, validate_device_state, run_pairing, run_and_verify
 
 
 # =====================================================================
@@ -153,7 +59,7 @@ def test_2_toggle(pi_device, flashed_device, config, device_rtt, log_paths):
         f"onoff toggle {chip['node_id']} {chip['endpoint_id']}"
     )
 
-    _run_and_verify(pi_device, device_rtt, log_paths, chip_cmd, "Toggle")
+    run_and_verify(pi_device, device_rtt, log_paths, chip_cmd, "Toggle")
 
 
 def test_3_on(pi_device, flashed_device, config, device_rtt, log_paths):
@@ -167,7 +73,7 @@ def test_3_on(pi_device, flashed_device, config, device_rtt, log_paths):
         f"onoff on {chip['node_id']} {chip['endpoint_id']}"
     )
 
-    _run_and_verify(pi_device, device_rtt, log_paths, chip_cmd, "Turn On")
+    run_and_verify(pi_device, device_rtt, log_paths, chip_cmd, "Turn On")
 
 
 def test_4_off(pi_device, flashed_device, config, device_rtt, log_paths):
@@ -181,4 +87,4 @@ def test_4_off(pi_device, flashed_device, config, device_rtt, log_paths):
         f"onoff off {chip['node_id']} {chip['endpoint_id']}"
     )
 
-    _run_and_verify(pi_device, device_rtt, log_paths, chip_cmd, "Turn Off")
+    run_and_verify(pi_device, device_rtt, log_paths, chip_cmd, "Turn Off")
