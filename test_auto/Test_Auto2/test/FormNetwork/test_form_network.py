@@ -13,7 +13,7 @@ def thread_dataset(pi_device):
 
 
 
-def test_thread_dataset_is_valid_hex(thread_dataset):
+def thread_dataset_is_valid_hex(thread_dataset):
     hex_part = thread_dataset.removeprefix("hex:")
 
     assert len(hex_part) > 0, "Dataset hex part is empty"
@@ -24,7 +24,7 @@ def test_thread_dataset_is_valid_hex(thread_dataset):
 
 
 def test_thread_channel(pi_device):
-    cmd = "sudo ot-ctl channel"
+    cmd = "echo 1 | sudo ot-ctl channel"
     out, _ = pi_device.execute_command(cmd)
 
     # Loại bỏ 'Done' của ot-ctl

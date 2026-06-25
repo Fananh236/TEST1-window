@@ -1,7 +1,7 @@
 import os
 import paramiko
 
-from test_auto.Test_Auto2.utils.pi_logger import setup_file_logger
+from utils.pi_logger import setup_file_logger
 
 
 class SSHClient:
@@ -63,6 +63,12 @@ class SSHClient:
         return self._ssh_client
 
     def execute_command(self, command, timeout=None):
+        if self.password and "sudo" in command:
+            import re
+            cleaned_cmd = re.sub(r"echo\s+['\"].*?['\"]\s*\|\s*sudo", "sudo", command)
+            cleaned_cmd = re.sub(r"\bsudo\s+-S\b", "sudo", cleaned_cmd)
+            command = re.sub(r"\bsudo\b", f"echo '{self.password}' | sudo -S", cleaned_cmd)
+
         self.logger.info(f"--- EXECUTE COMMAND: {command} ---")
         client = self.connect()
         stdin, stdout, stderr = client.exec_command(command, timeout=timeout)

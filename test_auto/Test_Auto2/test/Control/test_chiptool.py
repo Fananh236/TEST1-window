@@ -44,9 +44,7 @@ def _run_and_verify(pi_device, device_rtt, log_paths, chip_cmd, label):
     pi_log_file = log_paths["pi_log"]
 
     # === STEP 1: Open RTT (ensure active, record baselines) ===
-    print(f"\n{'='*60}")
-    print(f"[{label}] STEP 1: Open RTT log")
-    print(f"{'='*60}")
+   
 
     if device_rtt.rtt_proc is None:
         device_rtt.start_rtt()
@@ -56,32 +54,21 @@ def _run_and_verify(pi_device, device_rtt, log_paths, chip_cmd, label):
 
     rtt_baseline = read_rtt_log_file(rtt_log_file)
     pi_baseline = read_log_file(pi_log_file) if os.path.exists(pi_log_file) else ""
-    print(f"  RTT baseline: {len(rtt_baseline)} bytes")
-    print(f"  Pi  baseline: {len(pi_baseline)} bytes")
-    print("✅ RTT active, baselines recorded")
+    
 
     # === STEP 2: Send command ===
-    print(f"\n{'='*60}")
-    print(f"[{label}] STEP 2: Send command")
-    print(f"{'='*60}")
+   
 
-    print(f"  → {chip_cmd}")
+    print(f"{chip_cmd}")
     pi_device.execute_command(chip_cmd, timeout=15)
     time.sleep(2)
     print("✅ Command sent")
 
     # === STEP 3: Close Pi ===
-    print(f"\n{'='*60}")
-    print(f"[{label}] STEP 3: Close Pi")
-    print(f"{'='*60}")
-
     pi_device.disconnect()
-    print("✅ SSH disconnected")
+    
 
     # === STEP 4: Check Pi log ===
-    print(f"\n{'='*60}")
-    print(f"[{label}] STEP 4: Check Pi log")
-    print(f"{'='*60}")
 
     assert os.path.exists(pi_log_file), f"Pi log not found: {pi_log_file}"
     pi_full = read_log_file(pi_log_file)
@@ -97,25 +84,14 @@ def _run_and_verify(pi_device, device_rtt, log_paths, chip_cmd, label):
     assert len(pi_commands) >= 1, "No chip-tool commands found in Pi log delta"
 
     cmd_info = pi_commands[-1]
-    print(
-        f"  Pi sent: onoff {cmd_info['action']} "
-        f"node={cmd_info['node_id']} ep={cmd_info['endpoint_id']}"
-    )
-    print("✅ Pi log verified")
+
 
     # === STEP 5: Close RTT ===
-    print(f"\n{'='*60}")
-    print(f"[{label}] STEP 5: Close RTT")
-    print(f"{'='*60}")
-
+    
     device_rtt.stop_rtt()
     time.sleep(1)
-    print("✅ RTT stopped")
 
     # === STEP 6: Check RTT log (end device) ===
-    print(f"\n{'='*60}")
-    print(f"[{label}] STEP 6: Check end device RTT log")
-    print(f"{'='*60}")
 
     assert os.path.exists(rtt_log_file), f"RTT log not found: {rtt_log_file}"
     rtt_new = get_rtt_delta(rtt_log_file, rtt_baseline)
@@ -124,24 +100,17 @@ def _run_and_verify(pi_device, device_rtt, log_paths, chip_cmd, label):
     device_results = RTTLogParser.extract_device_responses(rtt_new)
     assert len(device_results) >= 1, "No device responses found in RTT log delta"
 
-    print(f"  Device responded: {device_results[-1]}")
-    print("✅ RTT log verified")
 
     # === STEP 7: Compare Pi command ↔ Device response ===
-    print(f"\n{'='*60}")
-    print(f"[{label}] STEP 7: Compare Pi command ↔ Device response")
-    print(f"{'='*60}")
 
     LogMatcher.verify_all_commands([pi_commands[-1]], [device_results[-1]])
 
-    print(f"\n🎉 [{label}] VERIFICATION PASSED!")
+    print(f"\n[{label}] VERIFICATION PASSED!")
 
     # === Reconnect for next command ===
-    print(f"\n  ↻ Reconnecting SSH + RTT for next command...")
     pi_device.connect()
     device_rtt.start_rtt()
     time.sleep(2)
-    print("  ✅ Ready for next command")
 
 
 # =====================================================================
