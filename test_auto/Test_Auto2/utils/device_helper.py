@@ -75,7 +75,6 @@ class DeviceHelper:
 
         cmd = [self.commander, "flash", firmware_path]
 
-    # ✅ giữ cùng order
         cmd += ["--device", self.device]
 
         if sn:

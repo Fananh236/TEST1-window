@@ -110,38 +110,7 @@ class RTTLogParser:
                             break
         
         return results
-    
-    @staticmethod
-    def match_log_to_command(rtt_content: str, action: str) -> Optional[str]:
-        """
-        Check if RTT log contains expected response for given action.
-        
-        Args:
-            rtt_content: RTT log content to search
-            action: "on", "off", or "toggle"
-            
-        Returns:
-            Response type ("TURN_ON", "TURN_OFF", "ALREADY_SET") or None
-        """
-        responses = RTTLogParser.extract_device_responses(rtt_content)
-        
-        if not responses:
-            return None
-        
-        # Take the last response (most recent)
-        actual = responses[-1]
-        
-        if action == "toggle":
-            if actual in ["TURN_ON", "TURN_OFF"]:
-                return actual
-        elif action == "on":
-            if actual in ["TURN_ON", "ALREADY_SET"]:
-                return actual
-        elif action == "off":
-            if actual in ["TURN_OFF", "ALREADY_SET"]:
-                return actual
-        
-        return None
+
 
 
 class LogMatcher:

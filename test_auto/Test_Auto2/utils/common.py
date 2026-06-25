@@ -64,30 +64,7 @@ def detect_pattern(line: str, pattern_type: str) -> bool:
         return pattern_type.lower() in line_lower
 
 
-# Legacy function names for backward compatibility
-def detect_receipt(line: str) -> bool:
-    """Detect receipt in RTT log (legacy, use detect_pattern instead)."""
-    return detect_pattern(line, "receipt")
 
-
-def detect_on_start(line: str) -> bool:
-    """Detect turn on start (legacy, use detect_pattern instead)."""
-    return detect_pattern(line, "on_start")
-
-
-def detect_on_done(line: str) -> bool:
-    """Detect turn on done (legacy, use detect_pattern instead)."""
-    return detect_pattern(line, "on_done")
-
-
-def detect_off_start(line: str) -> bool:
-    """Detect turn off start (legacy, use detect_pattern instead)."""
-    return detect_pattern(line, "off_start")
-
-
-def detect_off_done(line: str) -> bool:
-    """Detect turn off done (legacy, use detect_pattern instead)."""
-    return detect_pattern(line, "off_done")
 
 
 # ============================================================================
@@ -238,10 +215,4 @@ __all__ = [
     "get_log_files",
     "read_log_file",
     "get_device_ip",
-    # Legacy functions (for backward compatibility)
-    "detect_receipt",
-    "detect_on_start",
-    "detect_on_done",
-    "detect_off_start",
-    "detect_off_done",
 ]

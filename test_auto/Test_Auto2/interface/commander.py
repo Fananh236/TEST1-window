@@ -25,7 +25,7 @@ class CommanderInterface:
     # ACTION WRAPPER
     # =========================================================
     def mass_erase(self, sn=None, ip=None):
-        ok, _, _ = self.helper.mass_erase(sn, ip)
+        ok, _, _ = self.helper.mass_erase(sn, None)
         return ok
 
     def mass_erase_by_ip(self, ip):
@@ -43,7 +43,7 @@ class CommanderInterface:
         return ok
 
     def reset_device(self, sn=None, ip=None):
-        ok, _, _ = self.helper.reset(sn, ip)
+        ok, _, _ = self.helper.reset(sn, None)
         return ok
 
     def reset_device_by_ip(self, ip):

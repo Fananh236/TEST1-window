@@ -52,6 +52,7 @@ class ConfigLoader:
         """
         Support: "pi_config.pi_host"
         """
+        
         keys = key.split(".")
         value = self.config
 
@@ -61,24 +62,6 @@ class ConfigLoader:
             else:
                 return default
         return value
-
-    # =========================
-    # PATH HANDLING
-    # =========================
-    def resolve_path(self, path):
-        if not path:
-            return None
-
-        return path if os.path.isabs(path) else os.path.abspath(
-            os.path.join(self.root_dir, path)
-        )
-
-    def get_log_path(self):
-        log_path = self.get("log_path", "Log")
-        log_path = self.resolve_path(log_path)
-
-        os.makedirs(log_path, exist_ok=True)
-        return log_path
 
     # =========================
     # SINGLETON ACCESS

@@ -37,9 +37,7 @@ def test_reboot_and_reconnect(pi_device):
     """[TC0.4] Check Pi's reboot and automatic reconnection capability."""
     print("\n⏳ Sending REBOOT command to Raspberry Pi...")
     
-    # 1. Send reboot command
-    # Use 'sudo reboot' command and close SSH connection immediately
-    reboot_cmd = f"echo '{pi_device.password}' | sudo -S reboot"
+    reboot_cmd = "sudo reboot"
     try:
         pi_device.execute_command(reboot_cmd)
     except:

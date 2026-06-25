@@ -12,7 +12,7 @@ import time
 from typing import Union, List, Dict, Optional
 
 from utils.log_parser import RTTLogParser, PiLogParser
-from utils.rtt_reader import capture_rtt_logs, read_rtt_log_file, get_rtt_delta
+from utils.rtt_reader import read_rtt_log_file, get_rtt_delta
 
 
 def execute_command(
@@ -149,11 +149,11 @@ def resolve_chip_target(config, device_name=None):
 
 def fetch_thread_data_set(pi_device):
     """Fetch Thread dataset from Pi."""
-    cmd = f"echo '{pi_device.password}' | sudo -S -p '' ot-ctl dataset active -x"
+    cmd = "sudo ot-ctl dataset active -x"
     
     out, err = pi_device.execute_command(cmd)
     
-    if err and "password" not in err.lower():
+    if err:
         return None, err
     
     if not out:
@@ -261,7 +261,7 @@ def run_pairing(pi_device, config, pi_log_file: str = None):
     
     # Clean chip-tool KVS
     pi_device.execute_command(
-        f"echo '{pi_device.password}' | sudo -S rm -rf /tmp/chip_*"
+        "sudo rm -rf /tmp/chip_*"
     )
     
     # Fetch dataset
@@ -272,7 +272,7 @@ def run_pairing(pi_device, config, pi_log_file: str = None):
     
     # Build pairing command
     pairing_cmd = (
-        f"echo '{pi_device.password}' | sudo -S -p '' {pi_device.chip_tool_path} "
+        f"sudo {pi_device.chip_tool_path} "
         f"pairing {chip.get('discovery_type', 'ble-wifi')} "
         f"{chip['node_id']} "
         f"{dataset} "
@@ -292,7 +292,7 @@ def run_pairing(pi_device, config, pi_log_file: str = None):
     validate_pairing(pi_device, pi_log_file)
     
     # Optional: Check Thread state on Pi
-    state_cmd = f"echo '{pi_device.password}' | sudo -S -p '' ot-ctl state"
+    state_cmd = "sudo ot-ctl state"
     state_out, _ = pi_device.execute_command(state_cmd)
     print("[DEBUG] Thread state (Pi):", state_out)
     
@@ -330,7 +330,7 @@ def send_on_command(
     chip = resolve_chip_target(config)
     
     on_cmd = (
-        f"echo '{pi_device.password}' | sudo -S -p '' {pi_device.chip_tool_path} "
+        f"sudo {pi_device.chip_tool_path} "
         f"onoff on {chip['node_id']} {chip['endpoint_id']}"
     )
     
@@ -375,7 +375,7 @@ def send_off_command(
     chip = resolve_chip_target(config)
     
     off_cmd = (
-        f"echo '{pi_device.password}' | sudo -S -p '' {pi_device.chip_tool_path} "
+        f"sudo {pi_device.chip_tool_path} "
         f"onoff off {chip['node_id']} {chip['endpoint_id']}"
     )
     
@@ -420,7 +420,7 @@ def send_toggle_command(
     chip = resolve_chip_target(config)
     
     toggle_cmd = (
-        f"echo '{pi_device.password}' | sudo -S -p '' {pi_device.chip_tool_path} "
+        f"sudo {pi_device.chip_tool_path} "
         f"onoff toggle {chip['node_id']} {chip['endpoint_id']}"
     )
     

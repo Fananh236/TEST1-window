@@ -1,6 +1,6 @@
 
 import pytest
-from utils.chip_tool_helper import fetch_thread_data_set
+from utils.chiptool import fetch_thread_data_set
 
 
 @pytest.fixture(scope="module")
@@ -24,7 +24,7 @@ def test_thread_dataset_is_valid_hex(thread_dataset):
 
 
 def test_thread_channel(pi_device):
-    cmd = f"echo '{pi_device.password}' | sudo -S -p '' ot-ctl channel"
+    cmd = "sudo ot-ctl channel"
     out, _ = pi_device.execute_command(cmd)
 
     # Loại bỏ 'Done' của ot-ctl

@@ -10,11 +10,10 @@ from utils.jlink import _build_jlink_remote_server_cmd, _build_jlink_rtt_logger_
 
 
 class DeviceRTT:
-    """Realtime RTT reader that starts JLinkRTTLogger and provides wait_for_command().
+    """Realtime RTT reader that starts JLinkRTTLogger.
 
     - start_rtt(): launch processes and reader thread
     - stop_rtt(): stop processes and thread
-    - wait_for_command(action, timeout): wait for receipt->start->done
     """
 
     def __init__(self, serial_config, log_dir):
@@ -151,81 +150,4 @@ class DeviceRTT:
         except Exception:
             pass
 
-    def wait_rtt_ready(self, timeout: float = 5.0) -> bool:
-        end = time.time() + timeout
-        while time.time() < end:
-            try:
-                _ = self._line_queue.get(timeout=0.5)
-                self._line_queue.put_nowait(_)
-                return True
-            except queue.Empty:
-                continue
-        return False
 
-    def read_rtt_log(self) -> str:
-        if not os.path.exists(self.rtt_log_file):
-            return ""
-        try:
-            with open(self.rtt_log_file, "r", encoding="utf-8", errors="ignore") as f:
-                return f.read()
-        except Exception:
-            return ""
-
-    def wait_for_command(self, action: str, timeout: float) -> bool:
-        """Wait for receipt -> start -> done sequence for given action.
-
-        action: 'on' | 'off' | 'toggle'
-        """
-        action = (action or "").lower()
-        if action not in ("on", "off", "toggle"):
-            raise ValueError("action must be 'on', 'off' or 'toggle'")
-
-        # import unified pattern detector
-        from utils.common import detect_pattern
-
-        receipt_seen = False
-        start_seen = False
-        start_type = None
-
-        end_time = time.time() + timeout
-        while time.time() < end_time:
-            remaining = end_time - time.time()
-            try:
-                line = self._line_queue.get(timeout=min(0.5, max(0.05, remaining)))
-            except queue.Empty:
-                continue
-
-            # receipt -> start -> done
-            if not receipt_seen and detect_pattern(line, "receipt"):
-                receipt_seen = True
-                print(f"[RTT DEBUG] receipt detected: {line}")
-                continue
-
-            if receipt_seen and not start_seen:
-                if detect_pattern(line, "on_start") and action in ("on", "toggle"):
-                    start_seen = True
-                    start_type = "on"
-                    print(f"[RTT DEBUG] start(on) detected: {line}")
-                    continue
-                if detect_pattern(line, "off_start") and action in ("off", "toggle"):
-                    start_seen = True
-                    start_type = "off"
-                    print(f"[RTT DEBUG] start(off) detected: {line}")
-                    continue
-
-            if start_seen:
-                if start_type == "on" and detect_pattern(line, "on_done"):
-                    print(f"[RTT DEBUG] done(on) detected: {line}")
-                    return True
-                if start_type == "off" and detect_pattern(line, "off_done"):
-                    print(f"[RTT DEBUG] done(off) detected: {line}")
-                    return True
-
-            # If a new receipt arrives before start, treat as reset for a new command
-            if receipt_seen and not start_seen and detect_pattern(line, "receipt"):
-                receipt_seen = True
-                start_seen = False
-                start_type = None
-                print(f"[RTT DEBUG] new receipt detected (reset): {line}")
-
-        return False

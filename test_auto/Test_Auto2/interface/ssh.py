@@ -15,6 +15,12 @@ class SSHClient:
         self._ssh_client = None
         self.otl_path = pi_config.get("otl_path")
         self.log_dir = os.path.abspath(log_dir)
+
+
+
+
+
+        
         self.logger = setup_file_logger("PiSSH", self.log_dir, "pi_connection.log")
         self.logger.info("--- NEW SSH SESSION ---")
 
@@ -41,6 +47,14 @@ class SSHClient:
                     password=self.password,
                 )
             self.logger.info(f"Successfully connected to {self.host}:{self.port}")
+
+            # Cache sudo credentials upon connection
+            if self.password:
+                self.logger.info("Caching sudo credentials...")
+                stdin, stdout, stderr = self._ssh_client.exec_command(
+                    f"echo '{self.password}' | sudo -S -v"
+                )
+                stdout.channel.recv_exit_status()
         except Exception as exc:
             self.logger.error(f"SSH connection failed: {exc}")
             self._ssh_client = None

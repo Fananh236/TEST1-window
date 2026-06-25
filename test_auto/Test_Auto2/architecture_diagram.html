@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiến trúc Hệ thống Test Automation</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Mermaid JS -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.2.4/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'dark',
+            securityLevel: 'loose',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            }
+        });
+    </script>
+    <style>
+        :root {
+            --bg-primary: #0b0f19;
+            --bg-secondary: #131a26;
+            --bg-tertiary: #1b2537;
+            --accent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            --accent-primary: #6366f1;
+            --accent-secondary: #a855f7;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+            --glow-color: rgba(99, 102, 241, 0.15);
+            
+            --color-config: #ff9800;
+            --color-interface: #4caf50;
+            --color-util: #00bcd4;
+            --color-test: #2196f3;
+            --color-legacy: #e91e63;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Ambient background glow */
+        .ambient-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, rgba(0,0,0,0) 70%);
+            top: -200px;
+            right: -100px;
+            z-index: -1;
+            pointer-events: none;
+        }
+        .ambient-glow-2 {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.06) 0%, rgba(0,0,0,0) 70%);
+            bottom: 100px;
+            left: -100px;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        header {
+            background: rgba(19, 26, 38, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo i {
+            -webkit-text-fill-color: #6366f1;
+        }
+
+        .header-meta {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .badge-status {
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .badge-status::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: #10b981;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #10b981;
+        }
+
+        .main-container {
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(90deg, rgba(19, 26, 38, 0.8) 0%, rgba(27, 37, 55, 0.4) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+            background: linear-gradient(to right, #ffffff, #cbd5e1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 800px;
+            font-weight: 300;
+        }
+
+        /* Navigation Tabs */
+        .tabs {
+            display: flex;
+            gap: 1rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-family: inherit;
+            font-size: 1.05rem;
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tab-btn:hover {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .tab-btn.active {
+            color: var(--text-main);
+            background: var(--accent-gradient);
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Visual Card */
+        .card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            position: relative;
+        }
+
+        .card-header {
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding-bottom: 1rem;
+        }
+
+        .card-title {
+            font-size: 1.35rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        /* Diagram Wrapper styling */
+        .diagram-container {
+            background: var(--bg-tertiary);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            overflow-x: auto;
+            display: flex;
+            justify-content: center;
+            min-height: 500px;
+        }
+
+        /* Custom style overrides for Mermaid flowchart nodes inside SVG */
+        .node rect, .node circle, .node polygon, .node path {
+            filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.3));
+        }
+
+        /* Legend container styling */
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.25rem;
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: rgba(255,255,255,0.02);
+            border-radius: 8px;
+            border: 1px dashed rgba(255,255,255,0.05);
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .legend-color {
+            width: 14px;
+            height: 14px;
+            border-radius: 4px;
+        }
+
+        /* Explorer Tab Grid layout */
+        .explorer-grid {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        @media (max-width: 968px) {
+            .explorer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .file-list {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1rem;
+            max-height: 700px;
+            overflow-y: auto;
+        }
+
+        .file-list-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+            padding-left: 0.5rem;
+        }
+
+        .file-category {
+            margin-bottom: 1.5rem;
+        }
+
+        .category-name {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding-left: 0.5rem;
+        }
+
+        .file-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.65rem 0.75rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            border: 1px solid transparent;
+        }
+
+        .file-item:hover {
+            background: rgba(255,255,255,0.03);
+            color: var(--text-main);
+        }
+
+        .file-item.active {
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--text-main);
+            border-color: rgba(99, 102, 241, 0.3);
+            font-weight: 500;
+        }
+
+        .file-item i {
+            font-size: 1rem;
+        }
+
+        .file-details {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .details-empty {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-muted);
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .details-empty i {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Detail view typography */
+        .detail-header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-filename {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .detail-meta {
+            display: flex;
+            gap: 1.25rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .detail-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .detail-desc {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1.25rem 0 0.75rem 0;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-left: 3px solid var(--accent-primary);
+            padding-left: 0.65rem;
+        }
+
+        /* Custom lists and grids */
+        .func-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .func-card {
+            background: var(--bg-tertiary);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .func-card:hover {
+            transform: translateX(4px);
+            border-color: rgba(99, 102, 241, 0.2);
+        }
+
+        .func-name {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.95rem;
+            color: #f43f5e;
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+        }
+
+        .func-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .relation-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.25rem 0.6rem;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .relation-tag:hover {
+            background: rgba(99, 102, 241, 0.08);
+            border-color: rgba(99, 102, 241, 0.2);
+            color: var(--text-main);
+        }
+
+        .tag-arrow {
+            color: var(--accent-secondary);
+            font-size: 0.75rem;
+        }
+
+        .badge-type {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            color: #fff;
+        }
+        
+        .badge-config { background-color: var(--color-config); }
+        .badge-interface { background-color: var(--color-interface); }
+        .badge-util { background-color: var(--color-util); }
+        .badge-test { background-color: var(--color-test); }
+        .badge-legacy { background-color: var(--color-legacy); }
+
+        footer {
+            margin-top: 5rem;
+            border-top: 1px solid var(--border-color);
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="ambient-glow"></div>
+    <div class="ambient-glow-2"></div>
+
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-circle-nodes"></i>
+            <span>TestAuto Architect</span>
+        </div>
+        <div class="header-meta">
+            <span class="badge-status">Hệ thống sẵn sàng</span>
+            <span style="color: var(--text-muted); font-size: 0.9rem;"><i class="fa-regular fa-clock"></i> Cập nhật: 24/06/2026</span>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="hero">
+            <h1>Sơ đồ Kiến trúc & Tương tác</h1>
+            <p>Hệ thống tự động hóa kiểm thử điều khiển thiết bị (nạp firmware, thiết lập kết nối, ghép nối BLE/Thread, đo đếm trạng thái qua RTT log và so khớp). Bản đồ trực quan hỗ trợ phân tích luồng logic.</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab('diagram')">
+                <i class="fa-solid fa-diagram-project"></i> Sơ đồ Tương tác
+            </button>
+            <button class="tab-btn" onclick="switchTab('explorer')">
+                <i class="fa-regular fa-folder-open"></i> Chi tiết Module & Hàm
+            </button>
+        </div>
+
+        <!-- TAB 1: SƠ ĐỒ MERMAID -->
+        <div id="tab-diagram" class="tab-content active">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <i class="fa-solid fa-network-wired" style="color: var(--accent-primary)"></i>
+                        Sơ đồ Calling Graph (Luồng tương tác gọi hàm)
+                    </div>
+                    <span style="font-size: 0.85rem; color: var(--text-muted)">Cuộn ngang hoặc phóng to trình duyệt để quan sát tốt nhất</span>
+                </div>
+
+                <div class="diagram-container">
+                    <div class="mermaid">
+flowchart TB
+    classDef testClass fill:#e3f2fd,stroke:#1565c0,stroke-width:1.5px;
+    classDef utilClass fill:#efebe9,stroke:#4e342e,stroke-width:1.5px;
+    classDef interfaceClass fill:#e8f5e9,stroke:#2e7d32,stroke-width:1.5px;
+    classDef configClass fill:#fff3e0,stroke:#ef6c00,stroke-width:1.5px;
+    classDef scriptClass fill:#f3e5f5,stroke:#6a1b9a,stroke-width:1.5px;
+    classDef legacyClass fill:#ffebee,stroke:#c62828,stroke-width:1px,stroke-dasharray: 5 5;
+
+    subgraph Config_And_Scripts ["1. Cấu hình & Scripts Độc lập"]
+        direction LR
+        subgraph config_json ["config.json"]
+            cfg[File cấu hình JSON]
+        end
+        subgraph loader_py ["config/loader.py"]
+            ConfigLoader["Class: ConfigLoader<br/>• instance()<br/>• get()<br/>• resolve_path()"]
+        end
+        subgraph flash_ip_py ["flash_ip.py"]
+            DeviceFlasher["Class: DeviceFlasher<br/>• mass_erase()<br/>• flash()<br/>• reset()<br/>• run()"]
+        end
+        subgraph check_logs_py ["check_logs.py"]
+            check_logs_func["Hàm: check_logs()"]
+        end
+    end
+
+    subgraph Interface_Layer ["2. Lớp Giao tiếp (Interfaces)"]
+        subgraph interface_commander_py ["interface/commander.py"]
+            CommanderInterface["Class: CommanderInterface<br/>• mass_erase_by_ip()<br/>• flash_firmware_by_ip()<br/>• reset_device_by_ip()<br/>• mass_erase()<br/>• flash_firmware()<br/>• reset_device()"]
+        end
+        subgraph interface_ssh_py ["interface/ssh.py"]
+            SSHClient["Class: SSHClient<br/>• connect()<br/>• execute_command()<br/>• disconnect()"]
+        end
+        subgraph interface_rtt_py ["interface/rtt.py"]
+            DeviceRTT["Class: DeviceRTT<br/>• start_rtt()<br/>• stop_rtt()<br/>• wait_for_command()"]
+        end
+    end
+
+    subgraph Utilities_Layer ["3. Lớp Tiện ích (Utilities)"]
+        subgraph utils_device_helper_py ["utils/device_helper.py"]
+            DeviceHelper["Class: DeviceHelper<br/>• mass_erase()<br/>• flash()<br/>• reset()<br/>• is_connected()"]
+        end
+        subgraph utils_jlink_py ["utils/jlink.py"]
+            jlink_cmds["Hàm:<br/>• _build_jlink_remote_server_cmd()<br/>• _build_jlink_rtt_logger_cmd()"]
+        end
+        subgraph utils_pi_logger_py ["utils/pi_logger.py"]
+            setup_file_logger["Hàm:<br/>• setup_file_logger()"]
+        end
+        subgraph utils_common_py ["utils/common.py"]
+            common_utils["Hàm:<br/>• detect_pattern()<br/>• resolve_log_directory()<br/>• get_log_files()<br/>• read_log_file()<br/>• get_device_ip()"]
+        end
+        subgraph utils_rtt_reader_py ["utils/rtt_reader.py"]
+            rtt_reader_utils["Hàm:<br/>• capture_rtt_logs()<br/>• read_rtt_log_file()<br/>• get_rtt_delta()"]
+        end
+        subgraph utils_log_parser_py ["utils/log_parser.py"]
+            PiLogParser["Class: PiLogParser<br/>• extract_commands()<br/>• extract_pairing_result()"]
+            RTTLogParser["Class: RTTLogParser<br/>• extract_device_responses()<br/>• match_log_to_command()"]
+            LogMatcher["Class: LogMatcher<br/>• verify_all_commands()"]
+        end
+        subgraph utils_chiptool_py ["utils/chiptool.py"]
+            chiptool_utils["Hàm:<br/>• execute_command()<br/>• run_pairing()<br/>• send_on_command()<br/>• send_off_command()<br/>• send_toggle_command()"]
+        end
+    end
+
+    subgraph Test_Layer ["4. Hệ thống Test (Pytest)"]
+        subgraph test_conftest_py ["test/conftest.py"]
+            config_fixture["Fixture: config"]
+            pi_device_fixture["Fixture: pi_device"]
+            device_rtt_fixture["Fixture: device_rtt"]
+            flashed_device_fixture["Fixture: flashed_device"]
+        end
+        subgraph test_Connect_device ["test/Connect_device/"]
+            test_flashing_ip_py["test_flashing_ip.py"]
+            test_flashing_sn_py["test_flashing_sn.py"]
+            test_pi_connectivity_py["test_pi_connectivity.py"]
+            test_rtt_logging_py["test_rtt_logging.py"]
+        end
+        subgraph test_formnetwork ["test/formnetwork/"]
+            test_form_network_py["test_form_network.py"]
+        end
+        subgraph test_control ["test/control/"]
+            test_chiptool_py["test_chiptool.py"]
+        end
+        subgraph test_Verify ["test/Verify/"]
+            test_check_logs_py["test_check_logs.py"]
+        end
+    end
+
+    ConfigLoader --> |Đọc cấu hình| config_json
+    flash_ip_py -.-> |Sử dụng| ConfigLoader
+    config_fixture --> |Khởi tạo & Cung cấp cấu hình| ConfigLoader
+
+    CommanderInterface --> |Khởi tạo & Điều hướng hành vi| DeviceHelper
+    test_flashing_ip_py --> |Gọi flash, erase, reset bằng IP| CommanderInterface
+    test_flashing_sn_py --> |Gọi flash, erase, reset bằng SN| CommanderInterface
+
+    DeviceRTT --> |Gọi lệnh JLink qua| jlink_cmds
+    DeviceRTT --> |Kiểm tra khớp log| common_utils
+    device_rtt_fixture --> |Khởi tạo session RTT| DeviceRTT
+
+    SSHClient --> |Tạo file log| setup_file_logger
+    pi_device_fixture --> |Khởi tạo session SSH| SSHClient
+    test_pi_connectivity_py --> |Gửi lệnh tương tác| pi_device_fixture
+
+    chiptool_utils --> |Phân tích log| PiLogParser
+    chiptool_utils --> |Phân tích phản hồi| RTTLogParser
+    chiptool_utils --> |Đọc khoảng log RTT| rtt_reader_utils
+    test_form_network_py --> |Lấy Dataset mạng Thread| chiptool_utils
+    test_chiptool_py --> |Test Pairing, On/Off, Toggle| chiptool_utils
+    chiptool_utils --> |Gửi lệnh điều khiển qua SSH| pi_device_fixture
+
+    test_rtt_logging_py --> |Kiểm tra log bằng| common_utils
+    test_check_logs_py --> |Đọc log bằng| common_utils
+    test_check_logs_py --> |So khớp bằng| LogMatcher
+
+    check_logs_func --> |Đọc & Phân tích trực tiếp| LogFiles[(Logs: pi_connection.log / rtt_log.txt)]
+
+    class ConfigLoader,cfg configClass;
+    class DeviceFlasher,check_logs_func scriptClass;
+    class CommanderInterface,SSHClient,DeviceRTT interfaceClass;
+    class DeviceHelper,jlink_cmds,setup_file_logger,common_utils,rtt_reader_utils,PiLogParser,RTTLogParser,LogMatcher,chiptool_utils utilClass;
+    class config_fixture,pi_device_fixture,device_rtt_fixture,flashed_device_fixture,test_flashing_ip_py,test_flashing_sn_py,test_pi_connectivity_py,test_rtt_logging_py,test_form_network_py,test_chiptool_py,test_check_logs_py testClass;
+                    </div>
+                </div>
+
+                <div class="legend">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: var(--color-config)"></div>
+                        <span>Cấu hình (Loader)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #6a1b9a"></div>
+                        <span>Scripts Độc lập</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: var(--color-interface)"></div>
+                        <span>Lớp Giao tiếp (Interfaces)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: var(--color-util)"></div>
+                        <span>Lớp Tiện ích (Utilities)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: var(--color-test)"></div>
+                        <span>Kiểm thử (Pytest)</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="border: 1px dashed var(--color-legacy); background-color: #ffebee"></div>
+                        <span>Module cũ (Legacy / Deprecated)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 2: EXPLORER CHI TIẾT -->
+        <div id="tab-explorer" class="tab-content">
+            <div class="explorer-grid">
+                <!-- Sidebar Files -->
+                <div class="file-list">
+                    <div class="file-list-title">Danh sách File dự án</div>
+                    
+                    <div class="file-category">
+                        <div class="category-name"><i class="fa-solid fa-sliders"></i> Cấu hình</div>
+                        <div class="file-item" onclick="showFile('config_json')">config.json</div>
+                        <div class="file-item" onclick="showFile('loader')">config/loader.py</div>
+                    </div>
+
+                    <div class="file-category">
+                        <div class="category-name"><i class="fa-solid fa-plug"></i> Lớp Giao tiếp</div>
+                        <div class="file-item" onclick="showFile('commander')">interface/commander.py</div>
+                        <div class="file-item" onclick="showFile('ssh')">interface/ssh.py</div>
+                        <div class="file-item" onclick="showFile('rtt')">interface/rtt.py</div>
+                    </div>
+
+                    <div class="file-category">
+                        <div class="category-name"><i class="fa-solid fa-gears"></i> Tiện ích chính</div>
+                        <div class="file-item" onclick="showFile('device_helper')">utils/device_helper.py</div>
+                        <div class="file-item" onclick="showFile('chiptool')">utils/chiptool.py</div>
+                        <div class="file-item" onclick="showFile('log_parser')">utils/log_parser.py</div>
+                        <div class="file-item" onclick="showFile('common')">utils/common.py</div>
+                        <div class="file-item" onclick="showFile('rtt_reader')">utils/rtt_reader.py</div>
+                        <div class="file-item" onclick="showFile('jlink')">utils/jlink.py</div>
+                        <div class="file-item" onclick="showFile('pi_logger')">utils/pi_logger.py</div>
+                    </div>
+                </div>
+
+                <!-- Chi tiết file -->
+                <div class="file-details" id="details-container">
+                    <div class="details-empty">
+                        <i class="fa-solid fa-bezier-curve"></i>
+                        <h3>Hãy chọn một file ở danh sách bên trái</h3>
+                        <p>Thông tin chi tiết về các hàm bên trong file và sự tương tác giữa chúng sẽ hiển thị ở đây.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 TestAuto System. Bản đồ Kiến trúc Dự án Hỗ trợ Pairing & RTT Automation.</p>
+    </footer>
+
+    <!-- Dữ liệu tương tác động của các file -->
+    <script>
+        const fileData = {
+            config_json: {
+                filename: 'config.json',
+                badgeClass: 'badge-config',
+                badgeText: 'Cấu hình',
+                desc: 'File cấu hình định dạng JSON lưu thông tin kết nối và thông số phần cứng thiết bị.',
+                meta: 'Chứa dữ liệu tĩnh',
+                relations: [],
+                funcs: [
+                    { name: 'pi_config', desc: 'Lưu IP host, port SSH, username/password của Pi, và đường dẫn binary chip-tool trên Pi.' },
+                    { name: 'chip_config', desc: 'Chứa mã PIN thiết lập, kiểu dò Thread (ble-thread), và giá trị phân biệt thiết bị.' },
+                    { name: 'serial_config', desc: 'Lưu đường dẫn công cụ commander, loại MCU, danh sách Serial Number + IP, node_id, và đường dẫn file firmware (.s37).' }
+                ]
+            },
+            loader: {
+                filename: 'config/loader.py',
+                badgeClass: 'badge-config',
+                badgeText: 'Cấu hình',
+                desc: 'Thực hiện việc đọc, phân tích và quản lý file cấu hình dạng Singleton.',
+                meta: 'Class: ConfigLoader',
+                relations: [
+                    { name: 'config.json', type: 'Đọc dữ liệu từ' }
+                ],
+                funcs: [
+                    { name: 'instance(config_path)', desc: 'Trả về thể hiện Singleton duy nhất của ConfigLoader.' },
+                    { name: 'get(key, default)', desc: 'Lấy cấu hình hỗ trợ truy cập lồng kiểu chấm (ví dụ: pi_config.pi_host).' },
+                    { name: 'resolve_path(path)', desc: 'Đổi đường dẫn tương đối trong file config thành tuyệt đối từ thư mục gốc của dự án.' },
+                    { name: 'get_log_path()', desc: 'Lấy đường dẫn thư mục lưu log, tự động tạo nếu chưa tồn tại.' }
+                ]
+            },
+            commander: {
+                filename: 'interface/commander.py',
+                badgeClass: 'badge-interface',
+                badgeText: 'Lớp Giao tiếp',
+                desc: 'Giao diện tương tác nâng cao với chương trình nạp SiLabs JLink Commander.',
+                meta: 'Class: CommanderInterface',
+                relations: [
+                    { name: 'utils/device_helper.py', type: 'Ủy quyền gọi thông qua' }
+                ],
+                funcs: [
+                    { name: 'mass_erase(sn)', desc: 'Xóa chip dựa trên mã Serial Number của kit nạp.' },
+                    { name: 'mass_erase_by_ip(ip)', desc: 'Xóa chip qua IP của thiết bị.' },
+                    { name: 'flash_firmware(firmware, sn)', desc: 'Nạp file firmware .s37/hex vào thiết bị dựa trên SN.' },
+                    { name: 'flash_firmware_by_ip(firmware, ip)', desc: 'Nạp firmware thông qua IP của kit nạp.' },
+                    { name: 'reset_device(sn) / reset_device_by_ip(ip)', desc: 'Khởi động lại MCU của thiết bị.' },
+                    { name: 'is_device_connected(sn)', desc: 'Kiểm tra xem thiết bị phần cứng có đang cắm USB vào hệ thống không.' }
+                ]
+            },
+            ssh: {
+                filename: 'interface/ssh.py',
+                badgeClass: 'badge-interface',
+                badgeText: 'Lớp Giao tiếp',
+                desc: 'Quản lý kết nối SSH đến Raspberry Pi đóng vai trò làm điều phối viên (OTBR).',
+                meta: 'Class: SSHClient (sử dụng paramiko)',
+                relations: [
+                    { name: 'utils/pi_logger.py', type: 'Ghi nhật ký tương tác qua' }
+                ],
+                funcs: [
+                    { name: 'connect()', desc: 'Tạo phiên SSH kết nối đến Pi sử dụng Username/Password hoặc Private Key.' },
+                    { name: 'execute_command(command, timeout)', desc: 'Thực thi câu lệnh (chạy chip-tool, reboot, ot-ctl) trên Pi, ghi logs chi tiết STDOUT/STDERR vào pi_connection.log.' },
+                    { name: 'disconnect()', desc: 'Đóng phiên kết nối an toàn.' }
+                ]
+            },
+            rtt: {
+                filename: 'interface/rtt.py',
+                badgeClass: 'badge-interface',
+                badgeText: 'Lớp Giao tiếp',
+                desc: 'Bộ tiếp nhận dữ liệu thời gian thực RTT sinh ra từ thiết bị.',
+                meta: 'Class: DeviceRTT (độc lập tiến trình)',
+                relations: [
+                    { name: 'utils/jlink.py', type: 'Khởi tạo tiến trình bằng câu lệnh từ' },
+                    { name: 'utils/common.py', type: 'Phát hiện mẫu log bằng' }
+                ],
+                funcs: [
+                    { name: 'start_rtt()', desc: 'Mở JLinkRemoteServer và JLinkRTTLogger làm tiến trình con và chạy luồng phụ đọc luồng output tuần tự.' },
+                    { name: 'wait_for_command(action, timeout)', desc: 'Đợi và bắt tuần tự các dấu vết khớp trạng thái (receipt -> start -> done) từ hàng đợi logs của luồng phụ.' },
+                    { name: 'stop_rtt()', desc: 'Kill toàn bộ tiến trình con JLink và dọn dẹp bộ nhớ.' }
+                ]
+            },
+            device_helper: {
+                filename: 'utils/device_helper.py',
+                badgeClass: 'badge-util',
+                badgeText: 'Tiện ích',
+                desc: 'Lớp thực thi CLI cấp thấp cho các câu lệnh Commander.',
+                meta: 'Class: DeviceHelper',
+                relations: [
+                    { name: 'Subprocess', type: 'Khởi chạy lệnh hệ thống qua' }
+                ],
+                funcs: [
+                    { name: '_run(cmd, timeout)', desc: 'Gọi subprocess.run nạp và trả kết quả thành công/thất bại và nội dung logs.' },
+                    { name: '_retry(cmd, retry)', desc: 'Wrapper tự động thử lại khi câu lệnh CLI của silicon labs gặp lỗi hoặc timeout.' },
+                    { name: 'mass_erase(sn, ip) / flash(...) / reset(...)', desc: 'Xây dựng tham số CLI và gửi vào hàm _retry để thực thi thao tác nạp.' }
+                ]
+            },
+            chiptool: {
+                filename: 'utils/chiptool.py',
+                badgeClass: 'badge-util',
+                badgeText: 'Tiện ích',
+                desc: 'Module cốt lõi xử lý luồng logic điều khiển của chip-tool.',
+                meta: 'Nhóm các hàm logic điều khiển',
+                relations: [
+                    { name: 'interface/ssh.py', type: 'Gửi lệnh thông qua' },
+                    { name: 'utils/log_parser.py', type: 'Kiểm tra trạng thái ghép nối bằng' },
+                    { name: 'utils/rtt_reader.py', type: 'Trích xuất log RTT khoảng giữa lệnh bằng' }
+                ],
+                funcs: [
+                    { name: 'execute_command(pi_device, config, chip_command, expect, rtt_log_file)', desc: 'Gửi lệnh điều khiển sang Pi, thu log RTT thời gian chạy lệnh và kiểm tra mẫu chuỗi mong đợi (expect).' },
+                    { name: 'run_pairing(pi_device, config, pi_log_file)', desc: 'Dọn dẹp KVS cũ trên Pi, lấy Thread dataset, chạy lệnh pairing và thẩm định kết quả thành công.' },
+                    { name: 'send_on_command() / send_off_command() / send_toggle_command()', desc: 'Gửi các lệnh điều khiển onoff tương ứng với node_id và kiểm chứng thay đổi RTT.' }
+                ]
+            },
+            log_parser: {
+                filename: 'utils/log_parser.py',
+                badgeClass: 'badge-util',
+                badgeText: 'Tiện ích',
+                desc: 'Bộ phân tích nội dung logs thông minh dùng biểu thức chính quy (Regex).',
+                meta: 'Classes: PiLogParser, RTTLogParser, LogMatcher',
+                relations: [],
+                funcs: [
+                    { name: 'PiLogParser.extract_commands(content)', desc: 'Tìm tất cả các lệnh chip-tool onoff kèm mốc thời gian từ pi_connection.log.' },
+                    { name: 'PiLogParser.extract_pairing_result(content)', desc: 'Phân tích logs để xác định ghép nối thành công hay thất bại.' },
+                    { name: 'RTTLogParser.extract_device_responses(content)', desc: 'Nhận dạng và trích xuất chuỗi trạng thái hoạt động: TURN_ON, TURN_OFF, ALREADY_SET.' },
+                    { name: 'LogMatcher.verify_all_commands(pi_commands, device_results)', desc: 'So sánh khớp đối chiếu chéo số lượng và trạng thái của từng lệnh từ Pi với kết quả RTT.' }
+                ]
+            },
+            common: {
+                filename: 'utils/common.py',
+                badgeClass: 'badge-util',
+                badgeText: 'Tiện ích',
+                desc: 'Các hàm thư viện dùng chung cho toàn dự án.',
+                meta: 'Hàm độc lập',
+                relations: [],
+                funcs: [
+                    { name: 'detect_pattern(line, pattern_type)', desc: 'Xác định mẫu log RTT (receipt, on_start, on_done, off_start, off_done hoặc từ khóa tùy biến).' },
+                    { name: 'resolve_log_directory(log_path, project_root)', desc: 'Xử lý đường dẫn log tương đối hoặc tuyệt đối an toàn.' },
+                    { name: 'get_device_ip(config)', desc: 'Trích xuất IP của thiết bị được chỉ định trong file cấu hình.' }
+                ]
+            },
+            rtt_reader: {
+                filename: 'utils/rtt_reader.py',
+                badgeClass: 'badge-util',
+                badgeText: 'Tiện ích',
+                desc: 'Công cụ bắt và so sánh logs RTT tức thời.',
+                meta: 'Hàm phụ trợ',
+                relations: [],
+                funcs: [
+                    { name: 'capture_rtt_logs(rtt_log_file, start_time)', desc: 'Lấy dữ liệu log RTT sinh ra tính từ mốc thời gian start_time.' },
+                    { name: 'get_rtt_delta(rtt_log_file, baseline_content)', desc: 'Bóc tách sự khác biệt (nội dung log mới sinh ra) so với nội dung log cơ sở (baseline) đã chụp trước khi chạy lệnh.' }
+                ]
+            },
+            jlink: {
+                filename: 'utils/jlink.py',
+                badgeClass: 'badge-util',
+                badgeText: 'Tiện ích',
+                desc: 'Sinh cấu trúc lệnh CLI phục vụ cho việc khởi chạy các công cụ nạp của Segger.',
+                meta: 'Hàm độc lập',
+                relations: [],
+                funcs: [
+                    { name: '_build_jlink_remote_server_cmd(sn)', desc: 'Tạo mảng câu lệnh để chạy JLinkRemoteServer theo Serial Number.' },
+                    { name: '_build_jlink_rtt_logger_cmd(device, ip, rtt_log_file)', desc: 'Tạo mảng câu lệnh JLinkRTTLogger kết nối thông qua IP J-Link và lưu log ra file.' }
+                ]
+            },
+            pi_logger: {
+                filename: 'utils/pi_logger.py',
+                badgeClass: 'badge-util',
+                badgeText: 'Tiện ích',
+                desc: 'Hỗ trợ ghi log các sự kiện kết nối SSH.',
+                meta: 'Hàm phụ trợ',
+                relations: [],
+                funcs: [
+                    { name: 'setup_file_logger(name, log_dir, file_name)', desc: 'Tạo FileHandler cho hệ thống logging của Python để lưu các sự kiện kết nối.' }
+                ]
+            }
+        };
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+            const activeBtn = Array.from(document.querySelectorAll('.tab-btn')).find(btn => btn.textContent.includes(tabId === 'diagram' ? 'Sơ đồ' : 'Chi tiết'));
+            if (activeBtn) activeBtn.classList.add('active');
+            
+            document.getElementById(`tab-${tabId}`).classList.add('active');
+        }
+
+        function showFile(fileKey) {
+            // Cập nhật trạng thái active sidebar
+            document.querySelectorAll('.file-item').forEach(item => item.classList.remove('active'));
+            const activeItem = Array.from(document.querySelectorAll('.file-item')).find(item => item.textContent.includes(fileData[fileKey].filename));
+            if (activeItem) activeItem.classList.add('active');
+
+            const data = fileData[fileKey];
+            const container = document.getElementById('details-container');
+
+            let relationsHTML = '';
+            if (data.relations.length > 0) {
+                relationsHTML = `
+                    <div class="section-title"><i class="fa-solid fa-link"></i> Liên kết / Phụ thuộc</div>
+                    <div style="margin-bottom: 1.5rem;">
+                        ${data.relations.map(rel => `
+                            <span class="relation-tag" onclick="showFile('${rel.name.replace(/\.py|\.json|utils\/|interface\/|config\//g, '')}')">
+                                <strong>${data.filename}</strong> 
+                                <span class="tag-arrow"><i class="fa-solid fa-arrow-right"></i></span> 
+                                ${rel.type} 
+                                <strong>${rel.name}</strong>
+                            </span>
+                        `).join('')}
+                    </div>
+                `;
+            }
+
+            container.innerHTML = `
+                <div class="detail-header">
+                    <div class="detail-filename">
+                        <i class="fa-regular fa-file-code" style="color: var(--accent-primary)"></i>
+                        ${data.filename}
+                        <span class="badge-type ${data.badgeClass}">${data.badgeText}</span>
+                    </div>
+                    <div class="detail-meta">
+                        <span><i class="fa-solid fa-info-circle"></i> ${data.meta}</span>
+                    </div>
+                </div>
+                
+                <div class="detail-desc">${data.desc}</div>
+
+                ${relationsHTML}
+
+                <div class="section-title"><i class="fa-solid fa-list-check"></i> Các hàm / Cấu trúc bên trong</div>
+                <div class="func-list">
+                    ${data.funcs.map(f => `
+                        <div class="func-card">
+                            <div class="func-name">${f.name}</div>
+                            <div class="func-desc">${f.desc}</div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>

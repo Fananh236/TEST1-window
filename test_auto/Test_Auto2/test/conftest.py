@@ -175,8 +175,6 @@ def pytest_collection_modifyitems(items):
         "test_pi_connectivity.py": 3,
         "test_form_network.py": 4,
         "test_chiptool.py": 5,
-        "test_log_verification.py": 6,
-        "test_check_logs.py" : 7,
     }
 
     def sort_key(item):

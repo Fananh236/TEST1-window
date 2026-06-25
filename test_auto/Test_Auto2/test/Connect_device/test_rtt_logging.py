@@ -1,8 +1,8 @@
 import os
 import pytest
 
-from test_auto.Test_Auto2.utils.setup_log_rtt import (
-    resolve_log_path,
+from utils.common import (
+    resolve_log_directory,
     get_log_files,
     read_log_file,
     get_device_ip,
@@ -13,7 +13,7 @@ def test_rtt_fixture_active(device_rtt):
     print("✅ RTT fixture active")
 
 def test_log_file_readable(config):
-    log_path = resolve_log_path(config)
+    log_path = resolve_log_directory(config.get("log_path"))
     log_files = get_log_files(log_path)
 
     if not log_files:
