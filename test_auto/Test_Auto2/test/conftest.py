@@ -171,10 +171,9 @@ def pytest_collection_modifyitems(items):
     order = {
         "test_flashing_ip.py": 0,
         "test_flashing_sn.py": 1,
-        "test_rtt_logging.py": 2,
-        "test_pi_connectivity.py": 3,
-        "test_form_network.py": 4,
-        "test_chiptool.py": 5,
+        "test_pi_connectivity.py": 2,
+        "test_form_network.py": 3,
+        "test_chiptool.py": 4,
     }
 
     def sort_key(item):

@@ -75,10 +75,6 @@ def fetch_thread_data_set(pi_device):
     )
 
     out, err = pi_device.execute_command(cmd)
-
-    print(f"[DEBUG] dataset stdout: {repr(out)}")
-    print(f"[DEBUG] dataset stderr: {repr(err)}")
-
     full_output = f"{out}\n{err}".lower()
 
     if (
@@ -112,7 +108,7 @@ def fetch_thread_data_set(pi_device):
 
     dataset = f"hex:{dataset}"
 
-    print(f"[DEBUG] DATASET: {dataset}")
+    print(f"\n[DEBUG] DATASET: {dataset}")
 
     return dataset, None
 
@@ -197,9 +193,7 @@ def run_pairing(pi_device, config, pi_log_file: str = None):
     )
 
     pairing_cmd = build_sudo_command(pi_device, pairing_raw_cmd)
-
-    print("[DEBUG] pairing command created")
-
+    
     output, pairing_err = pi_device.execute_command(pairing_cmd, timeout=120)
 
     pairing_output = f"{output}\n{pairing_err}".lower()
@@ -271,7 +265,7 @@ def run_and_verify(pi_device, device_rtt, log_paths, chip_cmd, label):
 
     # Extract delta (only new content since baseline)
     if pi_baseline and pi_full.startswith(pi_baseline):
-        pi_new = pi_full[len(pi_baseline):]
+        pi_new = pi_full[len(pi_baseline):] # Cuting log from pi_baseline -> end 
     else:
         pi_new = pi_full
 
@@ -295,7 +289,7 @@ def run_and_verify(pi_device, device_rtt, log_paths, chip_cmd, label):
 
     print(f"\n[{label}] VERIFICATION PASSED!")
 
-    # === Reconnect for next command ===
+    # === Reconnect for next command ===,
     pi_device.connect()
     device_rtt.start_rtt()
     time.sleep(2)

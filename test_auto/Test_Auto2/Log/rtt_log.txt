@@ -1,32 +1,33 @@
-[00:02:03.284][info  ][EM] >>> [E:56990r S:0 M:217310192] (U) Msg RX from 0:53E188439749C6A7 [0000] to 0000000000000000 --- Type 0000:30 (SecureChannel:CASE_Sigma1) (B:196)
-[00:02:03.284][info  ][IN] CASE Server received Sigma1 message . Starting handshake. EC 0x200095e0
-[00:02:03.286][info  ][EM] <<< [E:56990r S:0 M:54851607 (Ack:217310192)] (U) Msg TX from 0000000000000000 to 0:53E188439749C6A7 [0000] [UDP:[fdc2:dd3b:d255:1:e90f:eaec:ff4e:d889]:60986] --- Type 0000:10 (SecureChannel:StandaloneAck) (B:26)
-[00:02:03.287][info  ][SC] Received Sigma1 msg
-[00:02:03.300][info  ][SC] CASE matched destination ID: fabricIndex 1, NodeID 0x0000000000000001
-[00:02:03.330][info  ][EM] <<< [E:56990r S:0 M:54851608 (Ack:217310192)] (U) Msg TX from 0000000000000000 to 0:53E188439749C6A7 [0000] [UDP:[fdc2:dd3b:d255:1:e90f:eaec:ff4e:d889]:60986] --- Type 0000:31 (SecureChannel:CASE_Sigma2) (B:751)
-[00:02:03.332][info  ][EM] ??1 [E:56990r S:0 M:54851608] (U) Msg Retransmission to 0:0000000000000000 scheduled for 2841ms from now [State:Active II:500 AI:300 AT:4000]
-[00:02:03.333][info  ][SC] Sent Sigma2 msg
-[00:02:03.768][info  ][EM] >>> [E:56990r S:0 M:217310193 (Ack:54851608)] (U) Msg RX from 0:53E188439749C6A7 [0000] to 0000000000000000 --- Type 0000:32 (SecureChannel:CASE_Sigma3) (B:598)
-[00:02:03.770][info  ][EM] <<< [E:56990r S:0 M:54851609 (Ack:217310193)] (U) Msg TX from 0000000000000000 to 0:53E188439749C6A7 [0000] [UDP:[fdc2:dd3b:d255:1:e90f:eaec:ff4e:d889]:60986] --- Type 0000:10 (SecureChannel:StandaloneAck) (B:26)
-[00:02:03.771][info  ][SC] Received Sigma3 msg
-[00:02:03.831][info  ][EM] <<< [E:56990r S:0 M:54851610 (Ack:217310193)] (U) Msg TX from 0000000000000000 to 0:53E188439749C6A7 [0000] [UDP:[fdc2:dd3b:d255:1:e90f:eaec:ff4e:d889]:60986] --- Type 0000:40 (SecureChannel:StatusReport) (B:34)
-[00:02:03.832][info  ][EM] ??1 [E:56990r S:0 M:54851610] (U) Msg Retransmission to 0:0000000000000000 scheduled for 2843ms from now [State:Active II:500 AI:300 AT:4000]
-[00:02:03.837][info  ][SC] SecureSession[0x20007cd8, LSID:35648]: State change 'kEstablishing' --> 'kActive'
-[00:02:03.838][info  ][IN] CASE Session established to peer: <000000000001B669, 1>
-[00:02:03.839][info  ][DL] _OnPlatformEvent default:  event->Type = 32792
-[00:02:03.899][info  ][EM] >>> [E:56991r S:35648 M:211319262] (S) Msg RX from 1:000000000001B669 [F356] to 0000000000000001 --- Type 0001:08 (IM:InvokeCommandRequest) (B:59)
-[00:02:03.902][info  ][ZCL] Toggle ep1 on/off from state 1 to 0
-[00:02:03.909][info  ][EM] <<< [E:56991r S:35648 M:178797634 (Ack:211319262)] (S) Msg TX from 0000000000000001 to 1:000000000001B669 [F356] [UDP:[fdc2:dd3b:d255:1:e90f:eaec:ff4e:d889]:60986] --- Type 0001:09 (IM:InvokeCommandResponse) (B:67)
-[00:02:03.911][info  ][EM] ??1 [E:56991r S:35648 M:178797634] (S) Msg Retransmission to 1:000000000001B669 scheduled for 2874ms from now [State:Active II:500 AI:300 AT:4000]
-[00:02:03.912][info  ][ZCL] Cluster callback: 0x0000_0008
-[00:02:03.912][info  ][ZCL] Level Control attribute ID: 0x0000_0000 Type: 32 Value: 1, length 1
-[00:02:03.912][info  ][ZCL] Setting on/off to OFF due to level change
-[00:02:03.913][info  ][ZCL] Toggle ep1 on/off from state 1 to 0
-[00:02:03.914][info  ][ZCL] Cluster callback: 0x0000_0006
-[00:02:03.914][silabs ]Turning light Off
-[00:02:03.947][info  ][ZCL] Off completed. reset OnTime to  0
-[00:02:03.950][info  ][ZCL] Cluster callback: 0x0000_0008
-[00:02:03.950][info  ][ZCL] Level Control attribute ID: 0x0000_0000 Type: 32 Value: 254, length 1
-[00:02:03.952][silabs ]Light OFF
-[00:02:03.961][info  ][EM] >>> [E:56990r S:0 M:217310194 (Ack:54851610)] (U) Msg RX from 0:53E188439749C6A7 [0000] to 0000000000000000 --- Type 0000:10 (SecureChannel:StandaloneAck) (B:26)
-[00:02:04.007][info  ][EM] >>> [E:56991r S:35648 M:211319263 (Ack:178797634)] (S) Msg RX from 1:000000000001B669 [F356] to 0000000000000001 --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)
+[00:01:48.089][info  ][DL] _OnPlatformEvent default:  event->Type = 32779
+[00:01:52.710][info  ][EM] >>> [E:45366r S:0 M:13789660] (U) Msg RX from 0:8E1307C9A8BF7843 [0000] to 0000000000000000 --- Type 0000:30 (SecureChannel:CASE_Sigma1) (B:196)
+[00:01:52.710][info  ][IN] CASE Server received Sigma1 message . Starting handshake. EC 0x200095e0
+[00:01:52.711][info  ][EM] <<< [E:45366r S:0 M:109212288 (Ack:13789660)] (U) Msg TX from 0000000000000000 to 0:8E1307C9A8BF7843 [0000] [UDP:[fdc2:dd3b:d255:1:e90f:eaec:ff4e:d889]:44386] --- Type 0000:10 (SecureChannel:StandaloneAck) (B:26)
+[00:01:52.712][info  ][SC] Received Sigma1 msg
+[00:01:52.727][info  ][SC] CASE matched destination ID: fabricIndex 1, NodeID 0x0000000000000001
+[00:01:52.756][info  ][EM] <<< [E:45366r S:0 M:109212289 (Ack:13789660)] (U) Msg TX from 0000000000000000 to 0:8E1307C9A8BF7843 [0000] [UDP:[fdc2:dd3b:d255:1:e90f:eaec:ff4e:d889]:44386] --- Type 0000:31 (SecureChannel:CASE_Sigma2) (B:751)
+[00:01:52.758][info  ][EM] ??1 [E:45366r S:0 M:109212289] (U) Msg Retransmission to 0:0000000000000000 scheduled for 2896ms from now [State:Active II:500 AI:300 AT:4000]
+[00:01:52.759][info  ][SC] Sent Sigma2 msg
+[00:01:53.060][info  ][EM] >>> [E:45366r S:0 M:13789661 (Ack:109212289)] (U) Msg RX from 0:8E1307C9A8BF7843 [0000] to 0000000000000000 --- Type 0000:32 (SecureChannel:CASE_Sigma3) (B:598)
+[00:01:53.062][info  ][EM] <<< [E:45366r S:0 M:109212290 (Ack:13789661)] (U) Msg TX from 0000000000000000 to 0:8E1307C9A8BF7843 [0000] [UDP:[fdc2:dd3b:d255:1:e90f:eaec:ff4e:d889]:44386] --- Type 0000:10 (SecureChannel:StandaloneAck) (B:26)
+[00:01:53.063][info  ][SC] Received Sigma3 msg
+[00:01:53.123][info  ][EM] <<< [E:45366r S:0 M:109212291 (Ack:13789661)] (U) Msg TX from 0000000000000000 to 0:8E1307C9A8BF7843 [0000] [UDP:[fdc2:dd3b:d255:1:e90f:eaec:ff4e:d889]:44386] --- Type 0000:40 (SecureChannel:StatusReport) (B:34)
+[00:01:53.124][info  ][EM] ??1 [E:45366r S:0 M:109212291] (U) Msg Retransmission to 0:0000000000000000 scheduled for 2891ms from now [State:Active II:500 AI:300 AT:4000]
+[00:01:53.129][info  ][SC] SecureSession[0x20007cd8, LSID:26909]: State change 'kEstablishing' --> 'kActive'
+[00:01:53.130][info  ][IN] CASE Session established to peer: <000000000001B669, 1>
+[00:01:53.131][info  ][DL] _OnPlatformEvent default:  event->Type = 32792
+[00:01:53.201][info  ][EM] >>> [E:45367r S:26909 M:155206620] (S) Msg RX from 1:000000000001B669 [B316] to 0000000000000001 --- Type 0001:08 (IM:InvokeCommandRequest) (B:59)
+[00:01:53.203][info  ][ZCL] Toggle ep1 on/off from state 1 to 0
+[00:01:53.210][info  ][EM] <<< [E:45367r S:26909 M:218969979 (Ack:155206620)] (S) Msg TX from 0000000000000001 to 1:000000000001B669 [B316] [UDP:[fdc2:dd3b:d255:1:e90f:eaec:ff4e:d889]:44386] --- Type 0001:09 (IM:InvokeCommandResponse) (B:67)
+[00:01:53.212][info  ][EM] ??1 [E:45367r S:26909 M:218969979] (S) Msg Retransmission to 1:000000000001B669 scheduled for 2839ms from now [State:Active II:500 AI:300 AT:4000]
+[00:01:53.212][info  ][ZCL] Cluster callback: 0x0000_0008
+[00:01:53.213][info  ][ZCL] Level Control attribute ID: 0x0000_0000 Type: 32 Value: 1, length 1
+[00:01:53.213][info  ][ZCL] Setting on/off to OFF due to level change
+[00:01:53.213][info  ][ZCL] Toggle ep1 on/off from state 1 to 0
+[00:01:53.215][info  ][ZCL] Cluster callback: 0x0000_0006
+[00:01:53.215][silabs ]Turning light Off
+[00:01:53.249][info  ][ZCL] Off completed. reset OnTime to  0
+[00:01:53.251][info  ][ZCL] Cluster callback: 0x0000_0008
+[00:01:53.251][info  ][ZCL] Level Control attribute ID: 0x0000_0000 Type: 32 Value: 254, length 1
+[00:01:53.252][silabs ]Light OFF
+[00:01:53.263][info  ][EM] >>> [E:45366r S:0 M:13789662 (Ack:109212291)] (U) Msg RX from 0:8E1307C9A8BF7843 [0000] to 0000000000000000 --- Type 0000:10 (SecureChannel:StandaloneAck) (B:26)
+[00:01:53.309][info  ][EM] >>> [E:45367r S:26909 M:155206621 (Ack:218969979)] (S) Msg RX from 1:000000000001B669 [B316] to 0000000000000001 --- Type 0000:10 (SecureChannel:StandaloneAck) (B:34)
